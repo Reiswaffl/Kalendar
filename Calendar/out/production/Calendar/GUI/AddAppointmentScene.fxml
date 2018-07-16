@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="500.0" maxWidth="100.0" prefHeight="500.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddAppointmentSceneController">
+   <children>
+      <VBox layoutY="50.0" spacing="50.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox alignment="TOP_CENTER" layoutX="154.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Termin hinzufügen" >
+                   <font>
+                       <Font size="24.0"/>
+                   </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Line endX="500.0" />
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label layoutX="26.0" layoutY="157.0" text="Jahr:" />
+                  <TextField fx:id="jahr" promptText="yyyy" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" spacing="40.0">
+               <children>
+                  <Label text="Monat:" />
+                  <MenuButton fx:id="mb" mnemonicParsing="false" text="Monat">
+                    <items>
+                      <MenuItem id="januar" fx:id="januar" mnemonicParsing="false" onAction="#handleJanuar" text="Januar" />
+                      <MenuItem id="februar" fx:id="februar" mnemonicParsing="false" onAction="#handleFebruar" text="Februar" />
+                        <MenuItem id="maerz" fx:id="maerz" mnemonicParsing="false" onAction="#handleMaerz" text="März" />
+                        <MenuItem id="april" fx:id="april" mnemonicParsing="false" onAction="#handleApril" text="April" />
+                        <MenuItem id="mai" fx:id="mai" mnemonicParsing="false" onAction="#handleMai" text="Mai" />
+                        <MenuItem id="juni" fx:id="juni" mnemonicParsing="false" onAction="#handleJuni" text="Juni" />
+                        <MenuItem id="juli" fx:id="juli" mnemonicParsing="false" onAction="#handleJuli" text="Juli" />
+                        <MenuItem id="august" fx:id="august" mnemonicParsing="false" onAction="#handleAugust" text="August" />
+                        <MenuItem id="september" fx:id="september" mnemonicParsing="false" onAction="#handleSeptember" text="September" />
+                        <MenuItem id="oktober" fx:id="oktober" mnemonicParsing="false" onAction="#handleOktober" text="Oktober" />
+                        <MenuItem id="november" fx:id="november" mnemonicParsing="false" onAction="#handleNovember" text="November" />
+                        <MenuItem id="Dezember" fx:id="dezember" mnemonicParsing="false" onAction="#handleDezember" text="Dezember" />
+                    </items>
+                  </MenuButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" text="Tag:" />
+                  <TextField fx:id="tag" promptText="tt" />
+               </children>
+            </HBox>
+             <HBox alignment="CENTER" spacing="10.0">
+                 <children>
+                     <Label alignment="CENTER" text="Beginn der Termins:" />
+                     <TextField fx:id="start" promptText="ss:mm" />
+                 </children>
+             </HBox>
+             <HBox alignment="CENTER" spacing="10.0">
+                 <children>
+                     <Label alignment="CENTER" text="Ende des Termins:" />
+                     <TextField fx:id="end" promptText="ss:mm" />
+                 </children>
+             </HBox>
+             <HBox alignment="CENTER" spacing="10.0">
+                 <children>
+                     <Label alignment="CENTER" text="Inhalt:" />
+                     <TextField fx:id="content" promptText="Hier könnte ihre Werbung stehen!!" />
+                 </children>
+             </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                   <Button mnemonicParsing="false" onAction="#back" text="Zurück"/>
+                  <Button mnemonicParsing="false" onAction="#add" text="Hinzufügen" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

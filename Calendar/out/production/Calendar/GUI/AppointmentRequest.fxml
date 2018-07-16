@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="GUI.AppointmentRequestSceneController">
+    <children>
+        <VBox  spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Label text="Terminvorschlag">
+                            <font>
+                                <Font size="36"/>
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <HBox spacing="46.0" alignment="CENTER">
+                    <children>
+                        <Label text="Betreff">
+                            <font>
+                                <Font size="18"/>
+                            </font>
+
+                        </Label>
+                        <TextField fx:id="subject" promptText="Hier einfügen!" />
+                    </children>
+                </HBox>
+                <HBox spacing="40.0" alignment="CENTER">
+                    <children>
+                        <Button  mnemonicParsing="false" onAction="#back" text="Zurück" />
+                        <Button  mnemonicParsing="false" onAction="#send" text="Senden"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
