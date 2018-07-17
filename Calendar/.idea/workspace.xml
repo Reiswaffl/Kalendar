@@ -26,10 +26,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUIController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="731">
               <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
               <folding>
                 <element signature="method#AddAppointment#0;class#GUIController#0" />
@@ -40,39 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main/Logic.java">
+      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="274">
+              <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
               <folding>
-                <element signature="method#getDateTime#0;class#Main#0" />
-                <element signature="method#GetDay1Info#0;class#Main#0" />
-                <element signature="method#GetDay2Info#0;class#Main#0" />
-                <element signature="method#GetDay3Info#0;class#Main#0" />
-                <element signature="method#GetDay4Info#0;class#Main#0" />
-                <element signature="method#GetDay5Info#0;class#Main#0" />
-                <element signature="method#GetDay6Info#0;class#Main#0" />
-                <element signature="method#AddUser#0;class#Main#0" />
-                <element signature="e#7323#7324#0" expanded="true" />
-                <element signature="e#7369#7370#0" expanded="true" />
-                <element signature="method#DaysInOrder#0;class#Main#0" />
-                <element signature="method#TransformToString#0;class#Main#0" />
-                <element signature="method#GetID#0;class#Main#0" />
-                <element signature="method#GetDayName#0;class#Main#0" />
+                <element signature="method#getDateTime#0;class#Logic#0" />
+                <element signature="method#AddAppiontment#0;class#Logic#0" />
+                <element signature="method#GetDayInfo#0;class#Logic#0" />
+                <element signature="method#AddUser#0;class#Logic#0" />
+                <element signature="method#DaysInOrder#0;class#Logic#0" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindow.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/MainWindow.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -134,6 +115,8 @@
         <option value="$PROJECT_DIR$/src/GUI/SwitchUserSceneController.java" />
         <option value="$PROJECT_DIR$/src/GUI/AppointmentRequestSceneController.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java" />
+        <option value="$PROJECT_DIR$/src/Main/Logic.java" />
+        <option value="$PROJECT_DIR$/src/Logic/Logic.java" />
       </list>
     </option>
   </component>
@@ -148,8 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,6 +165,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -228,7 +211,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Main.*" />
+          <option name="PATTERN" value="Logic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -306,6 +289,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1318" height="925" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -315,19 +299,18 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16359164" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.16359164" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13343558" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3296433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.0031796503" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3299923" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -335,36 +318,37 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296433" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21279213" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13359073" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3296433" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21279213" />
+      <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3296433" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296433" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.399754" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3299923" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3296433" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3299923" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13359073" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -372,10 +356,22 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="101" />
+      <option name="time" value="102" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding>
+            <element signature="method#AddAppointment#0;class#GUIController#0" />
+            <element signature="method#AppointmentRequest#0;class#GUIController#0" />
+            <element signature="method#SwitchUser#0;class#GUIController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/calendar.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -398,7 +394,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ONode.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
@@ -422,7 +418,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
@@ -446,7 +442,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ReturnValues/DayObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
@@ -469,7 +465,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PeriodObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
@@ -491,7 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
@@ -505,7 +501,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
@@ -545,7 +541,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
@@ -601,37 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MainWindow.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Logic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="method#getDateTime#0;class#Main#0" />
-            <element signature="method#GetDay1Info#0;class#Main#0" />
-            <element signature="method#GetDay2Info#0;class#Main#0" />
-            <element signature="method#GetDay3Info#0;class#Main#0" />
-            <element signature="method#GetDay4Info#0;class#Main#0" />
-            <element signature="method#GetDay5Info#0;class#Main#0" />
-            <element signature="method#GetDay6Info#0;class#Main#0" />
-            <element signature="method#AddUser#0;class#Main#0" />
-            <element signature="e#7323#7324#0" expanded="true" />
-            <element signature="e#7369#7370#0" expanded="true" />
-            <element signature="method#DaysInOrder#0;class#Main#0" />
-            <element signature="method#TransformToString#0;class#Main#0" />
-            <element signature="method#GetID#0;class#Main#0" />
-            <element signature="method#GetDayName#0;class#Main#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -658,12 +623,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="731">
           <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
           <folding>
             <element signature="method#AddAppointment#0;class#GUIController#0" />
             <element signature="method#AppointmentRequest#0;class#GUIController#0" />
             <element signature="method#SwitchUser#0;class#GUIController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="method#getDateTime#0;class#Logic#0" />
+            <element signature="method#AddAppiontment#0;class#Logic#0" />
+            <element signature="method#GetDayInfo#0;class#Logic#0" />
+            <element signature="method#AddUser#0;class#Logic#0" />
+            <element signature="method#DaysInOrder#0;class#Logic#0" />
           </folding>
         </state>
       </provider>
