@@ -16,10 +16,12 @@ import java.io.IOException;
 
 public class SwitchUserSceneController{
     @FXML private TextField select;
-    @FXML private TextField add;
     @FXML private Label selectedUser;
 
-
+    @FXML
+    public void initialize(){
+        selectedUser.setText(Logic.GetCurrentUser());
+    }
     @FXML
     public void handleBack(ActionEvent event) throws IOException {
         Parent addAppiontment = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
@@ -37,14 +39,14 @@ public class SwitchUserSceneController{
     }
     @FXML
     public void handleAdd() throws TransformerException {
-        selectedUser.setText(add.getText());
-        String exception = Logic.AddUser(add.getText());
+        selectedUser.setText(select.getText());
+        String exception = Logic.AddUser(select.getText());
         if(exception.equals("Name bereits vorhanden!")){
             //Fehler
         }else{
-            selectedUser.setText(add.getText());
+            selectedUser.setText(select.getText());
         }
-        add.clear();
+        select.clear();
         //add to XML-File
     }
 

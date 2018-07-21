@@ -22,16 +22,15 @@
                   <Label fx:id="selectedUser" alignment="CENTER" prefHeight="24.0" prefWidth="310.0" text="Kein Nutzer ausgewählt!" />
                </children>
             </HBox>
-            <HBox spacing="46.0">
+            <HBox spacing="46.0" alignment="CENTER">
                <children>
-                  <Button layoutX="93.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleSelect" text="Auswählen" />
                   <TextField fx:id="select" promptText="Nutzername" />
                </children>
             </HBox>
-            <HBox spacing="40.0">
+            <HBox spacing="40.0" alignment="CENTER">
                <children>
+                  <Button layoutX="93.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleSelect" text="Auswählen" />
                   <Button layoutX="52.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleAdd" text="Hinzufügen" />
-                  <TextField fx:id="add" promptText="Nutzername" />
                </children>
             </HBox>
          </children>
