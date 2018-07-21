@@ -74,6 +74,9 @@ public final class Logic {
 
         return ret;
     }
+    public static String GetNextFreeDay(String usr){
+        return reader.GetNextFreeDay(usr);
+    }
     //Change user
     public static void SwitchUser(String user){
         writer.SwitchUser(user);

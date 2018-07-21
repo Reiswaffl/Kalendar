@@ -11,6 +11,7 @@ import Logic.Logic;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -100,7 +101,11 @@ public class GUIController{
     }
     @FXML
     public void GetNextFreeDay(javafx.event.ActionEvent event ){
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Nächster freier Tag");
+        alert.setHeaderText(null);
+        alert.setContentText(Logic.GetNextFreeDay(Logic.GetCurrentUser()));
+        alert.showAndWait();
     }
 
 
