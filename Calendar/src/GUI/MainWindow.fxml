@@ -140,7 +140,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="GetNextFreeDay" mnemonicParsing="false" onAction="#GetNextFreeDay" text="Nächster freier Tag">
+                  <Button fx:id="getNextFreeDay" mnemonicParsing="false" onAction="#getNextFreeDay" text="Nächster freier Tag">
                      <font>
                         <Font size="18"/>
                      </font>

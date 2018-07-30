@@ -20,7 +20,7 @@ public class SwitchUserSceneController{
 
     @FXML
     public void initialize(){
-        selectedUser.setText(Logic.GetCurrentUser());
+        selectedUser.setText(Logic.getCurrentUser());
     }
     @FXML
     public void handleBack(ActionEvent event) throws IOException {

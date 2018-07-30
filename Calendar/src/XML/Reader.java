@@ -14,18 +14,18 @@ public class Reader {
     public Reader(){
         xmlReader = new XMLReader();
     }
-    public ReturnValue GetDayInformation(String user, int date) {
+    public ReturnValue getDayInformation(String user, int date) {
         xmlReader.Update();
         ReturnValue returnValue = new ReturnValue();
         int y = date / 10000;
         String idy = FormToString(y);
         NodeList years = null;
-        if(xmlReader.GetUser(user) != null){
-            years = xmlReader.GetUser(user).getChildNodes();
+        if(xmlReader.getUser(user) != null){
+            years = xmlReader.getUser(user).getChildNodes();
         }
         Node year = null;
         if(years != null){
-            year = xmlReader.GetYearById(idy, years);
+            year = xmlReader.getYearById(idy, years);
         }
 
         int m = date % 10000;
@@ -34,7 +34,7 @@ public class Reader {
 
         Node month = null;
         if (year != null) {
-            month = xmlReader.GetMonthById(idm, year.getChildNodes());
+            month = xmlReader.getMonthById(idm, year.getChildNodes());
 
         } else {
             return returnValue;
@@ -42,7 +42,7 @@ public class Reader {
 
         Node day = null;
         if (month != null) {
-            day = xmlReader.GetDayById(Integer.toString(date), month.getChildNodes());
+            day = xmlReader.getDayById(Integer.toString(date), month.getChildNodes());
         } else {
             return returnValue;
         }
@@ -69,24 +69,24 @@ public class Reader {
         }
         return  returnValue;
     }
-    public Periods GetPeriodInformation(String user, int date, String start) {
+    public Periods getPeriodInformation(String user, int date, String start) {
         xmlReader.Update();
         int y = date/10000;
         String idy = FormToString(y);
-        NodeList years = xmlReader.GetUser(user).getChildNodes();
-        Node year = xmlReader.GetYearById(idy, years);
+        NodeList years = xmlReader.getUser(user).getChildNodes();
+        Node year = xmlReader.getYearById(idy, years);
 
         int m = date%10000;
         m /= 100;
         String idm = FormToString(m);
                 Node month = null;
-        if(year != null) { month = xmlReader.GetMonthById(idm, year.getChildNodes());}
+        if(year != null) { month = xmlReader.getMonthById(idm, year.getChildNodes());}
         else{return null;}
         Node day = null;
-        if(month != null){ day = xmlReader.GetDayById(Integer.toString(date), month.getChildNodes());}
+        if(month != null){ day = xmlReader.getDayById(Integer.toString(date), month.getChildNodes());}
         else{return null;}
         Periods p = null;
-        if(day != null){p = xmlReader.GetPeriodByTime(start, day.getChildNodes());}
+        if(day != null){p = xmlReader.getPeriodByTime(start, day.getChildNodes());}
         else {return null;}
         if(p != null){
             return p;
@@ -94,24 +94,24 @@ public class Reader {
         return null;
 
     }
-    public String GetAppiontmentInformation(String user, int date, String time){
+    public String getAppiontmentInformation(String user, int date, String time){
         xmlReader.Update();
         int y = date/10000;
         String idy = FormToString(y);
-        NodeList years = xmlReader.GetUser(user).getChildNodes();
-        Node year = xmlReader.GetYearById(idy, years);
+        NodeList years = xmlReader.getUser(user).getChildNodes();
+        Node year = xmlReader.getYearById(idy, years);
 
         int m = date%10000;
         m /= 100;
         String idm = FormToString(m);
         Node month = null;
-        if(year != null) { month = xmlReader.GetMonthById(idm, year.getChildNodes());}
+        if(year != null) { month = xmlReader.getMonthById(idm, year.getChildNodes());}
         else{return null;}
         Node day = null;
-        if(month != null){ day = xmlReader.GetDayById(Integer.toString(date), month.getChildNodes());}
+        if(month != null){ day = xmlReader.getDayById(Integer.toString(date), month.getChildNodes());}
         else{return null;}
         Node p = null;
-        if(day != null){p = xmlReader.GetPeriodById(time, day.getChildNodes());}
+        if(day != null){p = xmlReader.getPeriodById(time, day.getChildNodes());}
         else {return null;}
         if(p != null){
             return p.getTextContent();
@@ -119,12 +119,12 @@ public class Reader {
         return null;
     }
 
-    public String GetNextFreeDay(String usr){
+    public String getNextFreeDay(String usr){
         xmlReader.Update();
-        Node user = xmlReader.GetUser(usr);
+        Node user = xmlReader.getUser(usr);
         Node year =null;
         if(user != null){
-            year = xmlReader.GetYearById("18",user.getChildNodes()); //change later to aktuall year (with datetime)
+            year = xmlReader.getYearById("18",user.getChildNodes()); //change later to aktuall year (with datetime)
         }
         NodeList months;
         if(year != null){
@@ -152,14 +152,14 @@ public class Reader {
         }
         return "Gönn dir mal ne Pause!";
     }
-    public String GetNextFreePeriod(String usr, String mintime, String maxtime, String hours){
+    public String getNextFreePeriod(String usr, String mintime, String maxtime, String hours){
         //Not possible, because searches intervall is bigger than the possible one
         xmlReader.Update();
         if(Integer.parseInt(maxtime) - Integer.parseInt(mintime) < Integer.parseInt(hours)){
             return "Leider nicht möglich, der Zeitraum und die Anzahl der gewünschten Stunden ist zu groß!";
         }
-        Node user = xmlReader.GetUser(usr);
-        Node year = xmlReader.GetYearById("18",user.getChildNodes());
+        Node user = xmlReader.getUser(usr);
+        Node year = xmlReader.getYearById("18",user.getChildNodes());
         NodeList months = year.getChildNodes();
         for(int m = 0; m < months.getLength(); m++){
             Node nmonth = months.item(m);
@@ -186,13 +186,13 @@ public class Reader {
 
         return "Leider keinen passenden Zeitraum gefunden!";
     }
-    public ArrayList<Integer> GetMonthInformation(){
+    public ArrayList<Integer> getMonthInformation(){
         return null;
     }
 
-    public String GetCurrentUser(){
+    public String getCurrentUser(){
         xmlReader.Update();
-        return xmlReader.GetCurrentUser();
+        return xmlReader.getCurrentUser();
     }
 
     //casts days and months in from int to String

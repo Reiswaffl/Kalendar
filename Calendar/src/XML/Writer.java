@@ -33,11 +33,11 @@ public class Writer {
     public void SwitchUser(String user){
         xmlReader.SwitchUser(user);
     }
-    public String GetCurrentUser(){
-        return xmlReader.GetCurrentUser();
+    public String getCurrentUser(){
+        return xmlReader.getCurrentUser();
     }
     public String AddUser(String name) throws TransformerException {
-        NodeList userList = xmlReader.GetUsers();
+        NodeList userList = xmlReader.getUsers();
         if (userList == null){
             xmlReader.CreateUser(name);
             return "--";
@@ -61,7 +61,7 @@ public class Writer {
     }
 
     public void AddPeriod(String user, String date, String start,String end, String content) throws TransformerException {
-        Node usr = xmlReader.GetUser(user);
+        Node usr = xmlReader.getUser(user);
 
         NodeList years = null;
         int iyear = Integer.parseInt(date);
@@ -75,7 +75,7 @@ public class Writer {
             years = usr.getChildNodes();
             Node year = null;
             if(years != null) {
-                year = xmlReader.GetYearById(Integer.toString(iyear), years);
+                year = xmlReader.getYearById(Integer.toString(iyear), years);
             }
             month = Integer.parseInt(date);
             month %= 10000;
@@ -89,13 +89,13 @@ public class Writer {
                 NodeList months = year.getChildNodes();
                 Node nmonth = null;
                 if(months != null) {
-                    nmonth = xmlReader.GetMonthById(smonth, months);
+                    nmonth = xmlReader.getMonthById(smonth, months);
                 }
                 if(nmonth != null){ // month allready exists
                     NodeList days = nmonth.getChildNodes();
                     Node day = null;
                     if(days != null) {
-                        day = xmlReader.GetDayById(date,days);
+                        day = xmlReader.getDayById(date,days);
                     }
                     if(day != null){
                         xmlReader.CreatePeriod(day,start,end,content);
@@ -128,7 +128,7 @@ public class Writer {
     public void SetDayBusy(String user, String date, String content){}
     public void SetDayBusy(String user, String date){}
 
-    private String GetDayName(int id){
+    private String getDayName(int id){
         switch (id){
             case 0:
                 return "Montag";

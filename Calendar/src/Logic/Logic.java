@@ -22,7 +22,7 @@ public final class Logic {
     public static Reader reader;
     public static int[] daysInMonth = new int[12];
 
-    //Getter to get information for the LogicWindow
+    //getter to get information for the LogicWindow
     public static String getDateTime() {
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy"); //HH:mm:ss
         Date date = new Date();
@@ -34,9 +34,9 @@ public final class Logic {
         if(Integer.parseInt(s) > Integer.parseInt(e)){
             return "Ende liegt vor Start";
         }
-        ReturnValue periods = reader.GetDayInformation(reader.GetCurrentUser(),Integer.parseInt(date));
-        ArrayList<String> sp = periods.GetStart();
-        ArrayList<String> ep = periods.GetEnd();
+        ReturnValue periods = reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date));
+        ArrayList<String> sp = periods.getStart();
+        ArrayList<String> ep = periods.getEnd();
 
         for(int i = 0; i < sp.size(); i++){
             String ps = sp.get(i).substring(0,sp.get(i).length()-3);
@@ -46,20 +46,20 @@ public final class Logic {
                 return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
             }
         }
-        writer.AddPeriod(reader.GetCurrentUser(), date, start,end,content);
+        writer.AddPeriod(reader.getCurrentUser(), date, start,end,content);
         return null;
 
     }
-    public static String GetDayInfo(int add){
+    public static String getDayInfo(int add){
         String date = DayMonth(add);
         ReturnValue returnValue = null;
 
-        if(reader.GetDayInformation(reader.GetCurrentUser(),Integer.parseInt(date))!=null) {
-            returnValue = reader.GetDayInformation(reader.GetCurrentUser(), Integer.parseInt(date));
+        if(reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date))!=null) {
+            returnValue = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(date));
         }
         String ret = "-";
         if(returnValue != null) {
-            ArrayList<String> a = returnValue.GetContent();
+            ArrayList<String> a = returnValue.getContent();
 
 
             for (int i = 0; i < a.size(); i++) {
@@ -74,8 +74,8 @@ public final class Logic {
 
         return ret;
     }
-    public static String GetNextFreeDay(String usr){
-        return reader.GetNextFreeDay(usr);
+    public static String getNextFreeDay(String usr){
+        return reader.getNextFreeDay(usr);
     }
     //Change user
     public static void SwitchUser(String user){
@@ -84,8 +84,8 @@ public final class Logic {
     public static String  AddUser(String username) throws TransformerException {
         return writer.AddUser(username);
     }
-    public static String GetCurrentUser(){
-        return writer.GetCurrentUser();
+    public static String getCurrentUser(){
+        return writer.getCurrentUser();
     }
 
 
@@ -95,14 +95,14 @@ public final class Logic {
         DateFormat format2=new SimpleDateFormat("EEEE");
         String currentDay=format2.format(date);
 
-        int startid = GetID(currentDay);
+        int startid = getID(currentDay);
         int id = 0;
         for(int i = startid; i < 7; i++){
-            daynames[id] = GetDayName(i);
+            daynames[id] = getDayName(i);
             id++;
         }
         for(int i = 0; i < startid; i++){
-            daynames[id] = GetDayName(i);
+            daynames[id] = getDayName(i);
             id++;
         }
 
@@ -159,7 +159,7 @@ public final class Logic {
         date = syear + smonth + sday;
         return date;
     }
-    private static int GetID(String dayname){
+    private static int getID(String dayname){
         switch (dayname){
             case "Montag":
                 return 0;
@@ -179,7 +179,7 @@ public final class Logic {
                 return 10;
         }
     }
-    private static String GetDayName(int id){
+    private static String getDayName(int id){
         switch (id){
             case 0:
                 return "Montag";

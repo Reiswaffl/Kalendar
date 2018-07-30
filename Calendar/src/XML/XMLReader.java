@@ -69,14 +69,14 @@ public class XMLReader {
                 transformer.transform(source, result);
             }catch (Exception e){}
     }
-    public String GetCurrentUser(){
+    public String getCurrentUser(){
         NodeList currents = doc.getElementsByTagName("currentUser");
         Node currentUser = currents.item(0);
 
         return ( (Element) currentUser).getAttribute("id");
     }
     //Reading Information
-    public NodeList GetUsers(){
+    public NodeList getUsers(){
         NodeList Users = doc.getElementsByTagName("users");
         Node userList = Users.item(0);
         if(userList == null){
@@ -85,7 +85,7 @@ public class XMLReader {
         System.out.println(userList.getChildNodes().getLength());
         return userList.getChildNodes();
     } //returns a NodeList with all possible Users
-    public Node GetUser(String id){
+    public Node getUser(String id){
         for(int i = 0; i < users.getLength(); i++){
             Node nuser = users.item(i);
             if(nuser.getNodeType() == Node.ELEMENT_NODE){
@@ -97,7 +97,7 @@ public class XMLReader {
         }
         return null;
     }
-    public Node GetYearById(String  id, NodeList years ){
+    public Node getYearById(String  id, NodeList years ){
         for(int i = 0; i < years.getLength(); i++){
             Node nyear = years.item(i);
             if (nyear.getNodeType() == Node.ELEMENT_NODE){
@@ -109,7 +109,7 @@ public class XMLReader {
         }
         return null;
     }
-    public Node GetMonthById(String id , NodeList months) {
+    public Node getMonthById(String id , NodeList months) {
         for (int i = 0; i < months.getLength(); i++) {
             Node nmonth = months.item(i);
             if (nmonth.getNodeType() == Node.ELEMENT_NODE) {
@@ -122,7 +122,7 @@ public class XMLReader {
         }
         return null;
     }
-    public Node GetDayById(String date, NodeList days){
+    public Node getDayById(String date, NodeList days){
         for(int i = 0; i < days.getLength(); i++){
             Node nday = days.item(i);
             if(nday.getNodeType() == Node.ELEMENT_NODE){
@@ -135,7 +135,7 @@ public class XMLReader {
         return null;
     }
 
-    public Periods GetPeriodByTime(String start, NodeList periods){
+    public Periods getPeriodByTime(String start, NodeList periods){
         Periods p = new Periods();
         for(int i = 0; i < periods.getLength(); i++){
             Node nperiod = periods.item(i);
@@ -148,7 +148,7 @@ public class XMLReader {
         }
         return p;
     }
-    public Node GetPeriodById(String start, NodeList periods){
+    public Node getPeriodById(String start, NodeList periods){
         for(int i = 0; i < periods.getLength(); i++){
             Node nperiod = periods.item(i);
             if(nperiod.getNodeType() == Node.ELEMENT_NODE){

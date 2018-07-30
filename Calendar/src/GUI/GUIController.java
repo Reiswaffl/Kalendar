@@ -61,14 +61,14 @@ public class GUIController{
         Logic.writer = new Writer();
         Logic.reader = new Reader();
         datetime.setText(Logic.getDateTime());
-        currentUser.setText(Logic.GetCurrentUser());
-        currentDayInfo.setText(Logic.GetDayInfo(0));
-        day1Info.setText(Logic.GetDayInfo(1));
-        day2Info.setText(Logic.GetDayInfo(2));
-        day3Info.setText(Logic.GetDayInfo(3));
-        day4Info.setText(Logic.GetDayInfo(4));
-        day5Info.setText(Logic.GetDayInfo(5));
-        day6Info.setText(Logic.GetDayInfo(6));
+        currentUser.setText(Logic.getCurrentUser());
+        currentDayInfo.setText(Logic.getDayInfo(0));
+        day1Info.setText(Logic.getDayInfo(1));
+        day2Info.setText(Logic.getDayInfo(2));
+        day3Info.setText(Logic.getDayInfo(3));
+        day4Info.setText(Logic.getDayInfo(4));
+        day5Info.setText(Logic.getDayInfo(5));
+        day6Info.setText(Logic.getDayInfo(6));
         Logic.DaysInOrder();
         String[] daynames = Logic.DaysInOrder();
         currentDay.setText(daynames[0]);
@@ -78,7 +78,7 @@ public class GUIController{
         day4.setText(daynames[4]);
         day5.setText(daynames[5]);
         day6.setText(daynames[6]);
-        currentUser.setText(Logic.GetCurrentUser());
+        currentUser.setText(Logic.getCurrentUser());
     }
 
     @FXML
@@ -100,11 +100,11 @@ public class GUIController{
         window.show();
     }
     @FXML
-    public void GetNextFreeDay(javafx.event.ActionEvent event ){
+    public void getNextFreeDay(javafx.event.ActionEvent event ){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Nächster freier Tag");
         alert.setHeaderText(null);
-        alert.setContentText(Logic.GetNextFreeDay(Logic.GetCurrentUser()));
+        alert.setContentText(Logic.getNextFreeDay(Logic.getCurrentUser()));
         alert.showAndWait();
     }
 

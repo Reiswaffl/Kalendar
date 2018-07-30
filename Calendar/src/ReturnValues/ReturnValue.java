@@ -23,10 +23,10 @@ public class ReturnValue {
     }
 
     //returns
-    public ArrayList<String> GetContent() {
+    public ArrayList<String> getContent() {
         return content;
     }
-    public ArrayList<String> GetStart(){return start;}
-    public ArrayList<String> GetEnd(){return end;}
+    public ArrayList<String> getStart(){return start;}
+    public ArrayList<String> getEnd(){return end;}
 
 }
