@@ -11,6 +11,7 @@ import org.w3c.dom.Element;
 
 public class Reader {
     XMLReader xmlReader;
+
     public Reader(){
         xmlReader = new XMLReader();
     }
