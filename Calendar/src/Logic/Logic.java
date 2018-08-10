@@ -28,7 +28,12 @@ public final class Logic {
         Date date = new Date();
         return dateFormat.format(date);
     }
-    public static String AddAppiontment(String date,String start,String end, String content) throws TransformerException {
+
+    public static String AddAppiontment(String date,String start,String end, String content, String driver) throws TransformerException {
+        if(driver != null && reader.isRegistered(driver) == false)
+        {
+            return "Die Begleitperson exestiert leider noch nicht. ";
+        }
         String s = start.substring(0,start.length()-3);
         String e = end.substring(0,end.length()-3);
         if(Integer.parseInt(s) > Integer.parseInt(e)){

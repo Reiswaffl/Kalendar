@@ -82,7 +82,6 @@ public class XMLReader {
         if(userList == null){
             return null;
         }
-        System.out.println(userList.getChildNodes().getLength());
         return userList.getChildNodes();
     } //returns a NodeList with all possible Users
     public Node getUser(String id){

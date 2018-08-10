@@ -8,6 +8,8 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
+import javax.swing.text.AbstractDocument;
+
 
 public class Reader {
     XMLReader xmlReader;
@@ -195,7 +197,19 @@ public class Reader {
         xmlReader.Update();
         return xmlReader.getCurrentUser();
     }
+    public boolean isRegistered(String id){
+        NodeList users = xmlReader.getUsers();
+        for(int i = 0; i < users.getLength(); i++){
+            Node nuser = users.item(i);
+            if(nuser.getNodeType() == Node.ELEMENT_NODE){
+                Element euser = (Element) nuser;
+                if(id.equals(euser.getAttribute(id))){
 
+                }
+            }
+        }
+        return false;
+    }
     //casts days and months in from int to String
     private String FormToString(int input){
 

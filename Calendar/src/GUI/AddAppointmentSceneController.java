@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class AddAppointmentSceneController implements Initializable {
     @FXML private TextField start;
     @FXML private TextField end;
     @FXML private TextField content;
+    @FXML private TextField begleiter;
     @FXML private MenuButton mb;
     @FXML private MenuItem januar;
     @FXML private MenuItem februar;
@@ -47,6 +49,7 @@ public class AddAppointmentSceneController implements Initializable {
     public void add() throws TransformerException {
         String year = jahr.getText();
         String day = tag.getText();
+        String driver = begleiter.getText();
         System.out.println(year + "" + month +"" +day);
         if(year.length() == 4){
             int i = Integer.parseInt(year);
@@ -57,10 +60,11 @@ public class AddAppointmentSceneController implements Initializable {
             day = "0" + day;
         }
         String date = year + monthnumber + day;
-        String s = Logic.AddAppiontment(date,start.getText(),end.getText(),content.getText());
+        String s = Logic.AddAppiontment(date,start.getText(),end.getText(),content.getText(), driver);
         if(s != null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
+            
             //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
             alert.setContentText(s);
             alert.showAndWait();
@@ -70,6 +74,7 @@ public class AddAppointmentSceneController implements Initializable {
         month = "--";
         mb.setText("Monat");
         tag.clear();
+        begleiter.clear();
 
 
     }

@@ -73,6 +73,12 @@
                      <TextField fx:id="content" promptText="Hier könnte ihre Werbung stehen!!" />
                  </children>
              </HBox>
+             <HBox alignment="CENTER" spacing="10.0">
+                 <children>
+                     <Label alignment="CENTER" text="Fahrer/Begleitperson:"/>
+                     <TextField fx:id="begleiter" promptText="Wenn kein Begleiter, bitte leer lassen"/>
+                 </children>
+             </HBox>
             <HBox alignment="CENTER">
                <children>
                    <Button mnemonicParsing="false" onAction="#back" text="Zurück"/>
