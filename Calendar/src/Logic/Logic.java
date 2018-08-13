@@ -9,6 +9,7 @@ import java.util.Date;
 import ReturnValues.ReturnValue;
 import java.util.ArrayList;
 
+import com.sun.prism.RenderTarget;
 import org.omg.PortableInterceptor.INACTIVE;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -51,7 +52,20 @@ public final class Logic {
                 return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
             }
         }
+        ReturnValue driverperiods = reader.getDayInformation(driver,Integer.parseInt(date));
+        ArrayList<String> spd = periods.getStart();
+        ArrayList<String> epd = periods.getEnd();
+
+        for(int i = 0; i < sp.size(); i++){
+            String ps = spd.get(i).substring(0,spd.get(i).length()-3);
+            String pe = epd.get(i).substring(0,epd.get(i).length()-3);
+            if(Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe)){
+                return "Der Zeitraum ist leider schon belegt \n" + spd.get(i) + " -" + epd.get(i);
+            }
+        }
+
         writer.AddPeriod(reader.getCurrentUser(), date, start,end,content);
+        writer.AddPeriod(driver,date,start,end,content);
         return null;
 
     }

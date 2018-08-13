@@ -199,12 +199,16 @@ public class Reader {
     }
     public boolean isRegistered(String id){
         NodeList users = xmlReader.getUsers();
+
         for(int i = 0; i < users.getLength(); i++){
             Node nuser = users.item(i);
+            System.out.println(i);
             if(nuser.getNodeType() == Node.ELEMENT_NODE){
                 Element euser = (Element) nuser;
-                if(id.equals(euser.getAttribute(id))){
-
+                System.out.println("--------- " + i);
+                System.out.println(euser.getAttribute("id"));
+                if(id.equals(euser.getAttribute("id"))){
+                    return true;
                 }
             }
         }

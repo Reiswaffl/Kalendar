@@ -3,7 +3,7 @@
     <User id="Eric"/>
     <User id="Tom"/>
     <User id="Arthur"/></users>
-    <currentUser id="Tom"/>
+    <currentUser id="Eric"/>
 <user id="Eric">
     <years id="18">
         <month id="07" maxdays="31">
@@ -24,7 +24,7 @@
                 <period end="14:50" start="14:05">Filmabend</period>
             </day>
         </month>
-    </years>
+    <month id="08" maxdays="31"><day blocked="false" date="180818" name="--"><period end="20:00" start="19:30">Nein</period></day></month></years>
 </user>
 <user id="Tom">
     <years id="18">
@@ -47,6 +47,6 @@
                 <period end="19:45" start="19.00">Filmabend</period>
             </day>
         </month>
-    </years>
+    <month id="08" maxdays="31"><day blocked="false" date="180818" name="--"><period end="20:00" start="19:30">Nein</period></day></month></years>
 </user>
 <user id="Arthur"><years id="18"><month id="07" maxdays="31"><day blocked="false" date="180702" name="--"><period end="12:30" start="11:30">Englisch</period></day></month></years></user></calendar>
