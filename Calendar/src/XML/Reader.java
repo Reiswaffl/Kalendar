@@ -122,7 +122,7 @@ public class Reader {
         return null;
     }
 
-    public String getNextFreeDay(String usr){
+    public String getNextFreeDay(String usr,int month, int day ){
         xmlReader.Update();
         Node user = xmlReader.getUser(usr);
         Node year =null;
@@ -131,25 +131,28 @@ public class Reader {
         }
         NodeList months;
         if(year != null){
+
             months = year.getChildNodes();
             for(int m = 0; m < months.getLength(); m++){
                 Node nmonth = months.item(m);
                 NodeList days = nmonth.getChildNodes();
                 int lastday = 0;
-                for(int d = 0; d < days.getLength(); d++){
-                    Node nday = days.item(d);
-                    if(nday.getNodeType() == Node.ELEMENT_NODE){
-                        Element eday = (Element) nday;
-                        int currentday = Integer.parseInt(eday.getAttribute("date"));
-                        currentday = currentday % 100;
-                        if(currentday -lastday > 1){
-                            //Free day found
-                            Element em = (Element) nmonth;
-                            Element ey = (Element) year;
-                            return (Integer.toString(lastday+1)+ " "+ em.getAttribute("name") + " "+ "20" + ey.getAttribute("id"));
+                if(m >= month) {
+                    for (int d = 0; d < days.getLength(); d++) {
+                        Node nday = days.item(d);
+                        if (nday.getNodeType() == Node.ELEMENT_NODE) {
+                            Element eday = (Element) nday;
+                            int currentday = Integer.parseInt(eday.getAttribute("date"));
+                            currentday = currentday % 100;
+                            if (currentday - lastday > 1 && d >= day) {
+                                //Free day found
+                                Element em = (Element) nmonth;
+                                Element ey = (Element) year;
+                                return (Integer.toString(lastday + 1) + " " + em.getAttribute("name") + " " + "20" + ey.getAttribute("id"));
+                            }
                         }
-                    }
 
+                    }
                 }
             }
         }

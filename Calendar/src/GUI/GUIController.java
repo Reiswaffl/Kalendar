@@ -104,10 +104,18 @@ public class GUIController{
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Nächster freier Tag");
         alert.setHeaderText(null);
-        alert.setContentText(Logic.getNextFreeDay(Logic.getCurrentUser()));
+        alert.setContentText("Funktioniert noch nicht ");
         alert.showAndWait();
     }
-
+    @FXML
+    public void AddPermAppointment(javafx.event.ActionEvent event) throws IOException{
+        Parent permAppointment = FXMLLoader.load(getClass().getResource("AddPermanentAppointment.fxml"));
+        Scene appointmentRequestScene = new Scene(permAppointment);
+        Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
+        window.setTitle("Permanenttermin");
+        window.setScene(appointmentRequestScene);
+        window.show();
+    }
 
     @FXML void SwitchUser(javafx.event.ActionEvent event) throws IOException {
         Parent addAppiontment = FXMLLoader.load(getClass().getResource("SwitchUserScene.fxml"));

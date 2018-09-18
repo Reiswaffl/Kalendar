@@ -12,8 +12,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.*;
 import ReturnValues.Periods;
 
-import static com.sun.deploy.perf.DeployPerfUtil.*;
-
 public class XMLReader {
     NodeList users;
     Document doc;
@@ -245,6 +243,22 @@ public class XMLReader {
             transformer.transform(source, result);
         } catch (Exception e) {}
         return period;
+    }
+    public Element CreatePermanentAppointment(Node parent, String start, String end, String content, String repetition){
+        Element permAppointment = doc.createElement("permAppointment");
+        permAppointment.setAttribute("start",start);
+        permAppointment.setAttribute("end",end);
+        permAppointment.setAttribute("repetition",repetition);
+        permAppointment.setTextContent(content);
+        parent.appendChild(permAppointment);
+        try {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File("calendar.xml"));
+            transformer.transform(source, result);
+        } catch (Exception e) {}
+        return null;
     }
 
     //Setting attributes

@@ -94,7 +94,10 @@ public final class Logic {
         return ret;
     }
     public static String getNextFreeDay(String usr){
-        return reader.getNextFreeDay(usr);
+        Date date = new Date();
+        int month = Integer.parseInt(new SimpleDateFormat("MM").format(date));
+        int day = Integer.parseInt(new SimpleDateFormat("dd").format(date));
+        return reader.getNextFreeDay(usr,month,day);
     }
     //Change user
     public static void SwitchUser(String user){
