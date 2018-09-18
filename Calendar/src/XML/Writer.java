@@ -4,8 +4,8 @@ package XML;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
-
 import javax.xml.transform.TransformerException;
+
 
 
 public class Writer {
@@ -124,6 +124,12 @@ public class Writer {
             xmlReader.CreatePeriod(nday,start,end,content);
         }
         xmlReader.Update();
+    }
+    public void AddPermAppointment(String user,String start, String end, String repetition,String weekday,String content){
+        NodeList permAppointments = xmlReader.getPermAppointments(user);
+        xmlReader.CreatePermanentAppointment(xmlReader.getPermUser(user),start, end,content,repetition,weekday);
+        xmlReader.CreatePermanentAppointment(xmlReader.getPermUser(user),start, end,content,repetition,weekday);
+
     }
     public void SetDayBusy(String user, String date, String content){}
     public void SetDayBusy(String user, String date){}

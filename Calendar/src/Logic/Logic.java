@@ -69,6 +69,48 @@ public final class Logic {
         return null;
 
     }
+    public static String AddPermanentAppointment(String start, String end, String content, String repetition, String weekday, String driver){
+        PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
+        String s = start.substring(0,start.length()-3);
+        String e = end.substring(0,end.length()-3);
+
+        if(Integer.parseInt(s) > Integer.parseInt(e)){
+            return "Ende liegt vor Start";
+        }
+        if(permAppointments != null) {
+
+            ArrayList<String> sp = permAppointments.getStart();
+            ArrayList<String> ep = permAppointments.getEnd();
+            System.out.println(sp.size() + " \n " + sp.get(0));
+
+            for (int i = 0; i < sp.size(); i++) {
+                String ps = sp.get(i).substring(0, sp.get(i).length() - 3);
+                String pe = ep.get(i).substring(0, ep.get(i).length() - 3);
+                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe)) {
+                    return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
+                }
+            }
+        }
+
+        PermAppointments permAppointmentsDriver = reader.getPemAppointments(driver);
+        if(permAppointmentsDriver != null) {
+            ArrayList<String> spd = permAppointmentsDriver.getStart();
+            ArrayList<String> epd = permAppointmentsDriver.getEnd();
+
+            for (int i = 0; i < spd.size(); i++) {
+                String ps = spd.get(i).substring(0, spd.get(i).length() - 3);
+                String pe = epd.get(i).substring(0, epd.get(i).length() - 3);
+                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe)) {
+                    return "Der Zeitraum ist leider schon belegt (bei Beleitperson) \n" + spd.get(i) + " -" + epd.get(i);
+                }
+            }
+        }
+        writer.AddPermAppointment(reader.getCurrentUser(),start,end,repetition,weekday,content);
+        if(permAppointmentsDriver != null) {
+            writer.AddPermAppointment(driver, start, end, repetition, weekday, content);
+        }
+        return null;
+    }
     public static String getDayInfo(int add){
         String date = DayMonth(add);
         ReturnValue returnValue = null;

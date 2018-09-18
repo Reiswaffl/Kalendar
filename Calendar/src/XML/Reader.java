@@ -72,6 +72,21 @@ public class Reader {
         }
         return  returnValue;
     }
+    public PermAppointments getPemAppointments(String user){
+        Node usr = xmlReader.getPermUser(user);
+        PermAppointments permAppointments = new PermAppointments();
+        if(usr != null){
+        for(int i = 0; i< usr.getChildNodes().getLength();i++){
+            Node nPermAppointment = usr.getChildNodes().item(i);
+            if(nPermAppointment.getNodeType() == Node.ELEMENT_NODE){
+                Element ePermAppointment = (Element) nPermAppointment;
+                permAppointments.add(ePermAppointment.getAttribute("start" ),ePermAppointment.getAttribute("end"),ePermAppointment.getAttribute("content"));
+            }
+        }
+        return permAppointments;
+        }
+        return null;
+    }
     public Periods getPeriodInformation(String user, int date, String start) {
         xmlReader.Update();
         int y = date/10000;
@@ -121,7 +136,6 @@ public class Reader {
         }
         return null;
     }
-
     public String getNextFreeDay(String usr,int month, int day ){
         xmlReader.Update();
         Node user = xmlReader.getUser(usr);

@@ -1,6 +1,7 @@
 package XML;
 
 import java.io.File;
+import javax.swing.text.AbstractDocument;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.transform.Transformer;
@@ -156,6 +157,49 @@ public class XMLReader {
         return null;
     }
 
+    public NodeList getPermAppointments(String user){
+        NodeList permAppoitnments = doc.getElementsByTagName("permAppointments");
+        NodeList users = permAppoitnments.item(0).getChildNodes();
+        if(users == null){
+            return null;
+        }
+        for(int i = 0; i  < users.getLength(); i++){
+            Node nuser = users.item(i);
+            if(nuser.getNodeType() == Node.ELEMENT_NODE){
+                Element euser = (Element) nuser;
+                if(euser.getAttribute("id").equals(user)){
+                    return nuser.getChildNodes();
+                }
+            }
+        }
+        return null;
+    }
+    public Node getPermUser(String user){
+        NodeList permAppointments = doc.getElementsByTagName("permAppointments");
+        NodeList users = permAppointments.item(0).getChildNodes();
+        for(int i = 0; i < users.getLength(); i++){
+            Node nuser = users.item(i);
+            if(nuser.getNodeType() == Node.ELEMENT_NODE){
+                Element euser = (Element) nuser;
+                if(euser.getAttribute("id").equals(user)){
+                    return nuser;
+                }
+            }
+        }
+        return null;
+    }
+    public Node getPermAppointment(String start,NodeList permAppointments){
+        for(int i = 0; i< permAppointments.getLength();i++){
+            Node nPermAppointment = permAppointments.item(i);
+            if(nPermAppointment.getNodeType() == Node.ELEMENT_NODE){
+                Element ePermAppointment = (Element) nPermAppointment;
+                if(ePermAppointment.getAttribute("start").equals(start)){
+                    return nPermAppointment;
+                }
+            }
+        }
+        return null;
+    }
     //Writing Information
     public Element CreateUser(String id) throws TransformerException {
         Element user = doc.createElement("user");
@@ -244,11 +288,12 @@ public class XMLReader {
         } catch (Exception e) {}
         return period;
     }
-    public Element CreatePermanentAppointment(Node parent, String start, String end, String content, String repetition){
+    public Element CreatePermanentAppointment(Node parent, String start, String end, String content, String repetition, String weekday){
         Element permAppointment = doc.createElement("permAppointment");
         permAppointment.setAttribute("start",start);
         permAppointment.setAttribute("end",end);
         permAppointment.setAttribute("repetition",repetition);
+        permAppointment.setAttribute("weekday",weekday);
         permAppointment.setTextContent(content);
         parent.appendChild(permAppointment);
         try {
