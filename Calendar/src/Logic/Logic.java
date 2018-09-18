@@ -81,12 +81,13 @@ public final class Logic {
 
             ArrayList<String> sp = permAppointments.getStart();
             ArrayList<String> ep = permAppointments.getEnd();
+            ArrayList<String> wd = permAppointments.getWeekday();
             System.out.println(sp.size() + " \n " + sp.get(0));
 
             for (int i = 0; i < sp.size(); i++) {
                 String ps = sp.get(i).substring(0, sp.get(i).length() - 3);
                 String pe = ep.get(i).substring(0, ep.get(i).length() - 3);
-                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe)) {
+                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && weekday.equals(wd.get(i))) {
                     return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
                 }
             }
@@ -96,11 +97,12 @@ public final class Logic {
         if(permAppointmentsDriver != null) {
             ArrayList<String> spd = permAppointmentsDriver.getStart();
             ArrayList<String> epd = permAppointmentsDriver.getEnd();
+            ArrayList<String> wdd = permAppointmentsDriver.getWeekday();
 
             for (int i = 0; i < spd.size(); i++) {
                 String ps = spd.get(i).substring(0, spd.get(i).length() - 3);
                 String pe = epd.get(i).substring(0, epd.get(i).length() - 3);
-                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe)) {
+                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && weekday.equals(wdd.get(i))) {
                     return "Der Zeitraum ist leider schon belegt (bei Beleitperson) \n" + spd.get(i) + " -" + epd.get(i);
                 }
             }
@@ -132,7 +134,20 @@ public final class Logic {
 
             }
         }
+        PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
+        if(permAppointments != null){
+            String[] s = DaysInOrder();
+            for(int i = 0; i < permAppointments.getStart().size();i++){
+                if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
+                    if (ret.equals("-")) {
+                        ret += permAppointments.getContent().get(i).toString() + "\n";
+                    } else {
+                        ret += "-" + permAppointments.getContent().get(i).toString() + "\n";
+                    }
+                }
 
+            }
+        }
         return ret;
     }
     public static String getNextFreeDay(String usr){
@@ -263,9 +278,21 @@ public final class Logic {
                 return null;
         }
     }
+    private static boolean checkDay(String compare,String day){
+
+        if(compare.equals("Montag") && day.equals("MONDAY")) return true;
+        if(compare.equals("Dienstag") && day.equals("TUESDAY")) return true;
+        if(compare.equals("Mittwoch") && day.equals("WEDNESDAY")) return true;
+        if(compare.equals("Donnerstag") && day.equals("THURSDAY")) return true;
+        if(compare.equals("Freitag") && day.equals("FRIDAY")) return true;
+        if(compare.equals("Samstag") && day.equals("SATURDAY")) return true;
+        if(compare.equals("Sonntag") && day.equals("SUNDAY")) return true;
+        return false;
+    }
 
 
     public static void Update(){
         writer.Update();
-    }   
+    }
+
 }

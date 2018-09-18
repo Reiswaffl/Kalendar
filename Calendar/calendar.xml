@@ -15,7 +15,9 @@
             <permAppointment end="02:00" repetition="WEEKLY" start="01:00" weekday="WEDNESDAY">Nein</permAppointment>
             <permAppointment end="02:00" repetition="WEEKLY" start="01:00" weekday="WEDNESDAY">Nein</permAppointment>
             <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
-            <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment></User>
+            <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
+            <permAppointment end="15:00" repetition="WEEKLY" start="14:00" weekday="SATURDAY">Nein</permAppointment>
+            <permAppointment end="15:00" repetition="WEEKLY" start="14:00" weekday="SATURDAY">Nein</permAppointment></User>
         <User id="Tom">
         <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
             <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment></User>

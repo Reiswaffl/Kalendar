@@ -144,7 +144,9 @@ public class AddPermanentAppointment implements Initializable {
                 wk = "SUNDAY";
                 break;
         }
+
         String ret = Logic.AddPermanentAppointment(start.getText(),end.getText(),content.getText(),rp,wk,begleiter.getText());
+
         if(ret != null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
