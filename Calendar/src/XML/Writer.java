@@ -126,8 +126,6 @@ public class Writer {
         xmlReader.Update();
     }
     public void AddPermAppointment(String user,String start, String end, String repetition,String weekday,String content){
-        NodeList permAppointments = xmlReader.getPermAppointments(user);
-        xmlReader.CreatePermanentAppointment(xmlReader.getPermUser(user),start, end,content,repetition,weekday);
         xmlReader.CreatePermanentAppointment(xmlReader.getPermUser(user),start, end,content,repetition,weekday);
 
     }

@@ -3,6 +3,7 @@ package GUI;
 
 import XML.Reader;
 import XML.Writer;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
@@ -123,6 +124,15 @@ public class GUIController{
         Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
         window.setScene(addAppiontmentScene);
         window.setTitle("Nutzer wechseln");
+        window.show();
+    }
+
+    public void DayPrewiev(ActionEvent event) throws IOException {
+        Parent permAppointment = FXMLLoader.load(getClass().getResource("DayReview.fxml"));
+        Scene appointmentRequestScene = new Scene(permAppointment);
+        Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
+        window.setTitle("Tagesvorschau");
+        window.setScene(appointmentRequestScene);
         window.show();
     }
 }

@@ -132,7 +132,7 @@ public class AddPermanentAppointment implements Initializable {
                 wk = "WEDNESDAY";
                 break;
             case THURSDAY:
-                wk ="THRUSDAY";
+                wk ="THURSDAY";
                 break;
             case FRIDAY:
                 wk = "FRIDAY";

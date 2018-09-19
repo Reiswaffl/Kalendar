@@ -3,7 +3,7 @@
         <User id="Eric"/>
         <User id="Tom"/>
         <User id="Arthur"/></users>
-    <currentUser id="Eric"/>
+    <currentUser id="Tom"/>
 
     <permAppointments>
         <User id="Eric">
@@ -20,7 +20,9 @@
             <permAppointment end="15:00" repetition="WEEKLY" start="14:00" weekday="SATURDAY">Nein</permAppointment></User>
         <User id="Tom">
         <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
-            <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment></User>
+            <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
+            <permAppointment end="16:30" repetition="WEEKLY" start="14:50" weekday="THURSDAY">Nein fuck</permAppointment>
+            <permAppointment end="16:30" repetition="WEEKLY" start="14:50" weekday="SUNDAY">n</permAppointment></User>
         <User id="Arthur">
         </User>
     </permAppointments>

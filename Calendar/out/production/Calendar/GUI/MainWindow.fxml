@@ -156,6 +156,11 @@
                      <Font size="18"/>
                   </font>
                </Button>
+               <Button fx:id="dayPreview" mnemonicParsing="false" onAction="#DayPrewiev" text="Tagesvorschau">
+                  <font>
+                     <Font size="18"/>
+                  </font>
+               </Button>
             </HBox>
          </children>
       </VBox>

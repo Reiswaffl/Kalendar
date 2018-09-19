@@ -135,8 +135,8 @@ public final class Logic {
             }
         }
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
+        String[] s = DaysInOrder();
         if(permAppointments != null){
-            String[] s = DaysInOrder();
             for(int i = 0; i < permAppointments.getStart().size();i++){
                 if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
                     if (ret.equals("-")) {
@@ -279,7 +279,7 @@ public final class Logic {
         }
     }
     private static boolean checkDay(String compare,String day){
-
+        System.out.println(compare + "----" + day);
         if(compare.equals("Montag") && day.equals("MONDAY")) return true;
         if(compare.equals("Dienstag") && day.equals("TUESDAY")) return true;
         if(compare.equals("Mittwoch") && day.equals("WEDNESDAY")) return true;
