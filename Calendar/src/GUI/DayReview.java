@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -34,6 +35,14 @@ public class DayReview implements Initializable{
     }
 
     public void select(ActionEvent event) {
-        Logic.handleDate(dayinput.getText());
+        String date = Logic.handleDate(dayinput.getText());
+        if(date == null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fehler beim Eintragen");
+
+            //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
+            alert.setContentText("Fehler bei der Eingabe, bitte versuchen sie es nocheinmal nach der beschriebene Schreibweise");
+            alert.showAndWait();
+        }
     }
 }

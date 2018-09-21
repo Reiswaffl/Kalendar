@@ -207,10 +207,18 @@ public final class Logic {
         return writer.getCurrentUser();
     }
     public static String handleDate(String date){
-        date = date.replaceAll("[.]","");
-        System.out.println(date);
+        if(date.length() > 8) return null;
+
+        date = date.replaceAll("[a-zA-Z.]","");
         String[] dateparts = date.split("(?<=\\G..)");
-        System.out.println(dateparts);
+
+        if(dateparts.length == 4){
+            dateparts[2] = dateparts[3];
+            return dateparts[2] + dateparts[1] + dateparts[0];
+        }else if(dateparts.length == 3){
+            return dateparts[2] + dateparts[1] + dateparts[0];
+        }
+
         return null;
     }
 
