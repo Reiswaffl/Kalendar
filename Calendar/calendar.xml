@@ -3,7 +3,7 @@
         <User id="Eric"/>
         <User id="Tom"/>
         <User id="Arthur"/></users>
-    <currentUser id="Tom"/>
+    <currentUser id="Eric"/>
 
     <permAppointments>
         <User id="Eric">

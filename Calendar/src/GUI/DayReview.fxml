@@ -11,9 +11,9 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="GUI.DayReview"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="700.0">
     <children>
-    <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
         <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
             <children>
                 <Label fx:id="datetime" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Tagesvorschau">
@@ -23,16 +23,17 @@
                 </Label>
             </children>
         </HBox>
+        <Line endX="700.0" startX="-20.0"  />
         <HBox alignment="TOP_CENTER">
         <children>
         <VBox spacing="5.0">
             <children>
-                <Label fx:id="currentDay" text="Zeitraum">
+                <Label fx:id="Time" text="Zeitraum">
                     <font>
                         <Font size="24" />
                     </font></Label>
                 <Line />
-                <Label fx:id="currentDayInfo" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="Time">
+                <Label fx:id="time" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="Time">
                     <font>
                         <Font size="18.0" />
                     </font></Label>
@@ -40,18 +41,24 @@
         </VBox>
         <VBox>
             <children>
-                <Label fx:id="day1" text="Termin">
+                <Label fx:id="Information" text="Termin">
                     <font>
                         <Font size="24" />
                     </font></Label>
                 <Line />
-                <Label fx:id="day1Info" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
+                <Label fx:id="information" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
                     <font>
                         <Font size="18.0" />
                     </font></Label>
             </children>
         </VBox>
         </children>
+        </HBox>
+        <HBox spacing="40.0" alignment="CENTER">
+            <children>
+                <Button  mnemonicParsing="false" onAction="#back" text="Zurück" />
+                <Button  mnemonicParsing="false" onAction="#select" text="Auswählen" />
+            </children>
         </HBox>
     </VBox>
     </children>

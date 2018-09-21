@@ -1,22 +1,16 @@
 package Logic;
 
-import ReturnValues.*;
+
+import ReturnValues.PermAppointments;
+import ReturnValues.ReturnValue;
 import XML.Reader;
 import XML.Writer;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import ReturnValues.ReturnValue;
-import java.util.ArrayList;
-
-import com.sun.prism.RenderTarget;
-import org.omg.PortableInterceptor.INACTIVE;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.Element;
 
 import javax.xml.transform.TransformerException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 public final class Logic {
     public static Writer writer;
@@ -143,6 +137,42 @@ public final class Logic {
                         ret += permAppointments.getContent().get(i).toString() + "\n";
                     } else {
                         ret += "-" + permAppointments.getContent().get(i).toString() + "\n";
+                    }
+                }
+
+            }
+        }
+        return ret;
+    }
+    public static String getDayTimes(int add){
+        String date = DayMonth(add);
+        ReturnValue returnValue = null;
+        if(reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date))!=null) {
+            returnValue = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(date));
+        }
+        String ret = "-";
+        if(returnValue != null) {
+            ArrayList<String> start = returnValue.getStart();
+            ArrayList<String> end = returnValue.getEnd();
+
+            for (int i = 0; i < start.size(); i++) {
+                if(ret.equals( "-")){
+                    ret += start.get(i) + " - " + end.get(i) + "\n";
+                }else{
+                    ret += "-" + start.get(i)+ " - " + end.get(i) +"\n";
+                }
+
+            }
+        }
+        PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
+        String[] s = DaysInOrder();
+        if(permAppointments != null){
+            for(int i = 0; i < permAppointments.getStart().size();i++){
+                if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
+                    if (ret.equals("-")) {
+                        ret += permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
+                    } else {
+                        ret += "-" + permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
                     }
                 }
 
