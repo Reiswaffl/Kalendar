@@ -44,8 +44,6 @@ public class XMLReader {
             doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             //Console delete later and replace with GUI
-            System.out.println("File read in!");
-            System.out.println("-----------------------------");
             users = doc.getElementsByTagName("user");
         } catch (Exception e) {
             e.printStackTrace();

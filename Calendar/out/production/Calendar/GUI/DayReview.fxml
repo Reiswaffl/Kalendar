@@ -24,7 +24,17 @@
             </children>
         </HBox>
         <Line endX="700.0" startX="-20.0"  />
-        <HBox alignment="TOP_CENTER">
+        <HBox spacing="40." alignment="CENTER">
+            <children>
+                <Label text="Tag:">
+                    <font>
+                        <Font size="18"/>
+                    </font>
+                </Label>
+                <TextField fx:id="dayinput" promptText="dd.MM.yyyy oder dd.MM.yy"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" spacing="20">
         <children>
         <VBox spacing="5.0">
             <children>
@@ -32,7 +42,6 @@
                     <font>
                         <Font size="24" />
                     </font></Label>
-                <Line />
                 <Label fx:id="time" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="Time">
                     <font>
                         <Font size="18.0" />

@@ -107,10 +107,14 @@ public final class Logic {
         }
         return null;
     }
-    public static String getDayInfo(int add){
-        String date = DayMonth(add);
+    public static String getDayInfo(int add, String dateInput, boolean isDate){
+        String date;
         ReturnValue returnValue = null;
-
+        if(!isDate) {
+            date = DayMonth(add);
+        }else{
+            date = dateInput;
+        }
         if(reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date))!=null) {
             returnValue = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(date));
         }
@@ -144,9 +148,14 @@ public final class Logic {
         }
         return ret;
     }
-    public static String getDayTimes(int add){
-        String date = DayMonth(add);
+    public static String getDayTimes(int add,String dateInput,boolean isDate){
+        String date;
         ReturnValue returnValue = null;
+        if(!isDate){
+            date = DayMonth(add);
+        }else{
+            date = dateInput;
+        }
         if(reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date))!=null) {
             returnValue = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(date));
         }
@@ -196,7 +205,11 @@ public final class Logic {
     public static String getCurrentUser(){
         return writer.getCurrentUser();
     }
-
+    public static String handleDate(String date){
+        date = date.replaceAll("[.]","");
+        System.out.println(date);
+        return null;
+    }
 
     public static String[] DaysInOrder(){
         String[] daynames = new String[7];
@@ -309,7 +322,6 @@ public final class Logic {
         }
     }
     private static boolean checkDay(String compare,String day){
-        System.out.println(compare + "----" + day);
         if(compare.equals("Montag") && day.equals("MONDAY")) return true;
         if(compare.equals("Dienstag") && day.equals("TUESDAY")) return true;
         if(compare.equals("Mittwoch") && day.equals("WEDNESDAY")) return true;
