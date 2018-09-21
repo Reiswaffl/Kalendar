@@ -10,6 +10,7 @@ import javax.xml.transform.TransformerException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public final class Logic {
@@ -208,6 +209,8 @@ public final class Logic {
     public static String handleDate(String date){
         date = date.replaceAll("[.]","");
         System.out.println(date);
+        String[] dateparts = date.split("(?<=\\G..)");
+        System.out.println(dateparts);
         return null;
     }
 
