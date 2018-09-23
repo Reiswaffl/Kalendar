@@ -63,13 +63,15 @@ public class GUIController{
         Logic.reader = new Reader();
         datetime.setText(Logic.getDateTime());
         currentUser.setText(Logic.getCurrentUser());
-        currentDayInfo.setText(Logic.getDayInfo(0,"null",false));
-        day1Info.setText(Logic.getDayInfo(1,"null",false));
-        day2Info.setText(Logic.getDayInfo(2,"null",false));
-        day3Info.setText(Logic.getDayInfo(3,"null",false));
-        day4Info.setText(Logic.getDayInfo(4,"null",false));
-        day5Info.setText(Logic.getDayInfo(5,"null",false));
-        day6Info.setText(Logic.getDayInfo(6,"null",false));
+        try {
+            currentDayInfo.setText(Logic.getDayInfo(0, "null", false));
+            day1Info.setText(Logic.getDayInfo(1, "null", false));
+            day2Info.setText(Logic.getDayInfo(2, "null", false));
+            day3Info.setText(Logic.getDayInfo(3, "null", false));
+            day4Info.setText(Logic.getDayInfo(4, "null", false));
+            day5Info.setText(Logic.getDayInfo(5, "null", false));
+            day6Info.setText(Logic.getDayInfo(6, "null", false));
+        }catch (Exception e){}
         Logic.DaysInOrder();
         String[] daynames = Logic.DaysInOrder();
         currentDay.setText(daynames[0]);

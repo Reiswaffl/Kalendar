@@ -23,8 +23,10 @@ public class DayReview implements Initializable{
     @FXML TextField dayinput;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        information.setText(Logic.getDayInfo(0,"null",false));
-        time.setText(Logic.getDayTimes(0,"null",false));
+        try {
+            information.setText(Logic.getDayInfo(0, "null", false));
+            time.setText(Logic.getDayTimes(0, "null", false));
+        }catch (Exception e){}
     }
     public void back(ActionEvent event) throws IOException {
         Parent addAppiontment = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
@@ -36,6 +38,7 @@ public class DayReview implements Initializable{
 
     public void select(ActionEvent event) {
         String date = Logic.handleDate(dayinput.getText());
+        System.out.println(date);
         if(date == null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
@@ -43,6 +46,11 @@ public class DayReview implements Initializable{
             //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
             alert.setContentText("Fehler bei der Eingabe, bitte versuchen sie es nocheinmal nach der beschriebene Schreibweise");
             alert.showAndWait();
+        }else {
+            try {
+                information.setText(Logic.getDayInfo(0, date, true));
+                time.setText(Logic.getDayTimes(0, date, true));
+            }catch (Exception e){}
         }
     }
 }

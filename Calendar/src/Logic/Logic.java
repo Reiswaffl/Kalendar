@@ -8,10 +8,12 @@ import XML.Writer;
 
 import javax.xml.transform.TransformerException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Locale;
 
 public final class Logic {
     public static Writer writer;
@@ -108,7 +110,7 @@ public final class Logic {
         }
         return null;
     }
-    public static String getDayInfo(int add, String dateInput, boolean isDate){
+    public static String getDayInfo(int add, String dateInput, boolean isDate) throws ParseException {
         String date;
         ReturnValue returnValue = null;
         if(!isDate) {
@@ -134,22 +136,41 @@ public final class Logic {
             }
         }
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
-        String[] s = DaysInOrder();
-        if(permAppointments != null){
-            for(int i = 0; i < permAppointments.getStart().size();i++){
-                if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
-                    if (ret.equals("-")) {
-                        ret += permAppointments.getContent().get(i).toString() + "\n";
-                    } else {
-                        ret += "-" + permAppointments.getContent().get(i).toString() + "\n";
+        if(!isDate){
+            String[] s = DaysInOrder();
+            if(permAppointments != null){
+                for(int i = 0; i < permAppointments.getStart().size();i++){
+                    if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
+                        if (ret.equals("-")) {
+                            ret += permAppointments.getContent().get(i).toString() + "\n";
+                        } else {
+                            ret += "-" + permAppointments.getContent().get(i).toString() + "\n";
+                        }
                     }
-                }
 
+                }
+            }
+        }else{
+            dateInput = "20" + dateInput;
+            String dateString = String.format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
+            Date dayNameDate = new SimpleDateFormat("yyyy-MM-d").parse(dateString);
+            String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
+            if(permAppointments != null){
+                for(int i = 0; i < permAppointments.getStart().size();i++){
+                    if(checkDay(dayofWeek,permAppointments.getWeekday().get(i).toString())) {
+                        if (ret.equals("-")) {
+                            ret += permAppointments.getContent().get(i).toString() + "\n";
+                        } else {
+                            ret += "-" + permAppointments.getContent().get(i).toString() + "\n";
+                        }
+                    }
+
+                }
             }
         }
         return ret;
     }
-    public static String getDayTimes(int add,String dateInput,boolean isDate){
+    public static String getDayTimes(int add,String dateInput,boolean isDate) throws ParseException {
         String date;
         ReturnValue returnValue = null;
         if(!isDate){
@@ -175,17 +196,36 @@ public final class Logic {
             }
         }
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
-        String[] s = DaysInOrder();
-        if(permAppointments != null){
-            for(int i = 0; i < permAppointments.getStart().size();i++){
-                if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
-                    if (ret.equals("-")) {
-                        ret += permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
-                    } else {
-                        ret += "-" + permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
+        if(!isDate){
+            String[] s = DaysInOrder();
+            if(permAppointments != null){
+                for(int i = 0; i < permAppointments.getStart().size();i++){
+                    if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
+                        if (ret.equals("-")) {
+                            ret += permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
+                        } else {
+                            ret += "-" + permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
+                        }
                     }
-                }
 
+                }
+            }
+        }else{
+            dateInput = "20" + dateInput;
+            String dateString = String.format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
+            Date dayNameDate = new SimpleDateFormat("yyyy-MM-d").parse(dateString);
+            String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
+            if(permAppointments != null){
+                for(int i = 0; i < permAppointments.getStart().size();i++){
+                    if(checkDay(dayofWeek,permAppointments.getWeekday().get(i).toString())) {
+                        if (ret.equals("-")) {
+                            ret += permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
+                        } else {
+                            ret += "-" + permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
+                        }
+                    }
+
+                }
             }
         }
         return ret;
@@ -207,11 +247,10 @@ public final class Logic {
         return writer.getCurrentUser();
     }
     public static String handleDate(String date){
-        if(date.length() > 8) return null;
+        if(date.length() > 10) return null;
 
         date = date.replaceAll("[a-zA-Z.]","");
         String[] dateparts = date.split("(?<=\\G..)");
-
         if(dateparts.length == 4){
             dateparts[2] = dateparts[3];
             return dateparts[2] + dateparts[1] + dateparts[0];
