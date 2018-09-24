@@ -27,7 +27,7 @@ public final class Logic {
         return dateFormat.format(date);
     }
 
-    public static String AddAppiontment(String date,String start,String end, String content, String driver) throws TransformerException {
+    public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean isSelected) throws TransformerException {
         if(driver != null && reader.isRegistered(driver) == false)
         {
             return "Die Begleitperson exestiert leider noch nicht. ";
@@ -50,8 +50,8 @@ public final class Logic {
             }
         }
         ReturnValue driverperiods = reader.getDayInformation(driver,Integer.parseInt(date));
-        ArrayList<String> spd = periods.getStart();
-        ArrayList<String> epd = periods.getEnd();
+        ArrayList<String> spd = driverperiods.getStart();
+        ArrayList<String> epd = driverperiods.getEnd();
 
         for(int i = 0; i < sp.size(); i++){
             String ps = spd.get(i).substring(0,spd.get(i).length()-3);
@@ -63,6 +63,12 @@ public final class Logic {
 
         writer.AddPeriod(reader.getCurrentUser(), date, start,end,content);
         writer.AddPeriod(driver,date,start,end,content);
+
+        if(isSelected){
+            for(int i = -5; i < 0; i++){
+                // here comes the real shit biatch 
+            }
+        }
         return null;
 
     }
@@ -301,19 +307,23 @@ public final class Logic {
         String totaldate = year + month + day;
         return totaldate;
     }
-    private static String DayMonth(int add){
+    private static String DayMonth(int add) {
         String date = TransformToString();
         int totaldate = Integer.parseInt(date);
         int month = totaldate % 10000;
         month /= 100;
         int day = totaldate % 100;
 
-        if(daysInMonth[month-1] < day + add ){
+        if (daysInMonth[month - 1] < day + add) {
             // day is in next month
             month += 1;
             day += add;
-            day -= daysInMonth[month-1];
+            day -= daysInMonth[month - 1];
             day += 1;
+        } else if (day + add < 1){
+            // day os in lst month
+            month -= 1;
+            day = daysInMonth[month-1] + (day - add);
         }else{
             day = day +add;
         }
