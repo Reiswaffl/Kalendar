@@ -66,7 +66,7 @@ public final class Logic {
 
         if(isSelected){
             for(int i = -5; i < 0; i++){
-                // here comes the real shit biatch 
+                // here comes the real shit biatch
             }
         }
         return null;
