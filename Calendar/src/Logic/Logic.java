@@ -16,8 +16,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public final class Logic {
-    public static Writer writer;
-    public static Reader reader;
+    public static Writer writer = new Writer();
+    public static Reader reader = new Reader();
     public static int[] daysInMonth = new int[12];
 
     //getter to get information for the LogicWindow
@@ -184,7 +184,6 @@ public final class Logic {
         }else{
             date = dateInput;
         }
-        System.out.println(reYLL);
         if(reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date))!=null) {
             returnValue = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(date));
         }

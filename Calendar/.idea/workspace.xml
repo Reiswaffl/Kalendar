@@ -19,11 +19,11 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/calendar.xml">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="782">
+                  <state relative-caret-position="527">
                     <caret line="46" column="68" lean-forward="false" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
                     <folding />
                   </state>
@@ -40,8 +40,8 @@
       <file leaf-file-name="AddAppointmentSceneController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="854">
-              <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,18 +81,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="186" column="32" lean-forward="false" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="32" />
+            <state relative-caret-position="178">
+              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
                 <element signature="method#AddAppiontment#0;class#Logic#0" expanded="false" />
                 <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
                 <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
-                <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
+                <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
                 <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
                 <element signature="method#handleDate#0;class#Logic#0" expanded="false" />
                 <element signature="method#DaysInOrder#0;class#Logic#0" expanded="false" />
@@ -106,12 +106,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextClass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Reader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/XML/Reader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="74" column="59" lean-forward="false" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
+              <folding>
+                <element signature="method#getDayInformation#0;class#Reader#0" expanded="false" />
+                <element signature="method#getPemAppointments#0;class#Reader#0" expanded="false" />
+                <element signature="method#getPeriodInformation#0;class#Reader#0" expanded="false" />
+                <element signature="method#getAppiontmentInformation#0;class#Reader#0" expanded="false" />
+                <element signature="method#getNextFreeDay#0;class#Reader#0" expanded="false" />
+                <element signature="method#getNextFreePeriod#0;class#Reader#0" expanded="false" />
+                <element signature="method#getCurrentUser#0;class#Reader#0" expanded="false" />
+                <element signature="method#isRegistered#0;class#Reader#0" expanded="false" />
+                <element signature="method#FormToString#0;class#Reader#0" expanded="false" />
+                <element signature="method#InTime#0;class#Reader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="198">
+              <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,6 +162,7 @@
       <find>Get</find>
       <find>Line</find>
       <find>Sys</find>
+      <find>daysInMonth</find>
     </findStrings>
     <replaceStrings>
       <replace>Logic</replace>
@@ -191,8 +215,8 @@
         <option value="$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java" />
         <option value="$PROJECT_DIR$/calendar.xml" />
-        <option value="$PROJECT_DIR$/src/Logic/TextClass.java" />
         <option value="$PROJECT_DIR$/src/Logic/Logic.java" />
+        <option value="$PROJECT_DIR$/src/Logic/TextClass.java" />
       </list>
     </option>
   </component>
@@ -217,9 +241,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -265,7 +290,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -527,15 +551,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Logic/Logic.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="146" />
+      <option name="time" value="149" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -694,24 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="82" column="147" lean-forward="false" selection-start-line="82" selection-start-column="147" selection-end-line="82" selection-end-column="147" />
-          <folding>
-            <element signature="method#getDayInformation#0;class#Reader#0" expanded="false" />
-            <element signature="method#getPeriodInformation#0;class#Reader#0" expanded="false" />
-            <element signature="method#getAppiontmentInformation#0;class#Reader#0" expanded="false" />
-            <element signature="method#getNextFreeDay#0;class#Reader#0" expanded="false" />
-            <element signature="method#getNextFreePeriod#0;class#Reader#0" expanded="false" />
-            <element signature="method#getCurrentUser#0;class#Reader#0" expanded="false" />
-            <element signature="method#isRegistered#0;class#Reader#0" expanded="false" />
-            <element signature="method#FormToString#0;class#Reader#0" expanded="false" />
-            <element signature="method#InTime#0;class#Reader#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ReturnValues/PermAppointments.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -849,18 +847,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calendar.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
+        <state relative-caret-position="527">
           <caret line="46" column="68" lean-forward="false" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
+    <entry file="file://$PROJECT_DIR$/src/XML/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="854">
-          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="74" column="59" lean-forward="false" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#getDayInformation#0;class#Reader#0" expanded="false" />
+            <element signature="method#getPemAppointments#0;class#Reader#0" expanded="false" />
+            <element signature="method#getPeriodInformation#0;class#Reader#0" expanded="false" />
+            <element signature="method#getAppiontmentInformation#0;class#Reader#0" expanded="false" />
+            <element signature="method#getNextFreeDay#0;class#Reader#0" expanded="false" />
+            <element signature="method#getNextFreePeriod#0;class#Reader#0" expanded="false" />
+            <element signature="method#getCurrentUser#0;class#Reader#0" expanded="false" />
+            <element signature="method#isRegistered#0;class#Reader#0" expanded="false" />
+            <element signature="method#FormToString#0;class#Reader#0" expanded="false" />
+            <element signature="method#InTime#0;class#Reader#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -895,25 +902,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="186" column="32" lean-forward="false" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="32" />
+        <state relative-caret-position="178">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
             <element signature="method#AddAppiontment#0;class#Logic#0" expanded="false" />
             <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
             <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
-            <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
+            <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
             <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
             <element signature="method#handleDate#0;class#Logic#0" expanded="false" />
             <element signature="method#DaysInOrder#0;class#Logic#0" expanded="false" />
@@ -922,6 +931,16 @@
             <element signature="method#getID#0;class#Logic#0" expanded="false" />
             <element signature="method#getDayName#0;class#Logic#0" expanded="false" />
             <element signature="method#checkDay#0;class#Logic#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
