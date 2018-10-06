@@ -14,20 +14,20 @@ import java.util.Date;
 
 
 public class TextClass{
-    int[] dIM = new int[12];
-    dIM[0] =31;
-    dIM[1] = 28;
-    dIM[2] = 31;
-    dIM[3] = 30;
-    dIM[4] = 31;
-    dIM[5] = 30;
-    dIM[6] = 31;
-    dIM[7] = 31;
-    dIM[8] = 30;
-    dIM[9] = 31;
-    dIM[10] = 30;
-    dIM[11] = 31;
+    private static int[] daysInMonth = new int[12];
     public static void main(String[] args) throws ParseException {
+        daysInMonth[0] =31;
+        daysInMonth[1] = 28;
+        daysInMonth[2] = 31;
+        daysInMonth[3] = 30;
+        daysInMonth[4] = 31;
+        daysInMonth[5] = 30;
+        daysInMonth[6] = 31;
+        daysInMonth[7] = 31;
+        daysInMonth[8] = 30;
+        daysInMonth[9] = 31;
+        daysInMonth[10] = 30;
+        daysInMonth[11] = 31;
         Reader reader = new Reader();
         ReturnValue[] periods = new ReturnValue[7];
         for(int i = 0; i < 7; i++){
@@ -38,7 +38,7 @@ public class TextClass{
             ArrayList<String> e = periods[i].getEnd();
             ArrayList<String> c = periods[i].getContent();
 
-            for(int b = 0; b < s.size(); i++){
+            for(int b = 0; b < s.size(); b++){
                 System.out.println(s.get(b) + " - " + e.get(b) + " - " + c.get(b));
             }
         }
@@ -52,17 +52,17 @@ public class TextClass{
         month /= 100;
         int day = totaldate % 100;
 
-        if (dIM[month - 1] < day + add) {
-            System.out.println("HI" + dIM[month-1]);
+        if (daysInMonth[month - 1] < day + add) {
+            System.out.println("HI" + daysInMonth[month-1]);
             // day is in next month
             month += 1;
             day += add;
-            day -= dIM[month - 1];
+            day -= daysInMonth[month - 1];
             day += 1;
         } else if (day + add < 1){
             // day os in lst month
             month -= 1;
-            day = dIM[month-1] + (day - add);
+            day = daysInMonth[month-1] + (day - add);
         }else{
             day = day +add;
         }

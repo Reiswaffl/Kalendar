@@ -16,8 +16,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public final class Logic {
-    public static Writer writer = new Writer();
-    public static Reader reader = new Reader();
+    public static Writer writer;
+    public static Reader reader;
     public static int[] daysInMonth = new int[12];
 
     //getter to get information for the LogicWindow
@@ -236,9 +236,34 @@ public final class Logic {
         }
         return ret;
     }
-    public static String addLearningtime(String dateInput){
+    public static String addLearningTime(String dateInput){
+        //setup
         int hours = 0;
+        ReturnValue[] periods = new ReturnValue[7];
+        PermAppointments[] permAppointments = new PermAppointments[7];
+        for(int i = 0; i < 7; i++){
+            periods[i] = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(DayMonth(i-7)));
+            permAppointments[i] = reader.getPemAppointments(reader.getCurrentUser());
+        }
+        ArrayList<String> s;
+        ArrayList<String> e;
+        ArrayList<String> c;
+        ArrayList<String> sp;
+        ArrayList<String> ep;
+        ArrayList<String> cp;
 
+        for(int i = 0; i < periods.length;i++){
+            s = periods[i].getStart();
+            e = periods[i].getEnd();
+            c = periods[i].getContent();
+            sp = permAppointments[i].getStart();
+            ep = permAppointments[i].getEnd();
+            cp = permAppointments[i].getContent();
+        }
+        // the real shit
+        for(int i = 0; i < 7; i++){
+            break;  
+        }
         return null;
     }
     public static String getNextFreeDay(String usr){
