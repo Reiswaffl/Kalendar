@@ -47,7 +47,16 @@
                 <period end="14:50" start="14:05">Filmabend</period>
             </day>
         </month>
-        <month id="08" maxdays="31"><day blocked="false" date="180818" name="--"><period end="20:00" start="19:30">Nein</period></day></month></years>
+        <month id="08" maxdays="31"><day blocked="false" date="180818" name="--"><period end="20:00" start="19:30">Nein</period></day></month>
+        <month id="10" maxdays="30">
+            <day blocked="false" date="181005" name="--">
+                <period end="01:00" start="00:00">Schlafen</period>
+                <period end="05:00" start="04:00">Immer noch Schlafen</period>
+                <period end="13:00" start="12:00">Aufstehen</period>
+                <period end="16:00" start="15:00">Sehr expertenmäßig Arbeit vermeiden</period>
+            </day>
+        </month>
+    </years>
 </user>
     <user id="Tom">
         <years id="18">

@@ -16,20 +16,17 @@
     </SUITE>
   </component>
   <component name="DockManager">
-    <window id="2">
+    <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="AddAppointmentScene.fxml" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml">
+          <leaf>
+            <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/calendar.xml">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="559">
-                    <caret line="84" column="50" lean-forward="false" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+                  <state relative-caret-position="782">
+                    <caret line="46" column="68" lean-forward="false" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
                     <folding />
                   </state>
-                </provider>
-                <provider editor-type-id="JavaFX-Scene-Builder">
-                  <state />
                 </provider>
               </entry>
             </file>
@@ -43,8 +40,8 @@
       <file leaf-file-name="AddAppointmentSceneController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="39" />
+            <state relative-caret-position="854">
+              <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding>
                 <element signature="method#XMLReader#0;class#XMLReader#0" expanded="false" />
                 <element signature="method#Update#0;class#XMLReader#0" expanded="false" />
@@ -87,14 +84,14 @@
       <file leaf-file-name="Logic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="50" />
+            <state relative-caret-position="251">
+              <caret line="186" column="32" lean-forward="false" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
+                <element signature="method#AddAppiontment#0;class#Logic#0" expanded="false" />
                 <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
                 <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
-                <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
                 <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
                 <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
                 <element signature="method#handleDate#0;class#Logic#0" expanded="false" />
@@ -105,6 +102,16 @@
                 <element signature="method#getDayName#0;class#Logic#0" expanded="false" />
                 <element signature="method#checkDay#0;class#Logic#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -173,18 +180,18 @@
         <option value="$PROJECT_DIR$/src/ReturnValues/PermAppointments.java" />
         <option value="$PROJECT_DIR$/src/XML/Reader.java" />
         <option value="$PROJECT_DIR$/src/XML/Writer.java" />
-        <option value="$PROJECT_DIR$/calendar.xml" />
         <option value="$PROJECT_DIR$/src/GUI/AddPermanentAppointment.java" />
         <option value="$PROJECT_DIR$/src/GUI/DayRewiev.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
         <option value="$PROJECT_DIR$/src/GUI/DayReview.fxml" />
-        <option value="$PROJECT_DIR$/src/Logic/TextClass.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUIController.java" />
         <option value="$PROJECT_DIR$/src/GUI/DayReview.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddPermanentAppointment.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java" />
+        <option value="$PROJECT_DIR$/calendar.xml" />
+        <option value="$PROJECT_DIR$/src/Logic/TextClass.java" />
         <option value="$PROJECT_DIR$/src/Logic/Logic.java" />
       </list>
     </option>
@@ -211,6 +218,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,8 +266,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,7 +294,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GUI">
+  <component name="RunManager" selected="Application.TextClass (1)">
     <configuration name="GUI" type="Application" factoryName="Application" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
@@ -461,12 +468,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10388248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10388248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -482,7 +490,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -520,7 +527,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="144" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Logic/Logic.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="146" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -790,22 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calendar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="88" lean-forward="false" selection-start-line="23" selection-start-column="88" selection-end-line="23" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddPermanentAppointment.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
@@ -837,10 +836,39 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calendar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="68" lean-forward="false" selection-start-line="46" selection-start-column="68" selection-end-line="46" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="854">
+          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding>
             <element signature="method#XMLReader#0;class#XMLReader#0" expanded="false" />
             <element signature="method#Update#0;class#XMLReader#0" expanded="false" />
@@ -867,37 +895,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml">
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="84" column="50" lean-forward="false" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+        <state relative-caret-position="136">
+          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="50" />
+        <state relative-caret-position="251">
+          <caret line="186" column="32" lean-forward="false" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
+            <element signature="method#AddAppiontment#0;class#Logic#0" expanded="false" />
             <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
             <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
-            <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
             <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
             <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
             <element signature="method#handleDate#0;class#Logic#0" expanded="false" />

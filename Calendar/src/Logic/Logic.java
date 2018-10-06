@@ -184,6 +184,7 @@ public final class Logic {
         }else{
             date = dateInput;
         }
+        System.out.println(reYLL);
         if(reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date))!=null) {
             returnValue = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(date));
         }
@@ -235,6 +236,11 @@ public final class Logic {
             }
         }
         return ret;
+    }
+    public static String addLearningtime(String dateInput){
+        int hours = 0;
+
+        return null;
     }
     public static String getNextFreeDay(String usr){
         Date date = new Date();

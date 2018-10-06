@@ -14,12 +14,10 @@ import java.util.Date;
 import java.util.Locale;
 
 public class TextClass{
-    public static void main(String[] args) throws TransformerException, ParseException {
-    String dateInput = "20181015";
-    String dateString = String.format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
-    Date date = new SimpleDateFormat("yyyy-MM-d").parse(dateString);
-    String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(date);
-    System.out.println(dayofWeek);
+    public static void main(String[] args) throws ParseException {
+        Logic Logic = new Logic();
+        String string = Logic.getDayTimes(0,"181005",false);
+        System.out.println(string);
     }
 }
 
