@@ -15,6 +15,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
+import static java.lang.String.*;
+
 public final class Logic {
     public static Writer writer;
     public static Reader reader;
@@ -158,7 +160,7 @@ public final class Logic {
             }
         }else{
             dateInput = "20" + dateInput;
-            String dateString = String.format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
+            String dateString = format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
             Date dayNameDate = new SimpleDateFormat("yyyy-MM-d").parse(dateString);
             String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
             if(permAppointments != null){
@@ -218,7 +220,7 @@ public final class Logic {
             }
         }else{
             dateInput = "20" + dateInput;
-            String dateString = String.format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
+            String dateString = format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
             Date dayNameDate = new SimpleDateFormat("yyyy-MM-d").parse(dateString);
             String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
             if(permAppointments != null){
@@ -238,31 +240,57 @@ public final class Logic {
     }
     public static String addLearningTime(String dateInput){
         //setup
-        int hours = 0;
+        double hours = 0;
         ReturnValue[] periods = new ReturnValue[7];
         PermAppointments[] permAppointments = new PermAppointments[7];
         for(int i = 0; i < 7; i++){
             periods[i] = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(DayMonth(i-7)));
             permAppointments[i] = reader.getPemAppointments(reader.getCurrentUser());
         }
-        ArrayList<String> s;
-        ArrayList<String> e;
-        ArrayList<String> c;
-        ArrayList<String> sp;
-        ArrayList<String> ep;
-        ArrayList<String> cp;
 
-        for(int i = 0; i < periods.length;i++){
-            s = periods[i].getStart();
-            e = periods[i].getEnd();
-            c = periods[i].getContent();
-            sp = permAppointments[i].getStart();
-            ep = permAppointments[i].getEnd();
-            cp = permAppointments[i].getContent();
-        }
         // the real shit
         for(int i = 0; i < 7; i++){
-            break;  
+            String time = "08:00";
+            String date = DayMonth(i-7);
+            ArrayList<String> s = periods[i].getStart();
+            ArrayList<String> e = periods[i].getEnd();
+            ArrayList<String> c = periods[i].getContent();
+            ArrayList<String> sp = permAppointments[i].getStart();
+            ArrayList<String> ep = permAppointments[i].getEnd();
+            ArrayList<String> cp = permAppointments[i].getContent();
+
+            int hour = Integer.parseInt(time.substring(0,2));
+            int minutes = Integer.parseInt(time.substring(3,5));
+            boolean possible = true;
+                for (int b = 0; b < s.size(); i++) {
+                    int starthour = Integer.parseInt(s.get(b).substring(0, 2));
+                    int startminutes = Integer.parseInt(s.get(b).substring(3, 5));
+                    int endhour = Integer.parseInt(e.get(b).substring(0, 2));
+                    int endminutes = Integer.parseInt(e.get(b).substring(3, 5));
+                    if (starthour <= hour && endhour >= hour) {
+                        if (starthour == hour && endhour == hour && minutes < 30) {
+                            if (startminutes > (minutes + 30) || endminutes < minutes) {
+                                continue;
+                            }
+                        }
+                    } else {
+                        continue;
+                    }
+                    possible = false;
+                    hour++;
+                    minutes = 0;
+                }
+                if(possible){
+                    String finalhour = Integer.toString(hour);
+                    if(finalhour.length() == 1){
+                        finalhour ="0"+finalhour;
+                    }
+                    String finalminutes = Integer.toString(minutes);
+                    if(finalminutes.length() == 1){
+                        finalhour = "0"+finalminutes;
+                    }
+                    //writer.AddPeriod(reader.getCurrentUser(),DayMonth(i-7),);
+                }
         }
         return null;
     }

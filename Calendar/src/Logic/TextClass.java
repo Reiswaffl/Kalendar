@@ -16,32 +16,10 @@ import java.util.Date;
 public class TextClass{
     private static int[] daysInMonth = new int[12];
     public static void main(String[] args) throws ParseException {
-        daysInMonth[0] =31;
-        daysInMonth[1] = 28;
-        daysInMonth[2] = 31;
-        daysInMonth[3] = 30;
-        daysInMonth[4] = 31;
-        daysInMonth[5] = 30;
-        daysInMonth[6] = 31;
-        daysInMonth[7] = 31;
-        daysInMonth[8] = 30;
-        daysInMonth[9] = 31;
-        daysInMonth[10] = 30;
-        daysInMonth[11] = 31;
-        Reader reader = new Reader();
-        ReturnValue[] periods = new ReturnValue[7];
-        for(int i = 0; i < 7; i++){
-            periods[i] = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(DayMonth(i)));
-        }
-        for(int i = 0; i < periods.length;i++){
-            ArrayList<String> s = periods[i].getStart();
-            ArrayList<String> e = periods[i].getEnd();
-            ArrayList<String> c = periods[i].getContent();
-
-            for(int b = 0; b < s.size(); b++){
-                System.out.println(s.get(b) + " - " + e.get(b) + " - " + c.get(b));
-            }
-        }
+        String time = "08:30";
+            int hour = Integer.parseInt(time.substring(0,2));
+            int minutes = Integer.parseInt(time.substring(3,5));
+        System.out.println(hour+"----"+minutes);
     }
 
     private static String DayMonth(int add) {
