@@ -214,6 +214,18 @@ public class Reader {
         xmlReader.Update();
         return xmlReader.getCurrentUser();
     }
+    public ArrayList<String> getUserList(){
+        NodeList userlist = xmlReader.getUsers();
+        ArrayList<String> users = new ArrayList<>();
+        for(int i =  0;i < userlist.getLength();i++){
+            Node nuser = userlist.item(i);
+            if(nuser.getNodeType() == Node.ELEMENT_NODE){
+                Element euser = (Element) nuser;
+                users.add(euser.getAttribute("id"));
+            }
+        }
+        return users;
+    }
     public boolean isRegistered(String id){
         NodeList users = xmlReader.getUsers();
 

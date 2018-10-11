@@ -26,6 +26,7 @@ public class AddAppointmentSceneController implements Initializable {
     @FXML private TextField begleiter;
     @FXML private MenuButton mb;
     @FXML private CheckBox learningTime;
+    @FXML private CheckBox famEvent;
     String month;
     String monthnumber;
     Logic Logic = new Logic();
@@ -48,7 +49,7 @@ public class AddAppointmentSceneController implements Initializable {
             day = "0" + day;
         }
         String date = year + monthnumber + day;
-        String s = Logic.AddAppiontment(date,start.getText(),end.getText(),content.getText(), driver, learningTime.isSelected());
+        String s = Logic.AddAppiontment(date,start.getText(),end.getText(),content.getText(), driver, learningTime.isSelected(),famEvent.isSelected());
         if(s != null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");

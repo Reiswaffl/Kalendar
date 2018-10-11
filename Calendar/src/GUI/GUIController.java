@@ -82,7 +82,6 @@ public class GUIController{
         day5.setText(daynames[5]);
         day6.setText(daynames[6]);
         currentUser.setText(Logic.getCurrentUser());
-        Logic.addLearningTime("181006");
     }
 
     @FXML

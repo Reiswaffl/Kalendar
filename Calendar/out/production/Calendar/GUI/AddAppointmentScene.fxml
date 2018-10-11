@@ -85,6 +85,12 @@
                      <CheckBox fx:id="learningTime"></CheckBox>
                  </children>
              </HBox>
+             <HBox alignment="CENTER" spacing="10.0">
+                 <children>
+                     <Label alignment="CENTER" text="Familienevent (überschreibt vorhandene Termine)"/>
+                     <CheckBox fx:id="famEvent"></CheckBox>
+                 </children>
+             </HBox>
             <HBox alignment="CENTER">
                <children>
                    <Button mnemonicParsing="false" onAction="#back" text="Zurück"/>

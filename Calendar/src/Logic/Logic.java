@@ -29,7 +29,11 @@ public final class Logic {
         return dateFormat.format(date);
     }
 
-    public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean isSelected) throws TransformerException {
+    public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean learningTime, boolean famEvent) throws TransformerException {
+        if(famEvent){
+            //famEvent: highest priotrity
+            ArrayList<String> users = reader.getUserList();
+        }
         if(driver != null && reader.isRegistered(driver) == false)
         {
             return "Die Begleitperson exestiert leider noch nicht. ";
@@ -66,7 +70,7 @@ public final class Logic {
         writer.AddPeriod(reader.getCurrentUser(), date, start,end,content);
         writer.AddPeriod(driver,date,start,end,content);
 
-        if(isSelected){
+        if(learningTime){
             for(int i = -5; i < 0; i++){
                 // here comes the real shit biatch
             }
