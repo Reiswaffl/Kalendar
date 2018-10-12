@@ -147,7 +147,7 @@ public class XMLReader {
             Node nperiod = periods.item(i);
             if(nperiod.getNodeType() == Node.ELEMENT_NODE){
                 Element eperiod = (Element) nperiod;
-                if(eperiod.getAttribute("start").equals("end")){
+                if(eperiod.getAttribute("start").equals(start)){
                     return nperiod;
                 }
             }
@@ -314,5 +314,18 @@ public class XMLReader {
             StreamResult result = new StreamResult(new File("calendar.xml"));
             transformer.transform(source, result);
         }catch (Exception e){}
+    }
+
+
+    //Remove Nodes
+    public void remove(Node parent, Node child){
+        parent.removeChild(child);
+        try {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File("calendar.xml"));
+            transformer.transform(source, result);
+        } catch (Exception e) {}
     }
 }

@@ -33,6 +33,36 @@ public final class Logic {
         if(famEvent){
             //famEvent: highest priotrity
             ArrayList<String> users = reader.getUserList();
+            int sthour = Integer.parseInt(start.substring(0,2));
+            int stminutes = Integer.parseInt(start.substring(3,5));
+            int enhour = Integer.parseInt(end.substring(0,2));
+            int enminutes = Integer.parseInt(end.substring(3,5));
+
+            for(int i = 0; i < users.size();i++){
+                ArrayList<String> s = reader.getDayInformation(users.get(i),Integer.parseInt(date)).getStart();
+                ArrayList<String> e = reader.getDayInformation(users.get(i),Integer.parseInt(date)).getEnd();
+                for(int c = 0; c < s.size();c++){
+                    int starthour = Integer.parseInt(s.get(c).substring(0, 2));
+                    int startminutes = Integer.parseInt(s.get(c).substring(3, 5));
+                    int endhour = Integer.parseInt(e.get(c).substring(0, 2));
+                    int endminutes = Integer.parseInt(e.get(c).substring(3, 5));
+
+                    if((sthour < starthour && enhour < starthour)||(sthour > endhour && enhour > endhour)) {
+                    }else if(starthour == sthour){
+                        if((stminutes < startminutes && enhour < startminutes)||(sthour > endminutes && enhour > endminutes)){
+
+                        }else{
+                            // Appointment in the time
+
+                        }
+                    }else{
+                        // Appointment in the time
+
+                    }
+                }
+                writer.AddPeriod(users.get(i),date,start,end,content);
+                return null;
+            }
         }
         if(driver != null && reader.isRegistered(driver) == false)
         {
@@ -454,7 +484,20 @@ public final class Logic {
         return false;
     }
 
-
+    public static void setup(){
+        Date date = new Date();
+        DateFormat monthFormat = new SimpleDateFormat("MM");
+        String month = monthFormat.format(date);
+        int imonth = Integer.parseInt(month) -1;
+        month = Integer.toString(imonth);
+        DateFormat yearFormat = new SimpleDateFormat("yyyy");
+        String year = yearFormat.format(date);
+        year = year.substring(2,4);
+        if(month.length() == 1){
+            month = "0" + month;
+        }
+        writer.setup(year,month);
+    }
     public static void Update(){
         writer.Update();
     }

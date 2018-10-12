@@ -129,6 +129,18 @@ public class Writer {
         xmlReader.CreatePermanentAppointment(xmlReader.getPermUser(user),start, end,content,repetition,weekday);
 
     }
+    public void removeNode(String user,String date,String start){
+        Node nuser = xmlReader.getUser(user);
+        String year = date.substring(0,2);
+        String month = date.substring(2, 4);
+        String day = date.substring(4, 6);
+
+        Node nyear = xmlReader.getYearById(year,nuser.getChildNodes());
+        Node nmonth = xmlReader.getMonthById(month,nyear.getChildNodes());
+        Node nday = xmlReader.getDayById(date,nmonth.getChildNodes());
+        Node period = xmlReader.getPeriodById(start,nday.getChildNodes());
+        xmlReader.remove(nday,period);
+    }
     public void SetDayBusy(String user, String date, String content){}
     public void SetDayBusy(String user, String date){}
 
@@ -153,5 +165,17 @@ public class Writer {
         }
     }
 
+    public void setup(String year, String month){
+        System.out.println(year + "----" + month);
+        NodeList users = xmlReader.getUsers();
+        for(int i = 0; i < users.getLength();i++){
+            Node nuser = users.item(i);
+
+            Node nyear = xmlReader.getYearById(year,nuser.getChildNodes());
+            Node nmonth = xmlReader.getMonthById(month,nyear.getChildNodes());
+            xmlReader.remove(nyear,nmonth);
+        }
+
+    }
 
 }
