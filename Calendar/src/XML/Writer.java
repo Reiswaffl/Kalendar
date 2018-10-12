@@ -170,10 +170,10 @@ public class Writer {
         NodeList users = xmlReader.getUsers();
         for(int i = 0; i < users.getLength();i++){
             Node nuser = users.item(i);
-
             Node nyear = xmlReader.getYearById(year,nuser.getChildNodes());
+            System.out.println(nyear +"---"+ nyear.getChildNodes());
             Node nmonth = xmlReader.getMonthById(month,nyear.getChildNodes());
-            xmlReader.remove(nyear,nmonth);
+            //xmlReader.remove(nyear,nmonth);
         }
 
     }
