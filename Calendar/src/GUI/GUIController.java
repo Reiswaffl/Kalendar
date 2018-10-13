@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class GUIController{
@@ -66,6 +67,7 @@ public class GUIController{
         try {
             currentDayInfo.setText(Logic.getDayInfo(0, "null", false));
             day1Info.setText(Logic.getDayInfo(1, "null", false));
+
             day2Info.setText(Logic.getDayInfo(2, "null", false));
             day3Info.setText(Logic.getDayInfo(3, "null", false));
             day4Info.setText(Logic.getDayInfo(4, "null", false));
@@ -80,7 +82,6 @@ public class GUIController{
         day3.setText(daynames[3]);
         day4.setText(daynames[4]);
         day5.setText(daynames[5]);
-        day6.setText(daynames[6]);
         currentUser.setText(Logic.getCurrentUser());
         Logic.setup();
     }
