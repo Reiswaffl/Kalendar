@@ -167,13 +167,14 @@ public class Writer {
 
     public void setup(String year, String month){
         System.out.println(year + "----" + month);
-        NodeList users = xmlReader.getUsers();
+        NodeList users = xmlReader.getUsers(12);
         for(int i = 0; i < users.getLength();i++){
             Node nuser = users.item(i);
             Node nyear = xmlReader.getYearById(year,nuser.getChildNodes());
-            System.out.println(nyear +"---"+ nyear.getChildNodes());
             Node nmonth = xmlReader.getMonthById(month,nyear.getChildNodes());
-            //xmlReader.remove(nyear,nmonth);
+            if(nmonth != null) {
+                xmlReader.remove(nyear, nmonth);
+            }
         }
 
     }

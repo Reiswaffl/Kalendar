@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="GUI.AddPermanentAppointment"
@@ -23,6 +24,7 @@
                 </Label>
             </children>
             </HBox>
+            <Line endX="600.0" />
             <HBox alignment="CENTER" spacing="10.0">
                 <children>
                     <Label alignment="CENTER" text="Beginn der Termins:" />
@@ -43,6 +45,7 @@
                         <MenuItem id="weekly" fx:id="weekly" mnemonicParsing="false" onAction="#handleWeekly" text="wöchentlich" />
                         <MenuItem id="daily" fx:id="daily" mnemonicParsing="false" onAction="#handleDaily" text="täglich" />
                         <MenuItem id="monthly" fx:id="monthly" mnemonicParsing="false" onAction="#handleMonthly" text="monatlich" />
+                        <MenuItem id="monthly" fx:id="yearly" mnemonicParsing="false" onAction="#handleYearly" text="jährlih" />
                     </items>
                 </MenuButton>
             </children>
@@ -73,6 +76,18 @@
                 <children>
                     <Label alignment="CENTER" text="Fahrer/Begleitperson:"/>
                     <TextField fx:id="begleiter" promptText="Wenn kein Begleiter, bitte leer lassen"/>
+                </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+                <children>
+                    <Label alignment="CENTER" text="Tag:"/>
+                    <TextField fx:id="day" promptText="Nur bei montl. Wdh."/>
+                </children>
+            </HBox>
+            <HBox alignment="CENTER" spacing="10.0">
+                <children>
+                    <Label alignment="CENTER" text="Monat:"/>
+                    <TextField fx:id="month" promptText="Nur bei jählr. Wdh."/>
                 </children>
             </HBox>
             <HBox alignment="CENTER">

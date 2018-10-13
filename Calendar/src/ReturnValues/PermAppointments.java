@@ -6,18 +6,21 @@ public class PermAppointments {
     ArrayList<String> start;
     ArrayList<String> end;
     ArrayList<String> content;
-    ArrayList<String> weekday;
+    ArrayList<String> info;
+    ArrayList<String> repetition;
     public PermAppointments(){
         start = new ArrayList<>();
         end = new ArrayList<>();
         content = new ArrayList<>();
-        weekday = new ArrayList<>();
+        info = new ArrayList<>();
+        repetition = new ArrayList<>();
     }
-    public void add(String start, String end, String content, String weekday){
+    public void add(String start, String end, String content, String info, String repetition){
         this.start.add(start);
         this.end.add(end);
         this.content.add(content);
-        this.weekday.add(weekday);
+        this.info.add(info);
+        this.repetition.add(repetition);
     }
     public ArrayList getStart(){
         return start;
@@ -29,7 +32,8 @@ public class PermAppointments {
         return content;
     }
     public ArrayList getWeekday(){
-        return weekday;
+        return info;
     }
+    public ArrayList getRepetition(){return repetition;}
 
 }

@@ -19,7 +19,8 @@ import java.util.ResourceBundle;
 enum Repetition{
     WEEKLY,
     DAILY,
-    MONTHLY
+    MONTHLY,
+    YEARLY
 }
 enum Weekday{
     MONDAY,
@@ -39,6 +40,8 @@ public class AddPermanentAppointment implements Initializable {
     @FXML private TextField begleiter;
     @FXML private MenuButton repetition;
     @FXML private MenuButton weekday;
+    @FXML private TextField day;
+    @FXML private TextField month;
     Repetition rep;
     Weekday weekd;
     Logic Logic = new Logic();
@@ -59,6 +62,11 @@ public class AddPermanentAppointment implements Initializable {
     public void handleMonthly(){
         repetition.setText("monatlich");
         rep = Repetition.MONTHLY;
+    }
+    @FXML
+    public void handleYearly(){
+        repetition.setText("jährlich");
+        rep = Repetition.YEARLY;
     }
     @FXML
     public void handleMonday(){
@@ -107,18 +115,49 @@ public class AddPermanentAppointment implements Initializable {
     @FXML
     public void add(){
         String rp = "null";
-        String wk = "null";
+        String input = "null";
         switch (rep){
             case DAILY:
                 rp = "DAILY";
+                input ="----";
                 break;
             case WEEKLY:
                 rp = "WEEKLY";
+                input = week();
                 break;
             case MONTHLY:
                 rp = "MONTHLY";
+                input = day.getText()   ;
                 break;
+            case YEARLY:
+                rp = "YEARLY";
+                String d = day.getText();
+                String m = month.getText();
+                if(d.length() == 1) d = "0" + d;
+                if(m.length() == 1) d = "0" + m;
+                input = d+m;
+                break;
+
         }
+
+        String ret = Logic.AddPermanentAppointment(start.getText(),end.getText(),content.getText(),rp,input,begleiter.getText());
+
+        if(ret != null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fehler beim Eintragen");
+
+            //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
+            alert.setContentText(ret);
+            alert.showAndWait();
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+    private String week(){
+        String wk = "null";
         switch (weekd){
             case MONDAY:
                 wk = "MONDAY";
@@ -142,21 +181,7 @@ public class AddPermanentAppointment implements Initializable {
                 wk = "SUNDAY";
                 break;
         }
-
-        String ret = Logic.AddPermanentAppointment(start.getText(),end.getText(),content.getText(),rp,wk,begleiter.getText());
-
-        if(ret != null){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Fehler beim Eintragen");
-
-            //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
-            alert.setContentText(ret);
-            alert.showAndWait();
-        }
+        return wk;
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
 }

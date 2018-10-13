@@ -80,7 +80,8 @@ public class Reader {
             Node nPermAppointment = usr.getChildNodes().item(i);
             if(nPermAppointment.getNodeType() == Node.ELEMENT_NODE){
                 Element ePermAppointment = (Element) nPermAppointment;
-                permAppointments.add(ePermAppointment.getAttribute("start" ),ePermAppointment.getAttribute("end"),ePermAppointment.getTextContent(),ePermAppointment.getAttribute("weekday"));
+                permAppointments.add(ePermAppointment.getAttribute("start" ),ePermAppointment.getAttribute("end"),ePermAppointment.getTextContent(),
+                        ePermAppointment.getAttribute("weekday"),ePermAppointment.getAttribute("repetition"));
             }
         }
         return permAppointments;

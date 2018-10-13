@@ -108,7 +108,7 @@ public final class Logic {
         return null;
 
     }
-    public static String AddPermanentAppointment(String start, String end, String content, String repetition, String weekday, String driver){
+    public static String AddPermanentAppointment(String start, String end, String content, String repetition, String input, String driver){
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
         String s = start.substring(0,start.length()-3);
         String e = end.substring(0,end.length()-3);
@@ -126,7 +126,7 @@ public final class Logic {
             for (int i = 0; i < sp.size(); i++) {
                 String ps = sp.get(i).substring(0, sp.get(i).length() - 3);
                 String pe = ep.get(i).substring(0, ep.get(i).length() - 3);
-                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && weekday.equals(wd.get(i))) {
+                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && input.equals(wd.get(i))) {
                     return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
                 }
             }
@@ -141,14 +141,14 @@ public final class Logic {
             for (int i = 0; i < spd.size(); i++) {
                 String ps = spd.get(i).substring(0, spd.get(i).length() - 3);
                 String pe = epd.get(i).substring(0, epd.get(i).length() - 3);
-                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && weekday.equals(wdd.get(i))) {
+                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && input.equals(wdd.get(i))) {
                     return "Der Zeitraum ist leider schon belegt (bei Beleitperson) \n" + spd.get(i) + " -" + epd.get(i);
                 }
             }
         }
-        writer.AddPermAppointment(reader.getCurrentUser(),start,end,repetition,weekday,content);
+        writer.AddPermAppointment(reader.getCurrentUser(),start,end,repetition,input,content);
         if(permAppointmentsDriver != null) {
-            writer.AddPermAppointment(driver, start, end, repetition, weekday, content);
+            writer.AddPermAppointment(driver, start, end, repetition, input, content);
         }
         return null;
     }
@@ -182,7 +182,7 @@ public final class Logic {
             String[] s = DaysInOrder();
             if(permAppointments != null){
                 for(int i = 0; i < permAppointments.getStart().size();i++){
-                    if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
+                    if(checkDay(s[add],permAppointments.getWeekday().get(i).toString(),permAppointments.getRepetition().get(i).toString())) {
                         if (ret.equals("-")) {
                             ret += permAppointments.getContent().get(i).toString() + "\n";
                         } else {
@@ -199,7 +199,7 @@ public final class Logic {
             String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
             if(permAppointments != null){
                 for(int i = 0; i < permAppointments.getStart().size();i++){
-                    if(checkDay(dayofWeek,permAppointments.getWeekday().get(i).toString())) {
+                    if(checkDay(dayofWeek,permAppointments.getWeekday().get(i).toString(),permAppointments.getRepetition().get(i).toString())) {
                         if (ret.equals("-")) {
                             ret += permAppointments.getContent().get(i).toString() + "\n";
                         } else {
@@ -242,7 +242,7 @@ public final class Logic {
             String[] s = DaysInOrder();
             if(permAppointments != null){
                 for(int i = 0; i < permAppointments.getStart().size();i++){
-                    if(checkDay(s[add],permAppointments.getWeekday().get(i).toString())) {
+                    if(checkDay(s[add],permAppointments.getWeekday().get(i).toString(),permAppointments.getRepetition().get(i).toString())) {
                         if (ret.equals("-")) {
                             ret += permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
                         } else {
@@ -259,7 +259,7 @@ public final class Logic {
             String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
             if(permAppointments != null){
                 for(int i = 0; i < permAppointments.getStart().size();i++){
-                    if(checkDay(dayofWeek,permAppointments.getWeekday().get(i).toString())) {
+                    if(checkDay(dayofWeek,permAppointments.getWeekday().get(i).toString(),permAppointments.getRepetition().get(i).toString())) {
                         if (ret.equals("-")) {
                             ret += permAppointments.getStart().get(i).toString() + " - " + permAppointments.getEnd().get(i).toString() + "\n";
                         } else {
@@ -473,14 +473,36 @@ public final class Logic {
                 return null;
         }
     }
-    private static boolean checkDay(String compare,String day){
-        if(compare.equals("Montag") && day.equals("MONDAY")) return true;
-        if(compare.equals("Dienstag") && day.equals("TUESDAY")) return true;
-        if(compare.equals("Mittwoch") && day.equals("WEDNESDAY")) return true;
-        if(compare.equals("Donnerstag") && day.equals("THURSDAY")) return true;
-        if(compare.equals("Freitag") && day.equals("FRIDAY")) return true;
-        if(compare.equals("Samstag") && day.equals("SATURDAY")) return true;
-        if(compare.equals("Sonntag") && day.equals("SUNDAY")) return true;
+    private static String getDate(){
+        Date date = new Date();
+        DateFormat dayFormat = new SimpleDateFormat("dd");
+        String day = dayFormat.format(date);
+
+        DateFormat monthFormat = new SimpleDateFormat("MM");
+        String month = monthFormat.format(date);
+
+        DateFormat yearFormat = new SimpleDateFormat("yyyy");
+        String year = yearFormat.format(date);
+        return day +"." + month + "." + year;
+    }
+    private static boolean checkDay(String compare,String input,String repetition){
+        if(repetition.equals("DAILY"))return true;
+        if(repetition.equals("WEEKLY")) {
+            if (compare.equals("Montag") && input.equals("MONDAY")) return true;
+            if (compare.equals("Dienstag") && input.equals("TUESDAY")) return true;
+            if (compare.equals("Mittwoch") && input.equals("WEDNESDAY")) return true;
+            if (compare.equals("Donnerstag") && input.equals("THURSDAY")) return true;
+            if (compare.equals("Freitag") && input.equals("FRIDAY")) return true;
+            if (compare.equals("Samstag") && input.equals("SATURDAY")) return true;
+            if (compare.equals("Sonntag") && input.equals("SUNDAY")) return true;
+        }else if(repetition.equals("MONTHLY")){
+            String day = getDate().substring(0,2);
+            if(input.equals(day)) return true;
+        }else if(repetition.equals("YEARLY")){
+            String day = getDate().substring(0,2);
+            String month = getDate().substring(3,5);
+            if(input.equals(day+month))return true;
+        }
         return false;
     }
 

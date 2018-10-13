@@ -79,6 +79,13 @@ public class XMLReader {
         }
         return userList.getChildNodes();
     } //returns a NodeList with all possible Users
+    public NodeList getUsers(int i){
+        NodeList Users = doc.getElementsByTagName("user");
+        if(Users == null){
+            return null;
+        }
+        return Users;
+    }
     public Node getUser(String id){
         for(int i = 0; i < users.getLength(); i++){
             Node nuser = users.item(i);

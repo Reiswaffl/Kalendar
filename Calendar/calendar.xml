@@ -17,7 +17,9 @@
             <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
             <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
             <permAppointment end="15:00" repetition="WEEKLY" start="14:00" weekday="SATURDAY">Nein</permAppointment>
-            <permAppointment end="15:00" repetition="WEEKLY" start="14:00" weekday="SATURDAY">Nein</permAppointment></User>
+            <permAppointment end="15:00" repetition="WEEKLY" start="14:00" weekday="SATURDAY">Nein</permAppointment>
+            <permAppointment end="23:59" repetition="YEARLY" start="00:00" weekday="12">Ein Tag</permAppointment>
+            <permAppointment end="14:00" repetition="YEARLY" start="13:00" weekday="1310">Ein Inhalt</permAppointment></User>
         <User id="Tom">
         <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
             <permAppointment end="01:00" repetition="WEEKLY" start="00:00" weekday="WEDNESDAY">Nein</permAppointment>
@@ -29,25 +31,6 @@
 
 <user id="Eric">
     <years id="18">
-        <month id="07" maxdays="31">
-            <day blocked="false" date="180702">
-                <period end="11.30" start="11.30">Protokoll Deutsch</period>
-                <period end="14.15" start="14.00">Präsentation WS</period>
-                <period end="19:30" start="18:30" time="18">Joggen</period>
-            </day>
-            <day blocked="false" date="180703">
-                <period end="17.50" start="17.00">BCP-Protokoll </period>
-                <period end="21.45" start="20.30">Karate Training</period>
-            </day>
-            <day blocked="false" date="180705">
-                <period end="14:50" start="14:05">Fahrstunde</period>
-                <period end="16:00" start="15:00">BCP-Protokoll</period>
-            </day>
-            <day blocked="false" date="180707">
-                <period end="14:50" start="14:05">Filmabend</period>
-            </day>
-        </month>
-        <month id="09" maxdays="31"><day blocked="false" date="180818" name="--"><period end="20:00" start="19:30">Nein</period></day></month>
         <month id="10" maxdays="30">
             <day blocked="false" date="181004" name="--">
                 <period end="01:00" start="00:00">Schlafen</period>
