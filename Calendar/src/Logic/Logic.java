@@ -152,7 +152,7 @@ public final class Logic {
         }
         return null;
     }
-    public static String deletePermanentAppointment(){
+    public static String deletePermanentAppointment(String start,String end, String weekday){
 
         return null;
     }

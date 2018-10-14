@@ -141,29 +141,22 @@ public class Writer {
         Node period = xmlReader.getPeriodById(start,nday.getChildNodes());
         xmlReader.remove(nday,period);
     }
+    public void removePermAppointment(String user, String start, String weekday){
+       NodeList permAppointments = xmlReader.getPermAppointments(user);
+        Node parent = xmlReader.getPermParent();
+       for(int i = 0; i < permAppointments.getLength();i++){
+           Node nPermAppointment = permAppointments.item(i);
+           if(nPermAppointment.getNodeType() == Node.ELEMENT_NODE){
+               Element ePermAppointment = (Element) nPermAppointment;
+               if(ePermAppointment.getAttribute("start") == start && ePermAppointment.getAttribute("weekday") == weekday){
+                   xmlReader.remove(parent,nPermAppointment);
+               }
+           }
+       }
+    }
     public void SetDayBusy(String user, String date, String content){}
     public void SetDayBusy(String user, String date){}
 
-    private String getDayName(int id){
-        switch (id){
-            case 0:
-                return "Montag";
-            case 1:
-                return "Dienstag";
-            case 2:
-                return "Mittwoch";
-            case 3:
-                return "Donnerstag";
-            case 4:
-                return "Freitag";
-            case 5:
-                return "Samstag";
-            case 6:
-                return "Sonntag";
-            default:
-                return null;
-        }
-    }
 
     public void setup(String year, String month){
         System.out.println(year + "----" + month);

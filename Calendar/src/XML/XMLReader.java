@@ -135,7 +135,6 @@ public class XMLReader {
         }
         return null;
     }
-
     public Periods getPeriodByTime(String start, NodeList periods){
         Periods p = new Periods();
         for(int i = 0; i < periods.getLength(); i++){
@@ -334,5 +333,9 @@ public class XMLReader {
             StreamResult result = new StreamResult(new File("calendar.xml"));
             transformer.transform(source, result);
         } catch (Exception e) {}
+    }
+    public Node getPermParent(){
+        NodeList permAppointments = doc.getElementsByTagName("permAppointments");
+        return permAppointments.item(0);
     }
 }
