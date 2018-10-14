@@ -151,7 +151,7 @@
                      </font>
                   </Button>
                </children>
-               <Button fx:id="appiontmentrequest" mnemonicParsing="false" onAction="#AppointmentRequest" text="Terminvorschlag">
+               <Button fx:id="timetable" mnemonicParsing="false" onAction="#AddTimeTable" text="Stundenplan hinzufügem">
                   <font>
                      <Font size="18"/>
                   </font>

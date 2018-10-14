@@ -96,11 +96,11 @@ public class GUIController{
         window.show();
     }
     @FXML
-    public void AppointmentRequest(javafx.event.ActionEvent event) throws IOException {
-        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("AppointmentRequest.fxml"));
+    public void AddTimeTable(javafx.event.ActionEvent event) throws IOException {
+        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("AddTimeTable.fxml"));
         Scene appointmentRequestScene = new Scene(appointmentRequest);
         Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
-        window.setTitle("Terminanfrage");
+        window.setTitle("Stundenplan hizufügen");
         window.setScene(appointmentRequestScene);
         window.show();
     }

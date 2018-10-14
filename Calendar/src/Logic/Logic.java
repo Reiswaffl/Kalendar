@@ -126,7 +126,7 @@ public final class Logic {
             for (int i = 0; i < sp.size(); i++) {
                 String ps = sp.get(i).substring(0, sp.get(i).length() - 3);
                 String pe = ep.get(i).substring(0, ep.get(i).length() - 3);
-                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && input.equals(wd.get(i))) {
+                if (Integer.parseInt(s) > Integer.parseInt(ps) && Integer.parseInt(s) < Integer.parseInt(pe) && input.equals(wd.get(i))) {
                     return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
                 }
             }
@@ -141,7 +141,7 @@ public final class Logic {
             for (int i = 0; i < spd.size(); i++) {
                 String ps = spd.get(i).substring(0, spd.get(i).length() - 3);
                 String pe = epd.get(i).substring(0, epd.get(i).length() - 3);
-                if (Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe) && input.equals(wdd.get(i))) {
+                if (Integer.parseInt(s) > Integer.parseInt(ps) && Integer.parseInt(s) < Integer.parseInt(pe) && input.equals(wdd.get(i))) {
                     return "Der Zeitraum ist leider schon belegt (bei Beleitperson) \n" + spd.get(i) + " -" + epd.get(i);
                 }
             }
@@ -150,6 +150,10 @@ public final class Logic {
         if(permAppointmentsDriver != null) {
             writer.AddPermAppointment(driver, start, end, repetition, input, content);
         }
+        return null;
+    }
+    public static String deletePermanentAppointment(){
+
         return null;
     }
     public static String getDayInfo(int add, String dateInput, boolean isDate) throws ParseException {
