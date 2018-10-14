@@ -275,57 +275,6 @@ public final class Logic {
     public static String addLearningTime(String dateInput){
         //setup
         double hours = 0;
-        ReturnValue[] periods = new ReturnValue[7];
-        PermAppointments[] permAppointments = new PermAppointments[7];
-        for(int i = 0; i < 7; i++){
-            periods[i] = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(DayMonth(i-7)));
-            permAppointments[i] = reader.getPemAppointments(reader.getCurrentUser());
-        }
-
-        // the real shit
-        for(int i = 0; i < 7; i++){
-            String time = "08:00";
-            String date = DayMonth(i-7);
-            ArrayList<String> s = periods[i].getStart();
-            ArrayList<String> e = periods[i].getEnd();
-            ArrayList<String> c = periods[i].getContent();
-            ArrayList<String> sp = permAppointments[i].getStart();
-            ArrayList<String> ep = permAppointments[i].getEnd();
-            ArrayList<String> cp = permAppointments[i].getContent();
-
-            int hour = Integer.parseInt(time.substring(0,2));
-            int minutes = Integer.parseInt(time.substring(3,5));
-            boolean possible = true;
-                for (int b = 0; b < s.size(); i++) {
-                    int starthour = Integer.parseInt(s.get(b).substring(0, 2));
-                    int startminutes = Integer.parseInt(s.get(b).substring(3, 5));
-                    int endhour = Integer.parseInt(e.get(b).substring(0, 2));
-                    int endminutes = Integer.parseInt(e.get(b).substring(3, 5));
-                    if (starthour <= hour && endhour >= hour) {
-                        if (starthour == hour && endhour == hour && minutes < 30) {
-                            if (startminutes > (minutes + 30) || endminutes < minutes) {
-                                continue;
-                            }
-                        }
-                    } else {
-                        continue;
-                    }
-                    possible = false;
-                    hour++;
-                    minutes = 0;
-                }
-                if(possible){
-                    String finalhour = Integer.toString(hour);
-                    if(finalhour.length() == 1){
-                        finalhour ="0"+finalhour;
-                    }
-                    String finalminutes = Integer.toString(minutes);
-                    if(finalminutes.length() == 1){
-                        finalhour = "0"+finalminutes;
-                    }
-                    //writer.AddPeriod(reader.getCurrentUser(),DayMonth(i-7),);
-                }
-        }
         return null;
     }
     public static String getNextFreeDay(String usr){
