@@ -143,12 +143,12 @@ public class Writer {
     }
     public void removePermAppointment(String user, String start, String weekday){
        NodeList permAppointments = xmlReader.getPermAppointments(user);
-        Node parent = xmlReader.getPermParent();
+        Node parent = xmlReader.getPermUser(user);
        for(int i = 0; i < permAppointments.getLength();i++){
            Node nPermAppointment = permAppointments.item(i);
            if(nPermAppointment.getNodeType() == Node.ELEMENT_NODE){
                Element ePermAppointment = (Element) nPermAppointment;
-               if(ePermAppointment.getAttribute("start") == start && ePermAppointment.getAttribute("weekday") == weekday){
+               if(ePermAppointment.getAttribute("start").equals(start) && ePermAppointment.getAttribute("weekday").equals(weekday)){
                    xmlReader.remove(parent,nPermAppointment);
                }
            }

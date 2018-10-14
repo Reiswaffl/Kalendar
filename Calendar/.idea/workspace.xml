@@ -19,40 +19,17 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/calendar.xml">
+          <leaf>
+            <file leaf-file-name="AddAppointmentScene.fxml" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="221">
-                    <caret line="13" column="8" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="13" selection-end-column="8" />
+                  <state relative-caret-position="760">
+                    <caret line="95" column="62" lean-forward="false" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="62" />
                     <folding />
                   </state>
                 </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="AddTimeTable.fxml" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTable.fxml">
                 <provider editor-type-id="JavaFX-Scene-Builder">
                   <state />
-                </provider>
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="442">
-                    <caret line="26" column="205" lean-forward="false" selection-start-line="26" selection-start-column="205" selection-end-line="26" selection-end-column="205" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="MainWindow.fxml" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/GUI/MainWindow.fxml">
-                <provider editor-type-id="JavaFX-Scene-Builder">
-                  <state />
-                </provider>
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="2601">
-                    <caret line="153" column="88" lean-forward="false" selection-start-line="153" selection-start-column="76" selection-end-line="153" selection-end-column="88" />
-                    <folding />
-                  </state>
                 </provider>
               </entry>
             </file>
@@ -63,118 +40,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Writer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/XML/Writer.java">
+      <file leaf-file-name="AddAppointmentSceneController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="150" column="43" lean-forward="false" selection-start-line="150" selection-start-column="43" selection-end-line="150" selection-end-column="43" />
+            <state relative-caret-position="168">
+              <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
               <folding>
-                <element signature="method#AddUser#0;class#Writer#0" expanded="false" />
-                <element signature="method#AddPeriod#0;class#Writer#0" expanded="false" />
-                <element signature="method#AddPermAppointment#0;class#Writer#0" expanded="false" />
-                <element signature="method#removeNode#0;class#Writer#0" expanded="false" />
-                <element signature="method#setup#0;class#Writer#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddTimeTableSceneController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="137" column="46" lean-forward="false" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#initialize#0;class#AddTimeTableSceneController#0" expanded="false" />
-                <element signature="method#next#0;class#AddTimeTableSceneController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUIController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-              <folding>
-                <element signature="method#setGui#0;class#GUIController#0" expanded="false" />
-                <element signature="method#AddAppointment#0;class#GUIController#0" expanded="false" />
-                <element signature="method#getNextFreeDay#0;class#GUIController#0" expanded="false" />
-                <element signature="method#AddPermAppointment#0;class#GUIController#0" expanded="false" />
-                <element signature="method#SwitchUser#0;class#GUIController#0" expanded="false" />
-                <element signature="method#DayPrewiev#0;class#GUIController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="110" column="138" lean-forward="false" selection-start-line="110" selection-start-column="138" selection-end-line="110" selection-end-column="138" />
-              <folding>
-                <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
-                <element signature="method#AddAppiontment#0;class#Logic#0" expanded="false" />
-                <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
-                <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
-                <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
-                <element signature="method#addLearningTime#0;class#Logic#0" expanded="false" />
-                <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
-                <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
-                <element signature="method#handleDate#0;class#Logic#0" expanded="false" />
-                <element signature="method#DaysInOrder#0;class#Logic#0" expanded="false" />
-                <element signature="method#TransformToString#0;class#Logic#0" expanded="false" />
-                <element signature="method#DayMonth#0;class#Logic#0" expanded="false" />
-                <element signature="method#getID#0;class#Logic#0" expanded="false" />
-                <element signature="method#getDayName#0;class#Logic#0" expanded="false" />
-                <element signature="method#getDate#0;class#Logic#0" expanded="false" />
-                <element signature="method#checkDay#0;class#Logic#0" expanded="false" />
-                <element signature="method#setup#0;class#Logic#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XMLReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="336" column="29" lean-forward="false" selection-start-line="336" selection-start-column="29" selection-end-line="336" selection-end-column="29" />
-              <folding>
-                <element signature="method#XMLReader#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#Update#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#SwitchUser#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getCurrentUser#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getUser#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getYearById#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getMonthById#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getDayById#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getPeriodByTime#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getPeriodById#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getPermAppointments#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getPermUser#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#getPermAppointment#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#CreateUser#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#CreateYear#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#CreateMonth#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#CreateDay#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#CreatePeriod#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#CreatePermanentAppointment#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#setAttribute#0;class#XMLReader#0" expanded="false" />
-                <element signature="method#remove#0;class#XMLReader#0" expanded="false" />
+                <element signature="method#initialize#0;class#AddAppointmentSceneController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -245,8 +117,6 @@
         <option value="$PROJECT_DIR$/src/GUI/DayRewiev.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/DayReview.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/DayReview.java" />
-        <option value="$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml" />
-        <option value="$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddPermanentAppointment.fxml" />
         <option value="$PROJECT_DIR$/src/XML/Reader.java" />
         <option value="$PROJECT_DIR$/src/ReturnValues/PermAppointments.java" />
@@ -256,10 +126,12 @@
         <option value="$PROJECT_DIR$/src/GUI/GUIController.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddTimeTable.fxml" />
         <option value="$PROJECT_DIR$/calendar.xml" />
-        <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
-        <option value="$PROJECT_DIR$/src/XML/Writer.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java" />
         <option value="$PROJECT_DIR$/src/Logic/Logic.java" />
+        <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
+        <option value="$PROJECT_DIR$/src/XML/Writer.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java" />
       </list>
     </option>
   </component>
@@ -283,6 +155,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -328,10 +203,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,7 +465,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="168" />
+      <option name="time" value="171" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -739,25 +611,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AppointmentRequest.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DayReview.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DayReview.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="36" column="44" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.fxml/javafx/fxml/Initializable.java">
@@ -825,17 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="101" column="14" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="101" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/DayReview.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -844,19 +705,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddPermanentAppointment.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="57" selection-end-column="32" />
+        <state relative-caret-position="961">
+          <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calendar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTable.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="205" lean-forward="false" selection-start-line="26" selection-start-column="205" selection-end-line="26" selection-end-column="205" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/MainWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="808">
+          <caret line="153" column="88" lean-forward="false" selection-start-line="153" selection-start-column="76" selection-end-line="153" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XML/Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
           <folding>
-            <element signature="method#initialize#0;class#AddAppointmentSceneController#0" expanded="false" />
+            <element signature="method#AddUser#0;class#Writer#0" expanded="false" />
+            <element signature="method#AddPeriod#0;class#Writer#0" expanded="false" />
+            <element signature="method#AddPermAppointment#0;class#Writer#0" expanded="false" />
+            <element signature="method#removeNode#0;class#Writer#0" expanded="false" />
+            <element signature="method#removePermAppointment#0;class#Writer#0" expanded="false" />
+            <element signature="method#setup#0;class#Writer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="137" column="46" lean-forward="false" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#initialize#0;class#AddTimeTableSceneController#0" expanded="false" />
+            <element signature="method#next#0;class#AddTimeTableSceneController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
+        <state relative-caret-position="661">
           <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="method#setGui#0;class#GUIController#0" expanded="false" />
@@ -869,86 +788,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddPermanentAppointment.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="336" column="29" lean-forward="false" selection-start-line="336" selection-start-column="29" selection-end-line="336" selection-end-column="29" />
-          <folding>
-            <element signature="method#XMLReader#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#Update#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#SwitchUser#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getCurrentUser#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getUser#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getYearById#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getMonthById#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getDayById#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getPeriodByTime#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getPeriodById#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getPermAppointments#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getPermUser#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#getPermAppointment#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#CreateUser#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#CreateYear#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#CreateMonth#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#CreateDay#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#CreatePeriod#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#CreatePermanentAppointment#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#setAttribute#0;class#XMLReader#0" expanded="false" />
-            <element signature="method#remove#0;class#XMLReader#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTable.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="205" lean-forward="false" selection-start-line="26" selection-start-column="205" selection-end-line="26" selection-end-column="205" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
-          <caret line="153" column="88" lean-forward="false" selection-start-line="153" selection-start-column="76" selection-end-line="153" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="137" column="46" lean-forward="false" selection-start-line="137" selection-start-column="46" selection-end-line="137" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#AddTimeTableSceneController#0" expanded="false" />
-            <element signature="method#next#0;class#AddTimeTableSceneController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -978,24 +822,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calendar.xml">
+    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="13" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="181" column="40" lean-forward="false" selection-start-line="181" selection-start-column="40" selection-end-line="181" selection-end-column="40" />
+          <folding>
+            <element signature="method#XMLReader#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#Update#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#SwitchUser#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getCurrentUser#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getUsers#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getUsers#1;class#XMLReader#0" expanded="false" />
+            <element signature="method#getUser#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getYearById#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getMonthById#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getDayById#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getPeriodByTime#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getPeriodById#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getPermAppointments#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getPermUser#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#getPermAppointment#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#CreateUser#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#CreateYear#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#CreateMonth#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#CreateDay#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#CreatePeriod#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#CreatePermanentAppointment#0;class#XMLReader#0" expanded="false" />
+            <element signature="method#setAttribute#0;class#XMLReader#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/Writer.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentScene.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="150" column="43" lean-forward="false" selection-start-line="150" selection-start-column="43" selection-end-line="150" selection-end-column="43" />
+        <state relative-caret-position="760">
+          <caret line="95" column="62" lean-forward="false" selection-start-line="95" selection-start-column="62" selection-end-line="95" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
           <folding>
-            <element signature="method#AddUser#0;class#Writer#0" expanded="false" />
-            <element signature="method#AddPeriod#0;class#Writer#0" expanded="false" />
-            <element signature="method#AddPermAppointment#0;class#Writer#0" expanded="false" />
-            <element signature="method#removeNode#0;class#Writer#0" expanded="false" />
-            <element signature="method#setup#0;class#Writer#0" expanded="false" />
+            <element signature="method#initialize#0;class#AddAppointmentSceneController#0" expanded="false" />
           </folding>
         </state>
       </provider>

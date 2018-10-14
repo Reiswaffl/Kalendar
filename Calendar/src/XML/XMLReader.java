@@ -98,6 +98,7 @@ public class XMLReader {
         }
         return null;
     }
+
     public Node getYearById(String  id, NodeList years ){
         for(int i = 0; i < years.getLength(); i++){
             Node nyear = years.item(i);
@@ -325,6 +326,7 @@ public class XMLReader {
 
     //Remove Nodes
     public void remove(Node parent, Node child){
+        System.out.println(parent +"-------" + child);
         parent.removeChild(child);
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -333,9 +335,5 @@ public class XMLReader {
             StreamResult result = new StreamResult(new File("calendar.xml"));
             transformer.transform(source, result);
         } catch (Exception e) {}
-    }
-    public Node getPermParent(){
-        NodeList permAppointments = doc.getElementsByTagName("permAppointments");
-        return permAppointments.item(0);
     }
 }

@@ -27,6 +27,7 @@ public class AddAppointmentSceneController implements Initializable {
     @FXML private MenuButton mb;
     @FXML private CheckBox learningTime;
     @FXML private CheckBox famEvent;
+    @FXML private CheckBox spareTime;
     String month;
     String monthnumber;
     Logic Logic = new Logic();
@@ -36,6 +37,13 @@ public class AddAppointmentSceneController implements Initializable {
     }
     @FXML
     public void add() throws TransformerException {
+        if((spareTime.isSelected() && famEvent.isSelected())|| (spareTime.isSelected() && learningTime.isSelected()) || (learningTime.isSelected() && famEvent.isSelected()))
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fehler beim Eintragen");
+            alert.setContentText("Es kann immer nur eine Checkbo");
+            alert.showAndWait();
+        }
         String year = jahr.getText();
         String day = tag.getText();
         String driver = begleiter.getText();
