@@ -121,8 +121,6 @@ public final class Logic {
             ArrayList<String> sp = permAppointments.getStart();
             ArrayList<String> ep = permAppointments.getEnd();
             ArrayList<String> wd = permAppointments.getWeekday();
-            System.out.println(sp.size() + " \n " + sp.get(0));
-
             for (int i = 0; i < sp.size(); i++) {
                 String ps = sp.get(i).substring(0, sp.get(i).length() - 3);
                 String pe = ep.get(i).substring(0, ep.get(i).length() - 3);
@@ -152,8 +150,8 @@ public final class Logic {
         }
         return null;
     }
-    public static String deletePermanentAppointment(String start,String end, String weekday){
-
+    public static String deletePermanentAppointment(String start, String weekday){
+        writer.removePermAppointment(reader.getCurrentUser(),start,weekday);
         return null;
     }
     public static String getDayInfo(int add, String dateInput, boolean isDate) throws ParseException {

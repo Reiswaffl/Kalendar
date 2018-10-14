@@ -114,6 +114,31 @@ public class AddTimeTableSceneController implements Initializable {
         }
     }
     @FXML public void delete(ActionEvent event) throws  IOException{
-
+        String input = "null";
+        if(weekday.getText().equals("MONTAG")) {
+            input = "MONDAY"; }
+        else if(weekday.getText().equals("DIENSTAG")) {
+            input ="TUESDAY";
+        }
+        else if(weekday.getText().equals("MITTWOCH")) {
+            input = "WEDNESDAY";
+        }
+        else if(weekday.getText().equals("DONNERSTAG")) {
+            input = "THURSDAY";
+        }
+        else if(weekday.getText().equals("FREITAG")){
+            input = "FRIDAY";
+        }
+        Logic.deletePermanentAppointment("08:00",input);
+        Logic.deletePermanentAppointment("08:45",input);
+        Logic.deletePermanentAppointment("09:45",input);
+        Logic.deletePermanentAppointment("10:30",input);
+        Logic.deletePermanentAppointment("11:35",input);
+        Logic.deletePermanentAppointment("12:20",input);
+        Logic.deletePermanentAppointment("13:05",input);
+        Logic.deletePermanentAppointment("14:00",input);
+        Logic.deletePermanentAppointment("14:45",input);
+        Logic.deletePermanentAppointment("15:30",input);
+        Logic.deletePermanentAppointment("16:15",input);
     }
 }
