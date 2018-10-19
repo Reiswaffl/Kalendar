@@ -40,13 +40,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddAppointmentSceneController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddAppointmentSceneController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="-291">
               <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
               <folding>
                 <element signature="method#initialize#0;class#AddAppointmentSceneController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1362">
+              <caret line="110" column="138" lean-forward="false" selection-start-line="110" selection-start-column="138" selection-end-line="110" selection-end-column="138" />
+              <folding>
+                <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
+                <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
+                <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
+                <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
+                <element signature="method#addLearningTime#0;class#Logic#0" expanded="false" />
+                <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
+                <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
+                <element signature="method#handleDate#0;class#Logic#0" expanded="false" />
+                <element signature="method#DaysInOrder#0;class#Logic#0" expanded="false" />
+                <element signature="method#TransformToString#0;class#Logic#0" expanded="false" />
+                <element signature="method#DayMonth#0;class#Logic#0" expanded="false" />
+                <element signature="method#getID#0;class#Logic#0" expanded="false" />
+                <element signature="method#getDayName#0;class#Logic#0" expanded="false" />
+                <element signature="method#getDate#0;class#Logic#0" expanded="false" />
+                <element signature="method#checkDay#0;class#Logic#0" expanded="false" />
+                <element signature="method#setup#0;class#Logic#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -796,32 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="110" column="138" lean-forward="false" selection-start-line="110" selection-start-column="138" selection-end-line="110" selection-end-column="138" />
-          <folding>
-            <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
-            <element signature="method#AddAppiontment#0;class#Logic#0" expanded="false" />
-            <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
-            <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
-            <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
-            <element signature="method#addLearningTime#0;class#Logic#0" expanded="false" />
-            <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
-            <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
-            <element signature="method#handleDate#0;class#Logic#0" expanded="false" />
-            <element signature="method#DaysInOrder#0;class#Logic#0" expanded="false" />
-            <element signature="method#TransformToString#0;class#Logic#0" expanded="false" />
-            <element signature="method#DayMonth#0;class#Logic#0" expanded="false" />
-            <element signature="method#getID#0;class#Logic#0" expanded="false" />
-            <element signature="method#getDayName#0;class#Logic#0" expanded="false" />
-            <element signature="method#getDate#0;class#Logic#0" expanded="false" />
-            <element signature="method#checkDay#0;class#Logic#0" expanded="false" />
-            <element signature="method#setup#0;class#Logic#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -866,10 +867,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="-291">
           <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
           <folding>
             <element signature="method#initialize#0;class#AddAppointmentSceneController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1362">
+          <caret line="110" column="138" lean-forward="false" selection-start-line="110" selection-start-column="138" selection-end-line="110" selection-end-column="138" />
+          <folding>
+            <element signature="method#getDateTime#0;class#Logic#0" expanded="false" />
+            <element signature="method#AddPermanentAppointment#0;class#Logic#0" expanded="false" />
+            <element signature="method#getDayInfo#0;class#Logic#0" expanded="false" />
+            <element signature="method#getDayTimes#0;class#Logic#0" expanded="false" />
+            <element signature="method#addLearningTime#0;class#Logic#0" expanded="false" />
+            <element signature="method#getNextFreeDay#0;class#Logic#0" expanded="false" />
+            <element signature="method#AddUser#0;class#Logic#0" expanded="false" />
+            <element signature="method#handleDate#0;class#Logic#0" expanded="false" />
+            <element signature="method#DaysInOrder#0;class#Logic#0" expanded="false" />
+            <element signature="method#TransformToString#0;class#Logic#0" expanded="false" />
+            <element signature="method#DayMonth#0;class#Logic#0" expanded="false" />
+            <element signature="method#getID#0;class#Logic#0" expanded="false" />
+            <element signature="method#getDayName#0;class#Logic#0" expanded="false" />
+            <element signature="method#getDate#0;class#Logic#0" expanded="false" />
+            <element signature="method#checkDay#0;class#Logic#0" expanded="false" />
+            <element signature="method#setup#0;class#Logic#0" expanded="false" />
           </folding>
         </state>
       </provider>
