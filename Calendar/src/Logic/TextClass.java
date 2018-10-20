@@ -8,9 +8,10 @@ import java.util.Date;
 
 public class TextClass{
     public static void main(String [ ] args){
-        String day = getDate().substring(0,2);
-        String month = getDate().substring(3,5);
-        System.out.println(day + "----" + month);
+        String input = "08:16";
+        String hour = input.substring(0,2);
+        String minutes = input.substring(3,5);
+        System.out.println(hour + "---" + minutes);
     }
 
     private static String getDate(){

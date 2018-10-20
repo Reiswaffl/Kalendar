@@ -277,6 +277,29 @@ public final class Logic {
     public static String addLearningTime(String dateInput){
         //setup
         double hours = 0;
+        PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
+        //for the 7 days before the class
+        for(int i = -7; i < 0; i++) {
+            int hour = 8;
+            int minutes = 0;
+            ReturnValue appointments = reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(DayMonth(i)));
+            ArrayList<String> appStart = appointments.getStart();
+            ArrayList<String> appEnd = appointments.getEnd();
+            for(int c = 0; c < appStart.size(); c++){
+                int shour = Integer.parseInt(appStart.get(i).toString().substring(0,2));
+                int ehour = Integer.parseInt(appEnd.get(i).toString().substring(0,2));
+                int sminutes = Integer.parseInt(appStart.get(i).toString().substring(3,5));
+                int eminutes = Integer.parseInt(appEnd.get(i).toString().substring(3,5));
+
+                if(hour < shour && (hour +1) > ehour) break;
+                if(hour < shour && hour < ehour) break;
+                if(hour > shour && hour > ehour) break;
+                if(hour == shour && minutes < sminutes) break;
+                if(hour == ehour) break;
+                if((hour+1) == ehour && minutes > eminutes) break;
+
+            }
+        }
         return null;
     }
     public static String getNextFreeDay(String usr){
@@ -476,3 +499,4 @@ public final class Logic {
     }
 
 }
+ 
