@@ -10,10 +10,7 @@ import javax.xml.transform.TransformerException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 import static java.lang.String.*;
 
@@ -274,7 +271,7 @@ public final class Logic {
         }
         return ret;
     }
-    public static String addLearningTime(String dateInput){
+    public static String addLearningTime(String dateInput,String subject ) throws TransformerException {
         //setup
         double hours = 0;
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
@@ -298,6 +295,15 @@ public final class Logic {
                 if(hour == ehour) break;
                 if((hour+1) == ehour && minutes > eminutes) break;
 
+                String starth = Integer.toString(hour);
+                if(starth.length() == 1) starth = "0" + starth;
+                String startm = Integer.toString(minutes);
+                if(startm.length() == 1) startm = "0" + startm;
+
+                String endh = Integer.toString(hour + 1);
+                if(endh.length() == 1) endh = "0" + endh;
+                hours += 1;
+                writer.AddPeriod(reader.getCurrentUser(),DayMonth(i),starth+":"+startm,endh+":"+startm,"Lernen:" + subject);
             }
         }
         return null;
