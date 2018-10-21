@@ -63,6 +63,7 @@ public final class Logic {
         }
         if(driver != null && reader.isRegistered(driver) == false)
         {
+            System.out.println("--"+driver);
             return "Die Begleitperson exestiert leider noch nicht. ";
         }
         String s = start.substring(0,start.length()-3);
@@ -274,39 +275,69 @@ public final class Logic {
     public static String addLearningTime(String dateInput,String subject ) throws TransformerException {
         //setup
         double hours = 0;
-        PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
+       PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
         //for the 7 days before the class
+        int hour = 8;
+        int minutes = 0;
         for(int i = -7; i < 0; i++) {
-            int hour = 8;
-            int minutes = 0;
+
+
             ReturnValue appointments = reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(DayMonth(i)));
             ArrayList<String> appStart = appointments.getStart();
             ArrayList<String> appEnd = appointments.getEnd();
+            ArrayList<String> permEnd = null;
+            ArrayList<String> permStart = null;
+            if(permAppointments != null){
+                permStart = permAppointments.getStart();
+                permEnd = permAppointments.getEnd();
+            }
+            boolean free = true;
             for(int c = 0; c < appStart.size(); c++){
-                int shour = Integer.parseInt(appStart.get(i).toString().substring(0,2));
-                int ehour = Integer.parseInt(appEnd.get(i).toString().substring(0,2));
-                int sminutes = Integer.parseInt(appStart.get(i).toString().substring(3,5));
-                int eminutes = Integer.parseInt(appEnd.get(i).toString().substring(3,5));
+                int shour = Integer.parseInt(appStart.get(c).toString().substring(0,2));
+                int ehour = Integer.parseInt(appEnd.get(c).toString().substring(0,2));
+                int sminutes = Integer.parseInt(appStart.get(c).toString().substring(3,5));
+                int eminutes = Integer.parseInt(appEnd.get(c).toString().substring(3,5));
 
-                if(hour < shour && (hour +1) > ehour) break;
-                if(hour < shour && hour < ehour) break;
-                if(hour > shour && hour > ehour) break;
-                if(hour == shour && minutes < sminutes) break;
-                if(hour == ehour) break;
-                if((hour+1) == ehour && minutes > eminutes) break;
+                if(hour <= shour && (hour +1) > ehour) free = false;
+                if(hour < shour && hour < ehour) free = false;
+                if(hour > shour && hour > ehour) free = false;
+                if((hour+1) == shour && minutes > sminutes) free = false;
+                if(hour == ehour && minutes < eminutes ) free = false;
+                if(hour == shour && minutes == sminutes) free = false;
+            }
+            if(permAppointments != null) {
+                for (int c = 0; c < permStart.size(); i++) {
+                    int shour = Integer.parseInt(permStart.get(c).toString().substring(0, 2));
+                    int ehour = Integer.parseInt(permEnd.get(c).toString().substring(0, 2));
+                    int sminutes = Integer.parseInt(permStart.get(c).toString().substring(3, 5));
+                    int eminutes = Integer.parseInt(permEnd.get(c).toString().substring(3, 5));
 
+                    if (hour <= shour && (hour + 1) > ehour) free = false;
+                    if (hour < shour && hour < ehour) free = false;
+                    if (hour > shour && hour > ehour) free = false;
+                    if ((hour + 1) == shour && minutes > sminutes) free = false;
+                    if (hour == ehour && minutes < eminutes) free = false;
+                    if (hour == shour && minutes == sminutes) free = false;
+                }
+            }
+            if(free) {
                 String starth = Integer.toString(hour);
-                if(starth.length() == 1) starth = "0" + starth;
+                if (starth.length() == 1) starth = "0" + starth;
                 String startm = Integer.toString(minutes);
-                if(startm.length() == 1) startm = "0" + startm;
+                if (startm.length() == 1) startm = "0" + startm;
 
                 String endh = Integer.toString(hour + 1);
-                if(endh.length() == 1) endh = "0" + endh;
+                if (endh.length() == 1) endh = "0" + endh;
+                writer.AddPeriod(reader.getCurrentUser(), DayMonth(i), starth + ":" + startm, endh + ":" + startm, "Lernen:" + subject);
                 hours += 1;
-                writer.AddPeriod(reader.getCurrentUser(),DayMonth(i),starth+":"+startm,endh+":"+startm,"Lernen:" + subject);
+                System.out.println("Eingetragen");
+            }else if(hour <= 19 && minutes <= 30){
+                if(minutes == 0) minutes = 30; i--;
+                if(minutes == 30) minutes = 0; hour++;i--;
+
             }
         }
-        return null;
+        return "Es wurden " + hours + " Stunden Lernzeit engetragen";
     }
     public static String getNextFreeDay(String usr){
         Date date = new Date();

@@ -57,7 +57,13 @@ public class AddAppointmentSceneController implements Initializable {
             day = "0" + day;
         }
         String date = year + monthnumber + day;
-        String s = Logic.AddAppiontment(date,start.getText(),end.getText(),content.getText(), driver, learningTime.isSelected(),famEvent.isSelected());
+        System.out.println(driver.length());
+        String s = null;
+        if(driver.length() == 0){
+             s = Logic.AddAppiontment(date,start.getText(),end.getText(),content.getText(), null, learningTime.isSelected(),famEvent.isSelected());
+        }else {
+             s = Logic.AddAppiontment(date, start.getText(), end.getText(), content.getText(), driver, learningTime.isSelected(), famEvent.isSelected());
+        }
         if(s != null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
@@ -66,10 +72,22 @@ public class AddAppointmentSceneController implements Initializable {
             alert.showAndWait();
         }
 
+        if(s == null && learningTime.isSelected()){
+            String l = Logic.addLearningTime(date,content.getText());
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Fehler beim Eintragen");
+                //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
+                alert.setContentText(l);
+                alert.showAndWait();
+
+        }
+
         jahr.clear();
         month = "--";
         mb.setText("Monat");
         tag.clear();
+        content.clear();
         begleiter.clear();
 
 

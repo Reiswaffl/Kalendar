@@ -2,16 +2,17 @@ package Logic;
 
 import XML.*;
 
+import javax.xml.transform.TransformerException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TextClass{
-    public static void main(String [ ] args){
-        String input = "08:16";
-        String hour = input.substring(0,2);
-        String minutes = input.substring(3,5);
-        System.out.println(hour + "---" + minutes);
+    public static void main(String [ ] args) throws TransformerException {
+    Logic Logic = new Logic();
+    Logic.reader = new Reader();
+    Logic.writer = new Writer();
+    Logic.addLearningTime("181027","Informatik");
     }
 
     private static String getDate(){

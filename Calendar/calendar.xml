@@ -2,8 +2,8 @@
     <users>
         <User id="Eric"/>
         <User id="Tom"/>
-        <User id="Arthur"/></users>
-    <currentUser id="Tom"/>
+        <User id="Arthur"/><User id=""/><User id=""/></users>
+    <currentUser id=""/>
 
     <permAppointments>
         <User id="Eric">
@@ -28,25 +28,7 @@
 </user>
     <user id="Tom">
         <years id="18">
-            <month id="07" maxdays="07">
-                <day blocked="false" date="180716">
-                    <period end="18:30" start="17:40">Fußball</period>
-                </day>
-                <day blocked="false" date="180717">
-                    <period end="18:30" start="17:40">Fußball</period>
-                </day>
-                <day blocked="false" date="180719">
-                    <period end="19:30" start="17:30">Tennis</period>
-                </day>
-                <day blocked="false" date="180720">
-                    <period end="18.00" start="17:30">Friseur</period>
-                    <period end="19:45" start="19.00">Physik-lernen</period>
-                </day>
-                <day blocked="false" date="180722">
-                    <period end="18.00" start="17:30">Zimmer aufräumen</period>
-                    <period end="19:45" start="19.00">Filmabend</period>
-                </day>
-            </month>
-            <month id="08" maxdays="31"><day blocked="false" date="180818" name="--"><period end="20:00" start="19:30">Nein</period></day></month><month id="10" maxdays="31"><day blocked="false" date="181014" name="--"><period end="13:50" start="13:40">10 Minuten </period></day></month></years>
-    </user>
-    <user id="Arthur"><years id="18"><month id="07" maxdays="31"><day blocked="false" date="180702" name="--"><period end="12:30" start="11:30">Englisch</period></day></month><month id="10" maxdays="31"><day blocked="false" date="181014" name="--"><period end="13:50" start="13:40">10 Minuten </period></day></month></years></user></calendar>
+
+            <month id="08" maxdays="31"><day blocked="false" date="180818" name="--"><period end="20:00" start="19:30">Nein</period></day></month><month id="10" maxdays="31"/><month id="11" maxdays="30"><day blocked="false" date="181115" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181116" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181117" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181118" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181119" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181120" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181121" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day></month></years>
+    <years id="19"><month id="08" maxdays="31"><day blocked="false" date="190819" name="--"><period end="14:30" start="13:30">Informatik </period></day></month></years></user>
+    <user id="Arthur"><years id="18"><month id="07" maxdays="31"><day blocked="false" date="180702" name="--"><period end="12:30" start="11:30">Englisch</period></day></month><month id="10" maxdays="31"><day blocked="false" date="181014" name="--"><period end="13:50" start="13:40">10 Minuten </period></day></month></years></user><user id=""><years id="19"><month id="08" maxdays="31"><day blocked="false" date="190819" name="--"><period end="14:30" start="13:30">Informatik </period></day></month><month id="03" maxdays="31"><day blocked="false" date="190319" name="--"><period end="14:30" start="13:30">Informatik</period></day></month></years><years id="18"><month id="10" maxdays="31"><day blocked="false" date="181014" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181015" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181016" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181017" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181018" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181019" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day><day blocked="false" date="181020" name="--"><period end="09:00" start="08:00">Lernen:Informatik</period></day></month></years></user><user id=""><years id="19"><month id="03" maxdays="31"><day blocked="false" date="190319" name="--"><period end="14:30" start="13:30">Informatik</period></day></month></years></user></calendar>
