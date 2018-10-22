@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="GUI.DeleteAppointmentScene"
+            prefHeight="400.0" prefWidth="400.0">
+    <children>
+        <VBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                <children>
+                    <Label fx:id="datetime" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Termin löschen!!">
+                        <font>
+                            <Font size="36.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <Line endX="700.0" startX="-20.0"  />
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                <children>
+                    <Label fx:id="normal" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Normale Termine">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <HBox spacing="40.0" alignment="CENTER">
+                <children>
+                    <Label text="Datum:">
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="dayinput" promptText="dd.MM.yyyy oder dd.MM.yy"/>
+                </children>
+                <children>
+                    <Label text="Datum:">
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="start" promptText="SS:mm oder SS.mm"/>
+                </children>
+            </HBox>
+            <Line endX="700.0" startX="-20.0"  />
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                <children>
+                    <Label fx:id="perm" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Permanetne Termine">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" spacing="40.0">
+                <children>
+                     <Label text="Bezeichner:">
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="input" promptText="Wochentag/Tag/Datum"/>
+                    <Label text="Wiederholung:" >
+                    <font>
+                        <Font size="18"/>
+                    </font>
+                </Label>
+                    <MenuButton fx:id="repetition" mnemonicParsing="false" text="Monat">
+                        <items>
+                            <MenuItem id="weekly" fx:id="weekly" mnemonicParsing="false" onAction="#handleWeekly" text="wöchentlich" />
+                            <MenuItem id="daily" fx:id="daily" mnemonicParsing="false" onAction="#handleDaily" text="täglich" />
+                            <MenuItem id="monthly" fx:id="monthly" mnemonicParsing="false" onAction="#handleMonthly" text="monatlich" />
+                            <MenuItem id="monthly" fx:id="yearly" mnemonicParsing="false" onAction="#handleYearly" text="jährlih" />
+                        </items>
+                    </MenuButton>
+                    <Label text="Wochentag:" >
+                    <font>
+                        <Font size="18"/>
+                    </font>
+                </Label>
+                    <MenuButton fx:id="weekday" mnemonicParsing="false" text="Monat">
+                        <items>
+                            <MenuItem id="monday" fx:id="monday" mnemonicParsing="false" onAction="#handleMonday" text="Montag" />
+                            <MenuItem id="tuesday" fx:id="tuesday" mnemonicParsing="false" onAction="#handleTuesday" text="Dienstag" />
+                            <MenuItem id="wednesday" fx:id="wednesday" mnemonicParsing="false" onAction="#handleWednesday" text="Mittwoch" />
+                            <MenuItem id="thursday" fx:id="thursday" mnemonicParsing="false" onAction="#handleThursday" text="Donnerstag" />
+                            <MenuItem id="friday" fx:id="friday" mnemonicParsing="false" onAction="#handleFriday" text="Freitag" />
+                            <MenuItem id="saturday" fx:id="saturday" mnemonicParsing="false" onAction="#handleSaturday" text="Samstag" />
+                            <MenuItem id="sunday" fx:id="sunday" mnemonicParsing="false" onAction="#handleSunday" text="Sonntag" />
+                        </items>
+                    </MenuButton>
+                </children>
+            </HBox>
+            <HBox spacing="40.0" alignment="CENTER">
+                <children>
+                    <Button  mnemonicParsing="false" onAction="#back" text="Zurück" />
+                    <Button  mnemonicParsing="false" onAction="#confirm" text="Bestätigen" />
+                </children>
+            </HBox>
+        </VBox>
+    </children>
+
+</AnchorPane>

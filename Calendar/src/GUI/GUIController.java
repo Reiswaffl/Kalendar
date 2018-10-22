@@ -82,6 +82,7 @@ public class GUIController{
         day3.setText(daynames[3]);
         day4.setText(daynames[4]);
         day5.setText(daynames[5]);
+        day6.setText(daynames[6]);
         currentUser.setText(Logic.getCurrentUser());
         Logic.setup();
     }
@@ -105,12 +106,13 @@ public class GUIController{
         window.show();
     }
     @FXML
-    public void getNextFreeDay(javafx.event.ActionEvent event ){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Nächster freier Tag");
-        alert.setHeaderText(null);
-        alert.setContentText("Funktioniert noch nicht ");
-        alert.showAndWait();
+    public void deleteAppointment(javafx.event.ActionEvent event ) throws IOException {
+        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("DeleteAppointmentScene.fxml"));
+        Scene appointmentRequestScene = new Scene(appointmentRequest);
+        Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
+        window.setTitle("Termin löschen");
+        window.setScene(appointmentRequestScene);
+        window.show();
     }
     @FXML
     public void AddPermAppointment(javafx.event.ActionEvent event) throws IOException{

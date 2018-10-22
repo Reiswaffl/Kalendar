@@ -60,7 +60,7 @@ public class Writer {
         xmlReader.Update();
     }
 
-    public void AddPeriod(String user, String date, String start,String end, String content) throws TransformerException {
+    public void AddPeriod(String user, String date, String start,String end, String content, String isfamEvent) throws TransformerException {
         Node usr = xmlReader.getUser(user);
 
         NodeList years = null;
@@ -98,22 +98,22 @@ public class Writer {
                         day = xmlReader.getDayById(date,days);
                     }
                     if(day != null){
-                        xmlReader.CreatePeriod(day,start,end,content);
+                        xmlReader.CreatePeriod(day,start,end,content,isfamEvent);
                     }else{
                         day = xmlReader.CreateDay(nmonth,date,"--","false");
-                        xmlReader.CreatePeriod(day,start,end,content);
+                        xmlReader.CreatePeriod(day,start,end,content,isfamEvent);
                     }
 
                 }else{
                     nmonth = xmlReader.CreateMonth(year,Integer.toString(month),Integer.toString(daysInMonth[month-1]));
                     Node nday = xmlReader.CreateDay(nmonth,date,"--","false");
-                    xmlReader.CreatePeriod(nday,start,end,content);
+                    xmlReader.CreatePeriod(nday,start,end,content,isfamEvent);
                 }
             }else{
                 Node nyear = xmlReader.CreateYear(usr,Integer.toString(iyear));
                 Node nmonth = xmlReader.CreateMonth(nyear,Integer.toString(month),Integer.toString(daysInMonth[month-1]));
                 Node nday = xmlReader.CreateDay(nmonth,date,"--","false");
-                xmlReader.CreatePeriod(nday,start,end,content);
+                xmlReader.CreatePeriod(nday,start,end,content,isfamEvent);
 
             }
         }else{
@@ -121,7 +121,7 @@ public class Writer {
             Node nyear = xmlReader.CreateYear(usr,Integer.toString(iyear));
             Node nmonth = xmlReader.CreateMonth(nyear,Integer.toString(month),Integer.toString(daysInMonth[month-1]));
             Node nday = xmlReader.CreateDay(nmonth,date,"--","false");
-            xmlReader.CreatePeriod(nday,start,end,content);
+            xmlReader.CreatePeriod(nday,start,end,content,isfamEvent);
         }
         xmlReader.Update();
     }
@@ -129,17 +129,22 @@ public class Writer {
         xmlReader.CreatePermanentAppointment(xmlReader.getPermUser(user),start, end,content,repetition,weekday);
 
     }
-    public void removeNode(String user,String date,String start){
+    public boolean removeNode(String user,String date,String start){
         Node nuser = xmlReader.getUser(user);
         String year = date.substring(0,2);
         String month = date.substring(2, 4);
         String day = date.substring(4, 6);
+        Node nyear = null;
+        if(nuser != null) nyear = xmlReader.getYearById(year,nuser.getChildNodes());
+        Node nmonth = null;
+        if(nyear != null) nmonth = xmlReader.getMonthById(month,nyear.getChildNodes());
+        Node nday = null;
+        if(nmonth != null) nday = xmlReader.getDayById(date,nmonth.getChildNodes());
+        Node period = null;
+        if(nday != null) period = xmlReader.getPeriodById(start,nday.getChildNodes());
+        if(period != null){ xmlReader.remove(nday,period); return true;}
 
-        Node nyear = xmlReader.getYearById(year,nuser.getChildNodes());
-        Node nmonth = xmlReader.getMonthById(month,nyear.getChildNodes());
-        Node nday = xmlReader.getDayById(date,nmonth.getChildNodes());
-        Node period = xmlReader.getPeriodById(start,nday.getChildNodes());
-        xmlReader.remove(nday,period);
+        return false;
     }
     public void removePermAppointment(String user, String start, String weekday){
        NodeList permAppointments = xmlReader.getPermAppointments(user);

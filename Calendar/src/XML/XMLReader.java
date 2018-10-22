@@ -278,10 +278,11 @@ public class XMLReader {
         } catch (Exception e) {}
         return day;
     }
-    public Element CreatePeriod(Node parent, String start, String end, String content){
+    public Element CreatePeriod(Node parent, String start, String end, String content,String isfamEvent){
         Element period = doc.createElement("period");
         period.setAttribute("start",start);
         period.setAttribute("end", end);
+        period.setAttribute("isfamEvent",isfamEvent);
         period.setTextContent(content);
         parent.appendChild(period);
         try {

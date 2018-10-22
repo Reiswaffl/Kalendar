@@ -54,10 +54,9 @@ public final class Logic {
                         }
                     }else{
                         // Appointment in the time
-
                     }
                 }
-                writer.AddPeriod(users.get(i),date,start,end,content);
+                writer.AddPeriod(users.get(i),date,start,end,content,"true");
                 return null;
             }
         }
@@ -95,8 +94,8 @@ public final class Logic {
             }
         }
 
-        writer.AddPeriod(reader.getCurrentUser(), date, start,end,content);
-        writer.AddPeriod(driver,date,start,end,content);
+        writer.AddPeriod(reader.getCurrentUser(), date, start,end,content,"false");
+        writer.AddPeriod(driver,date,start,end,content,"false");
 
         if(learningTime){
             for(int i = -5; i < 0; i++){
@@ -150,6 +149,10 @@ public final class Logic {
     }
     public static String deletePermanentAppointment(String start, String weekday){
         writer.removePermAppointment(reader.getCurrentUser(),start,weekday);
+        return null;
+    }
+    public static String deleteNode(String start,String date){
+
         return null;
     }
     public static String getDayInfo(int add, String dateInput, boolean isDate) throws ParseException {
@@ -328,7 +331,7 @@ public final class Logic {
 
                 String endh = Integer.toString(hour + 1);
                 if (endh.length() == 1) endh = "0" + endh;
-                writer.AddPeriod(reader.getCurrentUser(), DayMonth(i), starth + ":" + startm, endh + ":" + startm, "Lernen:" + subject);
+                writer.AddPeriod(reader.getCurrentUser(), DayMonth(i), starth + ":" + startm, endh + ":" + startm, "Lernen:" + subject,"false");
                 hours += 1;
                 System.out.println("Eingetragen");
             }else if(hour <= 19 && minutes <= 30){

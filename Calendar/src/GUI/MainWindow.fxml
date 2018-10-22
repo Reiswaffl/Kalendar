@@ -145,7 +145,7 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="getNextFreeDay" mnemonicParsing="false" onAction="#getNextFreeDay" text="Nächster freier Tag">
+                  <Button fx:id="getNextFreeDay" mnemonicParsing="false" onAction="#deleteAppointment" text="Termin löschen">
                      <font>
                         <Font size="18"/>
                      </font>
