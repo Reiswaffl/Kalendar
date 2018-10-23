@@ -8,12 +8,12 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="GUI.DeleteAppointmentScene"
-            prefHeight="400.0" prefWidth="400.0">
+            prefHeight="400.0" prefWidth="1000.0">
     <children>
         <VBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
             <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
                 <children>
-                    <Label fx:id="datetime" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Termin löschen!!">
+                    <Label fx:id="datetime" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Termin löschen">
                         <font>
                             <Font size="36.0" />
                         </font>
@@ -39,13 +39,25 @@
                     </Label>
                     <TextField fx:id="dayinput" promptText="dd.MM.yyyy oder dd.MM.yy"/>
                 </children>
+            </HBox>
+            <Line endX="700.0" startX="-20.0"  />
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
                 <children>
-                    <Label text="Datum:">
+                    <Label fx:id="required" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Immer angeben">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <HBox spacing="40.0" alignment="CENTER">
+                <children>
+                    <Label text="Start:">
                         <font>
                             <Font size="18"/>
                         </font>
                     </Label>
-                    <TextField fx:id="start" promptText="SS:mm oder SS.mm"/>
+                    <TextField fx:id="start" promptText="SS:mm"/>
                 </children>
             </HBox>
             <Line endX="700.0" startX="-20.0"  />

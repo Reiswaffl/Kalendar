@@ -152,8 +152,9 @@ public final class Logic {
         return null;
     }
     public static String deleteNode(String start,String date){
-
-        return null;
+        boolean done = writer.removeNode(reader.getCurrentUser(),date,start);
+        if(done) return null;
+        return "Leider ist ein Fehler beim Löschen aufgetreten. Der Termin is nicht vorhande";
     }
     public static String getDayInfo(int add, String dateInput, boolean isDate) throws ParseException {
         String date;
@@ -341,6 +342,17 @@ public final class Logic {
             }
         }
         return "Es wurden " + hours + " Stunden Lernzeit engetragen";
+    }
+    public static String removeAppointment(String date,String input , String start,String repetition, String weekday){
+        if(date != null && input != null) return "Fehlerhafte Eingabe";
+        if((date == null && input == null)|| start == null) return "Fehlerhaft Eingabe";
+        if(date != null){
+            return deleteNode(date,start);
+
+        }else if (input != null){
+            return deletePermanentAppointment(start, weekday);
+        }
+        return "Nicht vollständige Eingabe";
     }
     public static String getNextFreeDay(String usr){
         Date date = new Date();

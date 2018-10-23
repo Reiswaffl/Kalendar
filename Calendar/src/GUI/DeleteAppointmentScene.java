@@ -1,6 +1,8 @@
 package GUI;
 
+import Logic.Logic;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
@@ -96,6 +98,36 @@ public class DeleteAppointmentScene implements Initializable{
     @FXML
     public void confirm(ActionEvent event) throws IOException{
         //do some cool stuff
+       String sdate = dayinput.getText().replace(" ","");
+       String sinput = input.getText().replaceAll(" ","");
+       if(sdate.length() == 0) sdate = null;
+       if(sinput.length() == 0) sinput = null;
+       String rp = null;
+        switch (rep){
+            case DAILY:
+                rp = "DAILY";
+                break;
+            case WEEKLY:
+                rp = "WEEKLY";
+                break;
+            case MONTHLY:
+                rp = "MONTHLY";
+                break;
+            case YEARLY:
+                rp = "YEARLY";
+                break;
+
+
+        }
+        String ret = Logic.removeAppointment(sdate,sinput,start.getText(),rp,week());
+        if(ret != null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fehler beim Eintragen");
+
+            //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
+            alert.setContentText(ret);
+            alert.showAndWait();
+        }
     }
 
     private String week(){
@@ -122,6 +154,7 @@ public class DeleteAppointmentScene implements Initializable{
             case SUNDAY:
                 wk = "SUNDAY";
                 break;
+
         }
         return wk;
     }
