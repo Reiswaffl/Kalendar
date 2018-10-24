@@ -6,6 +6,7 @@ import ReturnValues.ReturnValue;
 import XML.Reader;
 import XML.Writer;
 
+
 import javax.xml.transform.TransformerException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -147,8 +148,8 @@ public final class Logic {
         }
         return null;
     }
-    public static String deletePermanentAppointment(String start, String weekday){
-        writer.removePermAppointment(reader.getCurrentUser(),start,weekday);
+    public static String deletePermanentAppointment(String start, String weekday,String repetition){
+        writer.removePermAppointment(reader.getCurrentUser(),start,weekday, repetition);
         return null;
     }
     public static String deleteNode(String start,String date){
@@ -357,7 +358,7 @@ public final class Logic {
             return deleteNode(date,start);
 
         }else if (input != null){
-            return deletePermanentAppointment(start, weekday);
+            return deletePermanentAppointment(start, weekday,repetition);
         }
         return "Nicht vollständige Eingabe";
     }

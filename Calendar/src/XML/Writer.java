@@ -45,7 +45,6 @@ public class Writer {
         for(int i = 0; i < userList.getLength(); i++){
             Node user = userList.item(i);
             if(user.getNodeType() == Node.ELEMENT_NODE){
-                System.out.println("HI");
                 Element euser = (Element) user;
                 if(name.equals(euser.getAttribute("id"))){
                     return "Name bereits vorhanden!";
@@ -147,14 +146,14 @@ public class Writer {
 
         return false;
     }
-    public void removePermAppointment(String user, String start, String weekday){
+    public void removePermAppointment(String user, String start, String weekday, String repetition){
        NodeList permAppointments = xmlReader.getPermAppointments(user);
         Node parent = xmlReader.getPermUser(user);
        for(int i = 0; i < permAppointments.getLength();i++){
            Node nPermAppointment = permAppointments.item(i);
            if(nPermAppointment.getNodeType() == Node.ELEMENT_NODE){
                Element ePermAppointment = (Element) nPermAppointment;
-               if(ePermAppointment.getAttribute("start").equals(start) && ePermAppointment.getAttribute("weekday").equals(weekday)){
+               if(ePermAppointment.getAttribute("start").equals(start) && ePermAppointment.getAttribute("weekday").equals(weekday) && ePermAppointment.getAttribute("repetition").equals(repetition)){
                    xmlReader.remove(parent,nPermAppointment);
                }
            }

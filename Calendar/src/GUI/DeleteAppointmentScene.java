@@ -23,10 +23,8 @@ public class DeleteAppointmentScene implements Initializable{
     @FXML private TextField start;
     @FXML private  TextField input;
     @FXML private MenuButton repetition;
-    @FXML private MenuButton weekday;
 
     Repetition rep;
-    Weekday weekd;
     @FXML
     public void handleWeekly(){
         repetition.setText("wöchentlich");
@@ -47,45 +45,11 @@ public class DeleteAppointmentScene implements Initializable{
         repetition.setText("jährlich");
         rep = Repetition.YEARLY;
     }
-    @FXML
-    public void handleMonday(){
-        weekday.setText("Montag");
-        weekd = Weekday.MONDAY;
-    }
-    @FXML
-    public void handleTuesday(){
-        weekday.setText("Dienstag");
-        weekd = Weekday.TUESDAY;
-    }
-    @FXML
-    public void handleWednesday(){
-        weekday.setText("Mittwoch");
-        weekd = Weekday.WEDNESDAY;
-    }
-    @FXML
-    public void handleThursday(){
-        weekday.setText("Donnerstag");
-        weekd = Weekday.THURSDAY;
-    }
-    @FXML
-    public void handleFriday(){
-        weekday.setText("Freitag");
-        weekd = Weekday.FRIDAY;
-    }
-    @FXML
-    public void handleSaturday(){
-        weekday.setText("Samstag");
-        weekd = Weekday.SATURDAY;
-    }
-    @FXML
-    public void handleSunday(){
-        weekday.setText("Sonntag");
-        weekd = Weekday.SUNDAY;
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        repetition.setText("wöchentlich");
+        rep = Repetition.WEEKLY;
     }
     @FXML
     public void back(ActionEvent event) throws IOException {
@@ -119,43 +83,33 @@ public class DeleteAppointmentScene implements Initializable{
 
 
         }
-        String ret = Logic.removeAppointment(sdate,sinput,start.getText(),rp,week());
-        if(ret != null){
+        if(week().equals("Fehler, Tag nicht Vorhanden")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
 
             //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
-            alert.setContentText(ret);
+            alert.setContentText(week());
             alert.showAndWait();
+        }else{
+            String ret = Logic.removeAppointment(sdate,sinput,start.getText(),rp,week());
+            if(ret != null){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Fehler beim Eintragen");
+                //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
+                alert.setContentText(ret);
+                alert.showAndWait();
+            }
         }
     }
 
     private String week(){
-        String wk = "null";
-        switch (weekd){
-            case MONDAY:
-                wk = "MONDAY";
-                break;
-            case TUESDAY:
-                wk = "TUESDAY";
-                break;
-            case WEDNESDAY:
-                wk = "WEDNESDAY";
-                break;
-            case THURSDAY:
-                wk ="THURSDAY";
-                break;
-            case FRIDAY:
-                wk = "FRIDAY";
-                break;
-            case SATURDAY:
-                wk = "SATURDAY";
-                break;
-            case SUNDAY:
-                wk = "SUNDAY";
-                break;
-
-        }
-        return wk;
+        if(input.getText().equals("Montag")) return "MONDAY";
+        if(input.getText().equals("Dienstag")) return "TUESDAY";
+        if(input.getText().equals("Mittwoch")) return "WEDNESDAY";
+        if(input.getText().equals("Donnerstag")) return "THUERSDAY";
+        if(input.getText().equals("Freitag")) return "FRIDAY";
+        if(input.getText().equals("Samstag")) return "SATURDAY";
+        if(input.getText().equals("Sonntag")) return "SUNDAY";
+        return "Fehler, Tag nicht Vorhanden";
     }
 }

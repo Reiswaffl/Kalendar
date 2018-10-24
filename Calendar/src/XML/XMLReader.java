@@ -221,8 +221,14 @@ public class XMLReader {
 
         NodeList currents = doc.getElementsByTagName("currentUser");
         Node currentUser = currents.item(0);
-
         setAttribute((Element) currentUser,"id",id);
+
+        Element permUser = doc.createElement("User");
+        permUser.setAttribute("id",id);
+        NodeList permAppointments = doc.getElementsByTagName("permAppointments");
+        Node permAppointmentssave =  permAppointments.item(0);
+        permAppointmentssave.appendChild(permUser);
+
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();

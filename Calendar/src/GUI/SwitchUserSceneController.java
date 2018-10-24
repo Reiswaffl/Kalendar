@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -43,6 +44,11 @@ public class SwitchUserSceneController{
         String exception = Logic.AddUser(select.getText());
         if(exception.equals("Name bereits vorhanden!")){
             //Fehler
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fehler beim Eintragen");
+            //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
+            alert.setContentText("Name bereits vorhanden!");
+            alert.showAndWait();
         }else{
             selectedUser.setText(select.getText());
         }

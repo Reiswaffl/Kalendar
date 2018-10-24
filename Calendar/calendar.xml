@@ -2,17 +2,18 @@
     <users>
         <User id="Eric"/>
         <User id="Tom"/>
-        <User id="Arthur"/><User id=""/><User id=""/></users>
-    <currentUser id="Eric"/>
+        <User id="Arthur"/><User id="Ben"/><User id="Björn"/></users>
+    <currentUser id=""/>
 
     <permAppointments>
         <User id="Eric">
+            
         </User>
         <User id="Tom">
         </User>
         <User id="Arthur">
         </User>
-    </permAppointments>
+    <User id="Björn"/></permAppointments>
 
 <user id="Eric">
     <years id="18">
@@ -32,4 +33,4 @@
     </years>
 </user>
 <user id="Tom"/>
-</calendar>
+<user id="Ben"/><user id="Harald"/><user id="Björn"/></calendar>

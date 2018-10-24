@@ -83,28 +83,12 @@
                         <Font size="18"/>
                     </font>
                 </Label>
-                    <MenuButton fx:id="repetition" mnemonicParsing="false" text="Monat">
+                    <MenuButton fx:id="repetition" mnemonicParsing="false" text="Wiederholung">
                         <items>
                             <MenuItem id="weekly" fx:id="weekly" mnemonicParsing="false" onAction="#handleWeekly" text="wöchentlich" />
                             <MenuItem id="daily" fx:id="daily" mnemonicParsing="false" onAction="#handleDaily" text="täglich" />
                             <MenuItem id="monthly" fx:id="monthly" mnemonicParsing="false" onAction="#handleMonthly" text="monatlich" />
                             <MenuItem id="monthly" fx:id="yearly" mnemonicParsing="false" onAction="#handleYearly" text="jährlih" />
-                        </items>
-                    </MenuButton>
-                    <Label text="Wochentag:" >
-                    <font>
-                        <Font size="18"/>
-                    </font>
-                </Label>
-                    <MenuButton fx:id="weekday" mnemonicParsing="false" text="Monat">
-                        <items>
-                            <MenuItem id="monday" fx:id="monday" mnemonicParsing="false" onAction="#handleMonday" text="Montag" />
-                            <MenuItem id="tuesday" fx:id="tuesday" mnemonicParsing="false" onAction="#handleTuesday" text="Dienstag" />
-                            <MenuItem id="wednesday" fx:id="wednesday" mnemonicParsing="false" onAction="#handleWednesday" text="Mittwoch" />
-                            <MenuItem id="thursday" fx:id="thursday" mnemonicParsing="false" onAction="#handleThursday" text="Donnerstag" />
-                            <MenuItem id="friday" fx:id="friday" mnemonicParsing="false" onAction="#handleFriday" text="Freitag" />
-                            <MenuItem id="saturday" fx:id="saturday" mnemonicParsing="false" onAction="#handleSaturday" text="Samstag" />
-                            <MenuItem id="sunday" fx:id="sunday" mnemonicParsing="false" onAction="#handleSunday" text="Sonntag" />
                         </items>
                     </MenuButton>
                 </children>
