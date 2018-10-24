@@ -130,7 +130,7 @@ public class Writer {
 
     }
     public boolean removeNode(String user,String start,String date){
-        System.out.println(date +"-"+start);
+        System.out.println(date +"+"+start);
         Node nuser = xmlReader.getUser(user);
         String year = date.substring(0,2);
         String month = date.substring(2, 4);

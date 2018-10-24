@@ -347,6 +347,13 @@ public final class Logic {
         if(date != null && input != null) return "Fehlerhafte Eingabe";
         if((date == null && input == null)|| start == null) return "Fehlerhaft Eingabe";
         if(date != null){
+            System.out.println(date);
+            date = date.replace(".","");
+            String day = date.substring(0,2);
+            String month = date.substring(2, 4);
+            String year = date.substring(4, 6);
+            date = year + month + day;
+            System.out.println(date + "+" + start);
             return deleteNode(date,start);
 
         }else if (input != null){
