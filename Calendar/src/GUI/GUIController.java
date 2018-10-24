@@ -141,5 +141,14 @@ public class GUIController{
         window.setScene(appointmentRequestScene);
         window.show();
     }
+
+    public void FreeTime(ActionEvent event) throws IOException {
+        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("FreeTime.fxml"));
+        Scene appointmentRequestScene = new Scene(appointmentRequest);
+        Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
+        window.setTitle("Freizeit definieren");
+        window.setScene(appointmentRequestScene);
+        window.show();
+    }
 }
 

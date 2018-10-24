@@ -362,6 +362,21 @@ public final class Logic {
         }
         return "Nicht vollständige Eingabe";
     }
+    public static String addFreeTime(String date, String input, String start, String end, String repetition, String weekday) throws TransformerException {
+        if(date != null && input != null) return "Es ist nicht möglich einen permanenten und normalen Termin gleichzeitig einzutragen";
+        if(date == null && input == null) return "Fehlerhafte Eingabe";
+        if(date != null){
+            date = date.replace(".","");
+            String day = date.substring(0,2);
+            String month = date.substring(2, 4);
+            String year = date.substring(4, 6);
+            date = year + month + day;
+            return AddAppiontment(date,start,end,"Freizeit",null,false,false);
+        }else if(input != null){
+            AddPermanentAppointment(start,end,"Freizeit",repetition,input,null);
+        }
+        return "Fehler bei der Eingabe";
+    }
     public static String getNextFreeDay(String usr){
         Date date = new Date();
         int month = Integer.parseInt(new SimpleDateFormat("MM").format(date));

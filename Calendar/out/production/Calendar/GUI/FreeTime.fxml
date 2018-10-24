@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.shape.Line?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="GUI.FreeTime"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <VBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                <children>
+                    <Label fx:id="datetime" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Freizeit Eintragen">
+                        <font>
+                            <Font size="36.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <Line endX="700.0" startX="-20.0"  />
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                <children>
+                    <Label fx:id="normal" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Normale Termine">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <HBox spacing="40.0" alignment="CENTER">
+                <children>
+                    <Label text="Datum:">
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="dayinput" promptText="dd.MM.yyyy oder dd.MM.yy"/>
+                </children>
+            </HBox>
+            <Line endX="700.0" startX="-20.0"  />
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                <children>
+                    <Label fx:id="required" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Immer angeben">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <HBox spacing="40.0" alignment="CENTER">
+                <children>
+                    <Label text="Start:">
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="start" promptText="SS:mm"/>
+                    <Label text="Ende:">
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="end" promptText="SS:mm"/>
+                </children>
+            </HBox>
+            <Line endX="700.0" startX="-20.0"  />
+            <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                <children>
+                    <Label fx:id="perm" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Permanetne Termine">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" spacing="40.0">
+                <children>
+                    <Label text="Bezeichner:">
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="input" promptText="Wochentag/Tag/Datum"/>
+                    <Label text="Wiederholung:" >
+                        <font>
+                            <Font size="18"/>
+                        </font>
+                    </Label>
+                    <MenuButton fx:id="repetition" mnemonicParsing="false" text="Wiederholung">
+                        <items>
+                            <MenuItem id="weekly" fx:id="weekly" mnemonicParsing="false" onAction="#handleWeekly" text="wöchentlich" />
+                            <MenuItem id="daily" fx:id="daily" mnemonicParsing="false" onAction="#handleDaily" text="täglich" />
+                            <MenuItem id="monthly" fx:id="monthly" mnemonicParsing="false" onAction="#handleMonthly" text="monatlich" />
+                            <MenuItem id="monthly" fx:id="yearly" mnemonicParsing="false" onAction="#handleYearly" text="jährlih" />
+                        </items>
+                    </MenuButton>
+                </children>
+            </HBox>
+            <HBox spacing="40.0" alignment="CENTER">
+                <children>
+                    <Button  mnemonicParsing="false" onAction="#back" text="Zurück" />
+                    <Button  mnemonicParsing="false" onAction="#confirm" text="Bestätigen" />
+                </children>
+            </HBox>
+        </VBox>
+    </children>
+
+</AnchorPane>
