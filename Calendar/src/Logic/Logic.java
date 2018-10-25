@@ -333,7 +333,7 @@ public final class Logic {
 
                 String endh = Integer.toString(hour + 1);
                 if (endh.length() == 1) endh = "0" + endh;
-                writer.AddPeriod(reader.getCurrentUser(), DayMonth(i), starth + ":" + startm, endh + ":" + startm, "Lernen:" + subject,"false");
+                writer.AddPeriod(reader.getCurrentUser(), DayMonth(i,dateInput), starth + ":" + startm, endh + ":" + startm, "Lernen:" + subject,"false");
                 hours += 1;
                 System.out.println("Eingetragen");
             }else if(hour <= 19 && minutes <= 30){
@@ -450,6 +450,39 @@ public final class Logic {
     }
     private static String DayMonth(int add) {
         String date = TransformToString();
+        int totaldate = Integer.parseInt(date);
+        int month = totaldate % 10000;
+        month /= 100;
+        int day = totaldate % 100;
+
+        if (daysInMonth[month - 1] < day + add) {
+            // day is in next month
+            month += 1;
+            day += add;
+            day -= daysInMonth[month - 1];
+            day += 1;
+        } else if (day + add < 1){
+            // day os in lst month
+            month -= 1;
+            day = daysInMonth[month-1] + (day - add);
+        }else{
+            day = day +add;
+        }
+        String smonth = Integer.toString(month);
+        String sday = Integer.toString(day);
+        if(smonth.length() == 1){
+            smonth = "0" + smonth;
+        }
+        if(sday.length() == 1){
+            sday = "0" +sday;
+        }
+
+        int year = totaldate / 10000;
+        String syear = Integer.toString(year);
+        date = syear + smonth + sday;
+        return date;
+    }
+    private static String DayMonth(int add,String date) {
         int totaldate = Integer.parseInt(date);
         int month = totaldate % 10000;
         month /= 100;

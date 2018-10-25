@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="500.0" maxWidth="100.0" prefHeight="500.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddAppointmentSceneController">
+<AnchorPane maxHeight="500.0" maxWidth="100.0" prefHeight="500.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddAppointmentSceneController" fx:id="anchor" >
    <children>
       <VBox layoutY="50.0" spacing="50.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
          <children>
@@ -89,12 +89,6 @@
                  <children>
                      <Label alignment="CENTER" text="Familienevent (überschreibt vorhandene Termine)"/>
                      <CheckBox fx:id="famEvent"></CheckBox>
-                 </children>
-             </HBox>
-             <HBox alignment="CENTER" spacing="10.0">
-                 <children>
-                     <Label alignment="CENTER" text="Freizeit?"/>
-                     <CheckBox fx:id="spareTime"></CheckBox>
                  </children>
              </HBox>
             <HBox alignment="CENTER">

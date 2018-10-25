@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GUIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GUIController" fx:id="anchor">
    <children>
       <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -22,7 +22,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#SwitchUser" prefHeight="4.0" prefWidth="175.0" text="Nutzer wechseln">
+                  <Button mnemonicParsing="false" onAction="#SwitchUser" prefHeight="4.0" prefWidth="175.0" text="Nutzer wechseln" fx:id="SwitchUser">
                      <font>
                         <Font size="18.0" />
                      </font></Button>
@@ -135,12 +135,12 @@
             </HBox>
             <HBox alignment="CENTER" spacing="20.0">
                <children>
-                  <Button fx:id="addAppiontment" mnemonicParsing="false" onAction="#AddAppointment" text="Termin hinzufügen">
+                  <Button fx:id="addAppointment" mnemonicParsing="false" onAction="#AddAppointment" text="Termin hinzufügen">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="addPermanentAppoitment" mnemonicParsing="false" onAction="#AddPermAppointment" text="Permanenttermin hinzufügen">
+                  <Button fx:id="addPermanentAppointment" mnemonicParsing="false" onAction="#AddPermAppointment" text="Permanenttermin hinzufügen">
                      <font>
                         <Font size="18.0" />
                      </font>

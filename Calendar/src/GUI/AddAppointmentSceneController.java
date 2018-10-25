@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,7 +28,8 @@ public class AddAppointmentSceneController implements Initializable {
     @FXML private MenuButton mb;
     @FXML private CheckBox learningTime;
     @FXML private CheckBox famEvent;
-    @FXML private CheckBox spareTime;
+    @FXML private AnchorPane anchor;
+
     String month;
     String monthnumber;
     Logic Logic = new Logic();
@@ -37,7 +39,7 @@ public class AddAppointmentSceneController implements Initializable {
     }
     @FXML
     public void add() throws TransformerException {
-        if((spareTime.isSelected() && famEvent.isSelected())|| (spareTime.isSelected() && learningTime.isSelected()) || (learningTime.isSelected() && famEvent.isSelected()))
+        if( (learningTime.isSelected() && famEvent.isSelected()))
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
