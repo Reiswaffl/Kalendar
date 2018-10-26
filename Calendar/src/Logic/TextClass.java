@@ -7,24 +7,16 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static java.lang.String.format;
+
 public class TextClass{
     public static void main(String [ ] args) throws TransformerException {
-    Logic Logic = new Logic();
-    Logic.reader = new Reader();
-    Logic.writer = new Writer();
-    Logic.addLearningTime("181027","Informatik");
+        String dateIinput = "20181030";
+        System.out.println("1.   " + dateIinput.substring(0,4));
+        System.out.println("2.   " + dateIinput.substring(4,6));
+        System.out.println("3.   " + dateIinput.substring(6,8));
+
     }
 
-    private static String getDate(){
-        Date date = new Date();
-        DateFormat dayFormat = new SimpleDateFormat("dd");
-        String day = dayFormat.format(date);
 
-        DateFormat monthFormat = new SimpleDateFormat("MM");
-        String month = monthFormat.format(date);
-
-        DateFormat yearFormat = new SimpleDateFormat("yyyy");
-        String year = yearFormat.format(date);
-        return day +"." + month + "." + year;
-    }
 }

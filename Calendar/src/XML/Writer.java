@@ -61,7 +61,6 @@ public class Writer {
 
     public void AddPeriod(String user, String date, String start,String end, String content, String isfamEvent) throws TransformerException {
         Node usr = xmlReader.getUser(user);
-
         NodeList years = null;
         int iyear = Integer.parseInt(date);
         iyear /= 10000;
@@ -69,6 +68,7 @@ public class Writer {
         month %= 10000;
         month /= 100;
         if(usr != null){ // usr allready exists
+            System.out.println("User not Created");
             iyear = Integer.parseInt(date);
             iyear /= 10000;
             years = usr.getChildNodes();
@@ -116,6 +116,7 @@ public class Writer {
 
             }
         }else{
+            System.out.println("User Created");
             usr = xmlReader.CreateUser(user);
             Node nyear = xmlReader.CreateYear(usr,Integer.toString(iyear));
             Node nmonth = xmlReader.CreateMonth(nyear,Integer.toString(month),Integer.toString(daysInMonth[month-1]));

@@ -139,7 +139,8 @@ public class AddPermanentAppointment implements Initializable {
                 break;
 
         }
-
+        String permDriver = begleiter.getText().replace(" ","");
+        if(permDriver.length() == 0) permDriver = null;
         String ret = Logic.AddPermanentAppointment(start.getText(),end.getText(),content.getText(),rp,input,begleiter.getText());
 
         if(ret != null){

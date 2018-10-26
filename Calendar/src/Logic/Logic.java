@@ -7,6 +7,7 @@ import XML.Reader;
 import XML.Writer;
 
 
+import javax.xml.transform.Source;
 import javax.xml.transform.TransformerException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -63,7 +64,7 @@ public final class Logic {
         }
         if(driver != null && reader.isRegistered(driver) == false)
         {
-            System.out.println("--"+driver);
+            System.out.println("Begleitperson");
             return "Die Begleitperson exestiert leider noch nicht. ";
         }
         String s = start.substring(0,start.length()-3);
@@ -96,7 +97,9 @@ public final class Logic {
         }
 
         writer.AddPeriod(reader.getCurrentUser(), date, start,end,content,"false");
-        writer.AddPeriod(driver,date,start,end,content,"false");
+        if(driver != null) {
+            writer.AddPeriod(driver, date, start, end, content, "false");
+        }
 
         if(learningTime){
             for(int i = -5; i < 0; i++){
@@ -158,6 +161,7 @@ public final class Logic {
         return "Leider ist ein Fehler beim Löschen aufgetreten. Der Termin is nicht vorhande";
     }
     public static String getDayInfo(int add, String dateInput, boolean isDate) throws ParseException {
+        System.out.println("Date:" + dateInput);
         String date;
         ReturnValue returnValue = null;
         if(!isDate) {
@@ -198,8 +202,10 @@ public final class Logic {
                 }
             }
         }else{
-            dateInput = "20" + dateInput;
-            String dateString = format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
+
+            if(dateInput.length() == 6) dateInput = "20" + dateInput;
+            String dateString = format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,4)),Integer.parseInt(dateInput.substring(4,6)),Integer.parseInt(dateInput.substring(6,8)));
+            System.out.println("DateString" + dateString);
             Date dayNameDate = new SimpleDateFormat("yyyy-MM-d").parse(dateString);
             String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
             if(permAppointments != null){
@@ -214,6 +220,7 @@ public final class Logic {
 
                 }
             }
+            System.out.println("HI2");
         }
         return ret;
     }
@@ -258,8 +265,8 @@ public final class Logic {
                 }
             }
         }else{
-            dateInput = "20" + dateInput;
-            String dateString = format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,1)),Integer.parseInt(dateInput.substring(2,3)),Integer.parseInt(dateInput.substring(4,5)));
+            if(dateInput.length() == 6) dateInput = "20" + dateInput;
+            String dateString = format("%d-%d-%d",Integer.parseInt(dateInput.substring(0,4)),Integer.parseInt(dateInput.substring(4,6)),Integer.parseInt(dateInput.substring(6,8)));
             Date dayNameDate = new SimpleDateFormat("yyyy-MM-d").parse(dateString);
             String dayofWeek = new SimpleDateFormat("EEEE", Locale.GERMAN).format(dayNameDate);
             if(permAppointments != null){
