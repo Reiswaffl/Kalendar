@@ -85,10 +85,14 @@
                          <font>
                              <Font size="24" />
                          </font></Label>
-                        <Label fx:id="day3Info" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                         <ScrollPane fx:id="ScrollPane3" fitToWidth="true" prefHeight="396.0" prefWidth="250.0" >
+                             <Text fx:id="day3Info" text="DayInfo">
+                                <font>
+                                    <Font size="18.0"></Font>
+                                </font>
+                             </Text>
+                         </ScrollPane>
+
                      </children>
                   </VBox>
                   <VBox>

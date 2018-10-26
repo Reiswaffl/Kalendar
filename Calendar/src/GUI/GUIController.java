@@ -15,8 +15,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class GUIController{
@@ -36,7 +39,7 @@ public class GUIController{
     @FXML private Label currentDayInfo;
     @FXML private Label day1Info;
     @FXML private Label day2Info;
-    @FXML private Label day3Info;
+    @FXML private Text day3Info;
     @FXML private Label day4Info;
     @FXML private Label day5Info;
     @FXML private Label day6Info;
@@ -48,6 +51,7 @@ public class GUIController{
     @FXML private Button dayPreview;
     @FXML private Button freeTime;
     @FXML private Button SwitchUser;
+    @FXML private ScrollPane ScrollPane3;
 
     // Methods
     public void setGui(GUI gui){
@@ -84,10 +88,11 @@ public class GUIController{
         currentDayInfo.setTextFill(Color.rgb(255,255,255));
         day1Info.setTextFill(Color.rgb(255,255,255));
         day2Info.setTextFill(Color.rgb(255,255,255));
-        day3Info.setTextFill(Color.rgb(255,255,255));
+        day3Info.setStyle("-fx-background-color: #404040;");
         day4Info.setTextFill(Color.rgb(255,255,255));
         day5Info.setTextFill(Color.rgb(255,255,255));
         day6Info.setTextFill(Color.rgb(255,255,255));
+        ScrollPane3.setStyle("-fx-background-color: rgb(64,64,64);");
         addAppointment.setStyle("-fx-background-color: #F4660E;");
         addPermanentAppointment.setStyle("-fx-background-color: #F4660E;");
         getNextFreeDay.setStyle("-fx-background-color: #F4660E;");
