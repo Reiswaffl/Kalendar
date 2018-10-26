@@ -40,19 +40,22 @@
                </children>
             </HBox>
             <Line endX="1200.0" startX="-20.0" />
-            <HBox alignment="TOP_CENTER">
+            <HBox alignment="TOP_CENTER" spacing="10">
                <children>
-                  <VBox spacing="5.0">
+                  <VBox>
                      <children>
                         <Label fx:id="currentDay" text="Montag">
                             <font>
                                 <Font size="24" />
                             </font></Label>
 
-                        <Label fx:id="currentDayInfo" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                         <ScrollPane fx:id="ScrollPanecurrent" fitToWidth="true" prefHeight="396.0" prefWidth="250.0">
+                             <Text fx:id="currentDayInfo" text="DayInfo">
+                                 <font>
+                                     <Font size="18.0"></Font>
+                                 </font>
+                             </Text>
+                         </ScrollPane>
                      </children>
                   </VBox>
                   <VBox>
@@ -61,10 +64,13 @@
                             <font>
                                 <Font size="24" />
                             </font></Label>
-                        <Label fx:id="day1Info" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                         <ScrollPane fx:id="ScrollPane1" fitToWidth="true" prefHeight="396.0" prefWidth="250.0">
+                             <Text fx:id="day1Info" text="DayInfo">
+                                 <font>
+                                     <Font size="18.0"></Font>
+                                 </font>
+                             </Text>
+                         </ScrollPane>
                      </children>
                   </VBox>
                   <VBox>
@@ -73,10 +79,13 @@
                          <font>
                              <Font size="24" />
                          </font></Label>
-                        <Label fx:id="day2Info" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                         <ScrollPane fx:id="ScrollPane2" fitToWidth="true" prefHeight="396.0" prefWidth="250.0">
+                             <Text fx:id="day2Info" text="DayInfo">
+                                 <font>
+                                     <Font size="18.0"></Font>
+                                 </font>
+                             </Text>
+                         </ScrollPane>
                      </children>
                   </VBox>
                   <VBox>
@@ -101,10 +110,13 @@
                          <font>
                              <Font size="24" />
                          </font></Label>
-                        <Label fx:id="day4Info" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                         <ScrollPane fx:id="ScrollPane4" fitToWidth="true" prefHeight="396.0" prefWidth="250.0" >
+                             <Text fx:id="day4Info" text="DayInfo">
+                                 <font>
+                                     <Font size="18.0"></Font>
+                                 </font>
+                             </Text>
+                         </ScrollPane>
                      </children>
                   </VBox>
                   <VBox>
@@ -113,10 +125,13 @@
                          <font>
                              <Font size="24" />
                          </font></Label>
-                        <Label fx:id="day5Info" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                         <ScrollPane fx:id="ScrollPane5" fitToWidth="true" prefHeight="396.0" prefWidth="250.0" >
+                             <Text fx:id="day5Info" text="DayInfo">
+                                 <font>
+                                     <Font size="18.0"></Font>
+                                 </font>
+                             </Text>
+                         </ScrollPane>
                      </children>
                   </VBox>
                   <VBox>
@@ -125,10 +140,13 @@
                            <font>
                               <Font size="24" />
                            </font></Label>
-                        <Label fx:id="day6Info" alignment="TOP_LEFT" prefHeight="396.0" prefWidth="250.0" text="DayInfo">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                         <ScrollPane fx:id="ScrollPane6" fitToWidth="true" prefHeight="396.0" prefWidth="250.0" >
+                             <Text fx:id="day6Info" text="DayInfo">
+                                 <font>
+                                     <Font size="18.0"></Font>
+                                 </font>
+                             </Text>
+                         </ScrollPane>
                      </children>
                   </VBox>
                </children>

@@ -36,14 +36,13 @@ public class GUIController{
     @FXML private Label day4;
     @FXML private Label day5;
     @FXML private Label day6;
-    @FXML private Label currentDayInfo;
-    @FXML private Label day1Info;
-    @FXML private Label day2Info;
+    @FXML private Text currentDayInfo;
+    @FXML private Text day1Info;
+    @FXML private Text day2Info;
     @FXML private Text day3Info;
-    @FXML private Label day4Info;
-    @FXML private Label day5Info;
-    @FXML private Label day6Info;
-    @FXML private AnchorPane anchor;
+    @FXML private Text day4Info;
+    @FXML private Text day5Info;
+    @FXML private Text day6Info;
     @FXML private Button addAppointment;
     @FXML private Button addPermanentAppointment;
     @FXML private Button getNextFreeDay;
@@ -51,7 +50,7 @@ public class GUIController{
     @FXML private Button dayPreview;
     @FXML private Button freeTime;
     @FXML private Button SwitchUser;
-    @FXML private ScrollPane ScrollPane3;
+
 
     // Methods
     public void setGui(GUI gui){
@@ -74,32 +73,22 @@ public class GUIController{
     @FXML
     public void initialize(){
         //Coloursetup
-        anchor.setStyle("-fx-background-color: #404040;");
-        datetime.setTextFill(Color.rgb(255,255,255));
-        currentUser.setTextFill(Color.rgb(255,255,255));
-        currentDay.setTextFill(Color.rgb(255,255,255));
-        day1.setTextFill(Color.rgb(255,255,255));
-        day2.setTextFill(Color.rgb(255,255,255));
-        day3.setTextFill(Color.rgb(255,255,255));
-        day4.setTextFill(Color.rgb(255,255,255));
-        day5.setTextFill(Color.rgb(255,255,255));
-        day5.setTextFill(Color.rgb(255,255,255));
-        day6.setTextFill(Color.rgb(255,255,255));
-        currentDayInfo.setTextFill(Color.rgb(255,255,255));
-        day1Info.setTextFill(Color.rgb(255,255,255));
-        day2Info.setTextFill(Color.rgb(255,255,255));
-        day3Info.setStyle("-fx-background-color: #404040;");
-        day4Info.setTextFill(Color.rgb(255,255,255));
-        day5Info.setTextFill(Color.rgb(255,255,255));
-        day6Info.setTextFill(Color.rgb(255,255,255));
-        ScrollPane3.setStyle("-fx-background-color: rgb(64,64,64);");
-        addAppointment.setStyle("-fx-background-color: #F4660E;");
-        addPermanentAppointment.setStyle("-fx-background-color: #F4660E;");
-        getNextFreeDay.setStyle("-fx-background-color: #F4660E;");
-        timetable.setStyle("-fx-background-color: #F4660E;");
-        dayPreview.setStyle("-fx-background-color: #F4660E;");
-        freeTime.setStyle("-fx-background-color: #F4660E;");
-        SwitchUser.setStyle("-fx-background-color: #F4660E;");
+        addAppointment.setStyle("-fx-background-color: #0066C8;");
+        addPermanentAppointment.setStyle("-fx-background-color: #0066C8;");
+        getNextFreeDay.setStyle("-fx-background-color: #0066C8;");
+        timetable.setStyle("-fx-background-color: #0066C8;");
+        dayPreview.setStyle("-fx-background-color: #0066C8;");
+        freeTime.setStyle("-fx-background-color: #0066C8;");
+        SwitchUser.setStyle("-fx-background-color: #0066C8;");
+        datetime.setTextFill(Color.rgb(0,102,200));
+        currentDay.setTextFill(Color.rgb(0,102,200));
+        day1.setTextFill(Color.rgb(0,102,200));
+        day2.setTextFill(Color.rgb(0,102,200));
+        day3.setTextFill(Color.rgb(0,102,200));
+        day4.setTextFill(Color.rgb(0,102,200));
+        day5.setTextFill(Color.rgb(0,102,200));
+        day6.setTextFill(Color.rgb(0,102,200));
+
         addAppointment.setTextFill(Color.rgb(255,255,255));
         addPermanentAppointment.setTextFill(Color.rgb(255,255,255));
         getNextFreeDay.setTextFill(Color.rgb(255,255,255));

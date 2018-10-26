@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,8 +19,9 @@ import java.util.ResourceBundle;
 
 public class DayReview implements Initializable{
     Logic Logic = new Logic();
-    @FXML Label time;
-    @FXML Label information;
+    @FXML
+    Text time;
+    @FXML Text information;
     @FXML TextField dayinput;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
