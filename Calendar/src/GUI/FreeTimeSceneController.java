@@ -6,9 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,9 +23,42 @@ public class FreeTimeSceneController implements Initializable{
     @FXML private TextField input;
     @FXML private TextField dayinput;
     @FXML private MenuButton repetition;
+    @FXML private Label normal;
+    @FXML private Label date;
+    @FXML private Label required;
+    @FXML private Label startLabel;
+    @FXML private Label endLabel;
+    @FXML private Label head;
+    @FXML private Label repetitionhead;
+    @FXML private Label perm;
+    @FXML private Label inputhead;
+    @FXML private Button select;
+    @FXML private Button back;
 
     Repetition rep;
     Logic Logic = new Logic();
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        repetition.setText("wöchentlich");
+        rep = Repetition.WEEKLY;
+        repetition.setStyle("-fx-background-color: #0066C8;");
+        repetition.setTextFill(Color.rgb(255,255,255));
+        select.setStyle("-fx-background-color: #0066C8;");
+        select.setTextFill(Color.rgb(255,255,255));
+        back.setStyle("-fx-background-color: #0066C8;");
+        back.setTextFill(Color.rgb(255,255,255));
+        normal.setTextFill(Color.rgb(0,102,200));
+        date.setTextFill(Color.rgb(0,102,200));
+        required.setTextFill(Color.rgb(0,102,200));
+        startLabel.setTextFill(Color.rgb(0,102,200));
+        endLabel.setTextFill(Color.rgb(0,102,200));
+        head.setTextFill(Color.rgb(0,102,200));
+        repetitionhead.setTextFill(Color.rgb(0,102,200));
+        perm.setTextFill(Color.rgb(0,102,200));
+        inputhead.setTextFill(Color.rgb(0,102,200));
+
+
+    }
     @FXML
     public void handleDaily(){
         repetition.setText("täglich");
@@ -97,11 +129,6 @@ public class FreeTimeSceneController implements Initializable{
 
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        repetition.setText("wöchentlich");
-        rep = Repetition.WEEKLY;
-    }
 
     private String week(){
         if(input.getText().equals("Montag")) return "MONDAY";
