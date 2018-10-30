@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DayReview implements Initializable{
+public class DayReviewSceneControlle implements Initializable{
     Logic Logic = new Logic();
     @FXML
     Text time;

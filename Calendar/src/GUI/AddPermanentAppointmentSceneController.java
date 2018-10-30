@@ -7,9 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -32,7 +31,7 @@ enum Weekday{
     SUNDAY
 }
 
-public class AddPermanentAppointment implements Initializable {
+public class AddPermanentAppointmentSceneController implements Initializable {
 
     @FXML private TextField start;
     @FXML private TextField end;
@@ -42,12 +41,45 @@ public class AddPermanentAppointment implements Initializable {
     @FXML private MenuButton weekday;
     @FXML private TextField day;
     @FXML private TextField month;
+    @FXML private Label starthead;
+    @FXML private Label endhead;
+    @FXML private Label contenthead;
+    @FXML private Label driverhead;
+    @FXML private Label repetitionhead;
+    @FXML private Label weekdayhead;
+    @FXML private Label dayhead;
+    @FXML private Label monthhead;
+    @FXML private Label head;
+    @FXML private Button back;
+    @FXML private Button add;
     Repetition rep;
     Weekday weekd;
     Logic Logic = new Logic();
 
-
-
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        head.setTextFill(Color.rgb(0,102,200));
+        starthead.setTextFill(Color.rgb(0,102,200));
+        endhead.setTextFill(Color.rgb(0,102,200));
+        contenthead.setTextFill(Color.rgb(0,102,200));
+        driverhead.setTextFill(Color.rgb(0,102,200));
+        repetitionhead.setTextFill(Color.rgb(0,102,200));
+        weekdayhead.setTextFill(Color.rgb(0,102,200));
+        dayhead.setTextFill(Color.rgb(0,102,200));
+        monthhead.setTextFill(Color.rgb(0,102,200));
+        add.setStyle("-fx-background-color: #0066C8;");
+        add.setTextFill(Color.rgb(255,255,255));
+        back.setStyle("-fx-background-color: #0066C8;");
+        back.setTextFill(Color.rgb(255,255,255));
+        repetition.setStyle("-fx-background-color: #0066C8;");
+        repetition.setTextFill(Color.rgb(255,255,255));
+        weekday.setStyle("-fx-background-color: #0066C8;");
+        weekday.setTextFill(Color.rgb(255,255,255));
+        repetition.setText("wöchentlich");
+        rep = Repetition.WEEKLY;
+        weekday.setText("Montag");
+        weekd = Weekday.MONDAY;
+    }
     @FXML
     public void handleWeekly(){
         repetition.setText("wöchentlich");
@@ -153,10 +185,6 @@ public class AddPermanentAppointment implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
     private String week(){
         String wk = "null";
         switch (weekd){

@@ -10,14 +10,14 @@
 <?import javafx.scene.shape.Line?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="GUI.AddPermanentAppointment"
+            fx:controller="GUI.AddPermanentAppointmentSceneController"
             prefHeight="400.0" prefWidth="600.0">
     <children>
         <VBox layoutY="50.0" spacing="50.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
         <children>
             <HBox alignment="TOP_CENTER" layoutX="154.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
             <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Permanenttermin hinzufügen" >
+                <Label fx:id="head" alignment="CENTER" contentDisplay="CENTER" text="Permanenttermin hinzufügen" >
                     <font>
                         <Font size="24.0"/>
                     </font>
@@ -27,19 +27,19 @@
             <Line endX="600.0" />
             <HBox alignment="CENTER" spacing="10.0">
                 <children>
-                    <Label alignment="CENTER" text="Beginn der Termins:" />
+                    <Label fx:id="starthead" alignment="CENTER" text="Beginn der Termins:" />
                     <TextField fx:id="start" promptText="ss:mm" />
                 </children>
             </HBox>
             <HBox alignment="CENTER" spacing="10.0">
                 <children>
-                    <Label alignment="CENTER" text="Ende des Termins:" />
+                    <Label fx:id="endhead" alignment="CENTER" text="Ende des Termins:" />
                     <TextField fx:id="end" promptText="ss:mm" />
                 </children>
             </HBox>
         <HBox alignment="TOP_CENTER" spacing="40.0">
             <children>
-                <Label text="Wiederholung:" />
+                <Label fx:id="repetitionhead" text="Wiederholung:" />
                 <MenuButton fx:id="repetition" mnemonicParsing="false" text="Monat">
                     <items>
                         <MenuItem id="weekly" fx:id="weekly" mnemonicParsing="false" onAction="#handleWeekly" text="wöchentlich" />
@@ -52,7 +52,7 @@
         </HBox>
             <HBox alignment="TOP_CENTER" spacing="40.0">
                 <children>
-                    <Label text="Wochentag:" />
+                    <Label fx:id="weekdayhead" text="Wochentag:" />
                     <MenuButton fx:id="weekday" mnemonicParsing="false" text="Monat">
                         <items>
                             <MenuItem id="monday" fx:id="monday" mnemonicParsing="false" onAction="#handleMonday" text="Montag" />
@@ -68,32 +68,32 @@
             </HBox>
             <HBox alignment="CENTER" spacing="10.0">
                 <children>
-                    <Label alignment="CENTER" text="Inhalt:" />
+                    <Label fx:id="contenthead" alignment="CENTER" text="Inhalt:" />
                     <TextField fx:id="content" promptText="Hier könnte ihre Werbung stehen!!" />
                 </children>
             </HBox>
             <HBox alignment="CENTER" spacing="10.0">
                 <children>
-                    <Label alignment="CENTER" text="Fahrer/Begleitperson:"/>
+                    <Label fx:id="driverhead" alignment="CENTER" text="Fahrer/Begleitperson:"/>
                     <TextField fx:id="begleiter" promptText="Wenn kein Begleiter, bitte leer lassen"/>
                 </children>
             </HBox>
             <HBox alignment="CENTER" spacing="10.0">
                 <children>
-                    <Label alignment="CENTER" text="Tag:"/>
+                    <Label fx:id="dayhead" alignment="CENTER" text="Tag:"/>
                     <TextField fx:id="day" promptText="Nur bei montl. Wdh."/>
                 </children>
             </HBox>
             <HBox alignment="CENTER" spacing="10.0">
                 <children>
-                    <Label alignment="CENTER" text="Monat:"/>
+                    <Label fx:id="monthhead" alignment="CENTER" text="Monat:"/>
                     <TextField fx:id="month" promptText="Nur bei jählr. Wdh."/>
                 </children>
             </HBox>
             <HBox alignment="CENTER">
                 <children>
-                    <Button mnemonicParsing="false" onAction="#back" text="Zurück"/>
-                    <Button mnemonicParsing="false" onAction="#add" text="Hinzufügen" />
+                    <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="Zurück"/>
+                    <Button fx:id="add" mnemonicParsing="false" onAction="#add" text="Hinzufügen" />
                 </children>
             </HBox>
         </children>

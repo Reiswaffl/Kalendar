@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="GUI.FreeTime"
+            fx:controller="GUI.FreeTimeSceneController"
             prefHeight="400.0" prefWidth="600.0">
     <children>
         <VBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">

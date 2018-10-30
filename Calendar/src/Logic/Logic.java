@@ -9,6 +9,7 @@ import XML.Writer;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.TransformerException;
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,6 +30,7 @@ public final class Logic {
     }
 
     public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean learningTime, boolean famEvent) throws TransformerException {
+        if(date == null) return "Eingabe nicht komplett";
         if(famEvent){
             //famEvent: highest priotrity
             ArrayList<String> users = reader.getUserList();
@@ -36,7 +38,6 @@ public final class Logic {
             int stminutes = Integer.parseInt(start.substring(3,5));
             int enhour = Integer.parseInt(end.substring(0,2));
             int enminutes = Integer.parseInt(end.substring(3,5));
-
             for(int i = 0; i < users.size();i++){
                 ArrayList<String> s = reader.getDayInformation(users.get(i),Integer.parseInt(date)).getStart();
                 ArrayList<String> e = reader.getDayInformation(users.get(i),Integer.parseInt(date)).getEnd();
@@ -67,11 +68,15 @@ public final class Logic {
             System.out.println("Begleitperson");
             return "Die Begleitperson exestiert leider noch nicht. ";
         }
-        String s = start.substring(0,start.length()-3);
-        String e = end.substring(0,end.length()-3);
+        String s = null;
+        String e = null;
+        try{
+        s = start.substring(0,start.length()-3);
+        e = end.substring(0,end.length()-3);
         if(Integer.parseInt(s) > Integer.parseInt(e)){
             return "Ende liegt vor Start";
         }
+        }catch (NumberFormatException r){return "Fehlerhafte Eingabe";}
         ReturnValue periods = reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date));
         ArrayList<String> sp = periods.getStart();
         ArrayList<String> ep = periods.getEnd();
@@ -113,10 +118,12 @@ public final class Logic {
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
         String s = start.substring(0,start.length()-3);
         String e = end.substring(0,end.length()-3);
-
+        try{
         if(Integer.parseInt(s) > Integer.parseInt(e)){
             return "Ende liegt vor Start";
         }
+        }catch (NumberFormatException exeption){
+            return "Fehlerhafte Eingabe";}
         if(permAppointments != null) {
 
             ArrayList<String> sp = permAppointments.getStart();
@@ -391,8 +398,13 @@ public final class Logic {
         return reader.getNextFreeDay(usr,month,day);
     }
     //Change user
-    public static void SwitchUser(String user){
-        writer.SwitchUser(user);
+    public static String SwitchUser(String user){
+        ArrayList<String> s  = reader.getUserList();
+        for(int i = 0; i < s.size(); i++){
+            if(user.equals(s.get(i))) {writer.SwitchUser(user);
+            return null;}
+        }
+        return "Nutzername noch nicht eingetragen";
     }
     public static String  AddUser(String username) throws TransformerException {
         return writer.AddUser(username);

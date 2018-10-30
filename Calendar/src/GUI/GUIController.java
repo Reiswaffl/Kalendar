@@ -12,12 +12,8 @@ import Logic.Logic;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -134,7 +130,7 @@ public class GUIController{
     }
     @FXML
     public void AddTimeTable(javafx.event.ActionEvent event) throws IOException {
-        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("AddTimeTable.fxml"));
+        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("AddTimeTableScene.fxml"));
         Scene appointmentRequestScene = new Scene(appointmentRequest);
         Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
         window.setTitle("Stundenplan hizufügen");
@@ -152,7 +148,7 @@ public class GUIController{
     }
     @FXML
     public void AddPermAppointment(javafx.event.ActionEvent event) throws IOException{
-        Parent permAppointment = FXMLLoader.load(getClass().getResource("AddPermanentAppointment.fxml"));
+        Parent permAppointment = FXMLLoader.load(getClass().getResource("AddPermanentAppointmentScene.fxml"));
         Scene appointmentRequestScene = new Scene(permAppointment);
         Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
         window.setTitle("Permanenttermin");
@@ -170,7 +166,7 @@ public class GUIController{
     }
 
     public void DayPrewiev(ActionEvent event) throws IOException {
-        Parent permAppointment = FXMLLoader.load(getClass().getResource("DayReview.fxml"));
+        Parent permAppointment = FXMLLoader.load(getClass().getResource("DayReviewScene.fxml"));
         Scene appointmentRequestScene = new Scene(permAppointment);
         Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
         window.setTitle("Tagesvorschau");
@@ -179,7 +175,7 @@ public class GUIController{
     }
 
     public void FreeTime(ActionEvent event) throws IOException {
-        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("FreeTime.fxml"));
+        Parent appointmentRequest = FXMLLoader.load(getClass().getResource("FreeTimeScene.fxml"));
         Scene appointmentRequestScene = new Scene(appointmentRequest);
         Stage window = (Stage) ((javafx.scene.Node)event.getSource()).getScene().getWindow();
         window.setTitle("Freizeit definieren");

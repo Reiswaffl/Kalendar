@@ -14,7 +14,7 @@
          <children>
             <HBox alignment="TOP_CENTER" layoutX="154.0" layoutY="48.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="Termin hinzufügen" >
+                  <Label fx:id="head" alignment="CENTER" contentDisplay="CENTER" text="Termin hinzufügen" >
                    <font>
                        <Font size="24.0"/>
                    </font>
@@ -24,13 +24,13 @@
             <Line endX="500.0" />
             <HBox alignment="CENTER" spacing="10.0">
                <children>
-                  <Label layoutX="26.0" layoutY="157.0" text="Jahr:" />
+                  <Label fx:id="yearhead" layoutX="26.0" layoutY="157.0" text="Jahr:" />
                   <TextField fx:id="jahr" promptText="yyyy" />
                </children>
             </HBox>
             <HBox alignment="TOP_CENTER" spacing="40.0">
                <children>
-                  <Label text="Monat:" />
+                  <Label fx:id="monthhead" text="Monat:" />
                   <MenuButton fx:id="mb" mnemonicParsing="false" text="Monat">
                     <items>
                       <MenuItem id="januar" fx:id="januar" mnemonicParsing="false" onAction="#handleJanuar" text="Januar" />
@@ -51,50 +51,50 @@
             </HBox>
             <HBox alignment="CENTER" spacing="10.0">
                <children>
-                  <Label alignment="CENTER" text="Tag:" />
+                  <Label fx:id="dayhead" alignment="CENTER" text="Tag:" />
                   <TextField fx:id="tag" promptText="tt" />
                </children>
             </HBox>
              <HBox alignment="CENTER" spacing="10.0">
                  <children>
-                     <Label alignment="CENTER" text="Beginn der Termins:" />
+                     <Label fx:id="starthead" alignment="CENTER" text="Beginn der Termins:" />
                      <TextField fx:id="start" promptText="ss:mm" />
                  </children>
              </HBox>
              <HBox alignment="CENTER" spacing="10.0">
                  <children>
-                     <Label alignment="CENTER" text="Ende des Termins:" />
+                     <Label fx:id="endhead" alignment="CENTER" text="Ende des Termins:" />
                      <TextField fx:id="end" promptText="ss:mm" />
                  </children>
              </HBox>
              <HBox alignment="CENTER" spacing="10.0">
                  <children>
-                     <Label alignment="CENTER" text="Inhalt:" />
+                     <Label fx:id="contenthead" alignment="CENTER" text="Inhalt:" />
                      <TextField fx:id="content" promptText="Hier könnte ihre Werbung stehen!!" />
                  </children>
              </HBox>
              <HBox alignment="CENTER" spacing="10.0">
                  <children>
-                     <Label alignment="CENTER" text="Fahrer/Begleitperson:"/>
+                     <Label fx:id="driverhead" alignment="CENTER" text="Fahrer/Begleitperson:"/>
                      <TextField fx:id="begleiter" promptText="Wenn kein Begleiter, bitte leer lassen"/>
                  </children>
              </HBox>
              <HBox alignment="CENTER" spacing="10.0">
                  <children>
-                     <Label alignment="CENTER" text="Lernzeit reservieren"/>
+                     <Label fx:id="learninghead" alignment="CENTER" text="Lernzeit reservieren"/>
                      <CheckBox fx:id="learningTime"></CheckBox>
                  </children>
              </HBox>
              <HBox alignment="CENTER" spacing="10.0">
                  <children>
-                     <Label alignment="CENTER" text="Familienevent (überschreibt vorhandene Termine)"/>
+                     <Label fx:id="famhead" alignment="CENTER" text="Familienevent (überschreibt vorhandene Termine)"/>
                      <CheckBox fx:id="famEvent"></CheckBox>
                  </children>
              </HBox>
-            <HBox alignment="CENTER">
+            <HBox alignment="CENTER" spacing="20.0">
                <children>
-                   <Button mnemonicParsing="false" onAction="#back" text="Zurück"/>
-                  <Button mnemonicParsing="false" onAction="#add" text="Hinzufügen" />
+                   <Button mnemonicParsing="false" onAction="#back" text="Zurück" fx:id="back" />
+                  <Button mnemonicParsing="false" onAction="#add" text="Hinzufügen" fx:id="add"/>
                </children>
             </HBox>
          </children>

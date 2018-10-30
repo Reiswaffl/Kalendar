@@ -8,10 +8,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
 
 import Logic.Logic;
@@ -29,13 +31,40 @@ public class AddAppointmentSceneController implements Initializable {
     @FXML private CheckBox learningTime;
     @FXML private CheckBox famEvent;
     @FXML private AnchorPane anchor;
-
+    @FXML private Button back;
+    @FXML private Button add;
+    @FXML private Label head;
+    @FXML private Label monthhead;
+    @FXML private Label dayhead;
+    @FXML private Label starthead;
+    @FXML private Label endhead;
+    @FXML private Label learninghead;
+    @FXML private Label famhead;
+    @FXML private Label driverhead;
+    @FXML private Label contenthead;
+    @FXML private Label yearhead;
     String month;
     String monthnumber;
     Logic Logic = new Logic();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        head.setTextFill(Color.rgb(0,102,200));
+        starthead.setTextFill(Color.rgb(0,102,200));
+        endhead.setTextFill(Color.rgb(0,102,200));
+        monthhead.setTextFill(Color.rgb(0,102,200));
+        famhead.setTextFill(Color.rgb(0,102,200));
+        dayhead.setTextFill(Color.rgb(0,102,200));
+        learninghead.setTextFill(Color.rgb(0,102,200));
+        driverhead.setTextFill(Color.rgb(0,102,200));
+        contenthead.setTextFill(Color.rgb(0,102,200));
+        yearhead.setTextFill(Color.rgb(0,102,200));
+        add.setStyle("-fx-background-color: #0066C8;");
+        add.setTextFill(Color.rgb(255,255,255));
+        back.setStyle("-fx-background-color: #0066C8;");
+        back.setTextFill(Color.rgb(255,255,255));
+        mb.setText("Januar");
+        month = "Januar";
+        monthnumber = "01";
     }
     @FXML
     public void add() throws TransformerException {
@@ -43,22 +72,39 @@ public class AddAppointmentSceneController implements Initializable {
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
-            alert.setContentText("Es kann immer nur eine Checkbo");
+            alert.setContentText("Es kann immer nur eine Checkbox angeclickt werden");
             alert.showAndWait();
         }
         String year = jahr.getText();
+        year = year.replace(" ","");
+        if(year.length() == 0) year = null;
         String day = tag.getText();
+        day = day.replace(" ","");
+        if(day.length() == 0) day = null;
         String driver = begleiter.getText();
-        System.out.println(year + "" + month +"" +day);
+            System.out.println(year + "" + month + "" + day);
+
+        String date = null;
+        if(year != null && day != null){
         if(year.length() == 4){
-            int i = Integer.parseInt(year);
-            i %= 100;
-            year = Integer.toString(i);
+            try {
+                int i = Integer.parseInt(year);
+                i %= 100;
+                year = Integer.toString(i);
+            }catch (NumberFormatException e){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Fehler beim Eintragen");
+                //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
+                alert.setContentText("Fehlerhafte Eingabe");
+                alert.showAndWait();
+            }
+
         }
         if(day.length() == 1){
             day = "0" + day;
         }
-        String date = year + monthnumber + day;
+        date = year + monthnumber + day;}
+
         System.out.println(driver.length());
         String s = null;
         if(driver.length() == 0){
@@ -87,11 +133,14 @@ public class AddAppointmentSceneController implements Initializable {
 
         jahr.clear();
         month = "--";
-        mb.setText("Monat");
+        mb.setText("Januar");
+        month = "Januar";
+        monthnumber = "01";
         tag.clear();
         content.clear();
         begleiter.clear();
-
+        start.clear();
+        end.clear();
 
     }
     @FXML

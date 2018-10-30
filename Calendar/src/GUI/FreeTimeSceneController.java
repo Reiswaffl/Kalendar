@@ -1,35 +1,32 @@
 package GUI;
 
-import Logic.Logic;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import Logic.Logic;
 
+import javax.xml.transform.TransformerException;
 
-public class DeleteAppointmentScene implements Initializable{
-
-    @FXML private TextField dayinput;
+public class FreeTimeSceneController implements Initializable{
     @FXML private TextField start;
-    @FXML private  TextField input;
+    @FXML private TextField end;
+    @FXML private TextField input;
+    @FXML private TextField dayinput;
     @FXML private MenuButton repetition;
 
     Repetition rep;
-    @FXML
-    public void handleWeekly(){
-        repetition.setText("wöchentlich");
-        rep = Repetition.WEEKLY;
-    }
+    Logic Logic = new Logic();
     @FXML
     public void handleDaily(){
         repetition.setText("täglich");
@@ -41,17 +38,15 @@ public class DeleteAppointmentScene implements Initializable{
         rep = Repetition.MONTHLY;
     }
     @FXML
-    public void handleYearly(){
+    public void handleYearly() {
         repetition.setText("jährlich");
         rep = Repetition.YEARLY;
     }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void handleWeekly(){
         repetition.setText("wöchentlich");
         rep = Repetition.WEEKLY;
     }
-    @FXML
+
     public void back(ActionEvent event) throws IOException {
         Parent addAppiontment = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         Scene addAppiontmentScene = new Scene(addAppiontment);
@@ -59,14 +54,9 @@ public class DeleteAppointmentScene implements Initializable{
         window.setScene(addAppiontmentScene);
         window.show();
     }
-    @FXML
-    public void confirm(ActionEvent event) throws IOException{
-        //do some cool stuff
-       String sdate = dayinput.getText().replace(" ","");
-       String sinput = input.getText().replaceAll(" ","");
-       if(sdate.length() == 0) sdate = null;
-       if(sinput.length() == 0) sinput = null;
-       String rp = null;
+
+    public void confirm(ActionEvent event) throws TransformerException {
+        String rp = null;
         switch (rep){
             case DAILY:
                 rp = "DAILY";
@@ -83,6 +73,10 @@ public class DeleteAppointmentScene implements Initializable{
 
 
         }
+        String sdate = dayinput.getText().replace(" ","");
+        String sinput = input.getText().replace(" ","");
+        if(sdate.length() == 0) sdate = null;
+        if(sinput.length() == 0) sinput = null;
         if(week().equals("Fehler, Tag nicht Vorhanden")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
@@ -90,8 +84,8 @@ public class DeleteAppointmentScene implements Initializable{
             //alert.setHeaderText("Es ist leider ein Fehler aufgetreten");
             alert.setContentText(week());
             alert.showAndWait();
-        }else{
-            String ret = Logic.removeAppointment(sdate,sinput,start.getText(),rp,week());
+        }else {
+            String ret = Logic.addFreeTime(sdate, sinput, start.getText(), end.getText(), rp, week());
             if(ret != null){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Fehler beim Eintragen");
@@ -100,6 +94,13 @@ public class DeleteAppointmentScene implements Initializable{
                 alert.showAndWait();
             }
         }
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        repetition.setText("wöchentlich");
+        rep = Repetition.WEEKLY;
     }
 
     private String week(){
