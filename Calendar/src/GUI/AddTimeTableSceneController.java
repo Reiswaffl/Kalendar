@@ -8,8 +8,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,11 +43,45 @@ public class AddTimeTableSceneController implements Initializable {
     private TextField s10;
     @FXML
     private TextField s11;
+    @FXML private Label s1head;
+    @FXML private Label s2head;
+    @FXML private Label s3head;
+    @FXML private Label s4head;
+    @FXML private Label s5head;
+    @FXML private Label s6head;
+    @FXML private Label s7head;
+    @FXML private Label s8head;
+    @FXML private Label s9head;
+    @FXML private Label s10head;
+    @FXML private Label s11head;
+    @FXML private Label head;
+    @FXML private Button back;
+    @FXML private Button next;
+    @FXML private Button delete;
+
     Logic Logic = new Logic();
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
+    public void initialize(URL location, ResourceBundle resources){
+        back.setStyle("-fx-background-color: #0066C8;");
+        back.setTextFill(Color.rgb(225,255,255));
+        next.setStyle("-fx-background-color: #0066C8;");
+        next.setTextFill(Color.rgb(255,255,255));
+        delete.setStyle("-fx-background-color: #0066C8;");
+        delete.setTextFill(Color.rgb(255,255,255));
+        head.setTextFill(Color.rgb(0,102,200));
+        weekday.setTextFill(Color.rgb(0,102,200));
+        s1head.setTextFill(Color.rgb(0,102,200));
+        s2head.setTextFill(Color.rgb(0,102,200));
+        s3head.setTextFill(Color.rgb(0,102,200));
+        s4head.setTextFill(Color.rgb(0,102,200));
+        s5head.setTextFill(Color.rgb(0,102,200));
+        s6head.setTextFill(Color.rgb(0,102,200));
+        s7head.setTextFill(Color.rgb(0,102,200));
+        s8head.setTextFill(Color.rgb(0,102,200));
+        s9head.setTextFill(Color.rgb(0,102,200));
+        s10head.setTextFill(Color.rgb(0,102,200));
+        s11head.setTextFill(Color.rgb(0,102,200));
     }
 
     @FXML public void back(ActionEvent event) throws IOException {

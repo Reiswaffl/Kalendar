@@ -20,77 +20,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="406" column="49" selection-start-line="406" selection-start-column="49" selection-end-line="406" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getDateTime#0;class#Logic#0" />
-                <element signature="method#AddAppiontment#0;class#Logic#0" />
-                <element signature="method#AddPermanentAppointment#0;class#Logic#0" />
-                <element signature="method#deletePermanentAppointment#0;class#Logic#0" />
-                <element signature="method#deleteNode#0;class#Logic#0" />
-                <element signature="method#getDayInfo#0;class#Logic#0" />
-                <element signature="method#getDayTimes#0;class#Logic#0" />
-                <element signature="method#addLearningTime#0;class#Logic#0" />
-                <element signature="method#removeAppointment#0;class#Logic#0" />
-                <element signature="method#addFreeTime#0;class#Logic#0" />
-                <element signature="method#getNextFreeDay#0;class#Logic#0" />
-                <element signature="method#AddUser#0;class#Logic#0" />
-                <element signature="e#19688#19689#0" expanded="true" />
-                <element signature="e#19734#19735#0" expanded="true" />
-                <element signature="method#handleDate#0;class#Logic#0" />
-                <element signature="method#DaysInOrder#0;class#Logic#0" />
-                <element signature="method#TransformToString#0;class#Logic#0" />
-                <element signature="method#DayMonth#0;class#Logic#0" />
-                <element signature="method#DayMonth#1;class#Logic#0" />
-                <element signature="method#getID#0;class#Logic#0" />
-                <element signature="method#getDayName#0;class#Logic#0" />
-                <element signature="method#getDate#0;class#Logic#0" />
-                <element signature="method#checkDay#0;class#Logic#0" />
-                <element signature="method#setup#0;class#Logic#0" />
-                <element signature="e#26638#26639#0" expanded="true" />
-                <element signature="e#26669#26670#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XMLReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="35" column="64" lean-forward="true" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FreeTimeScene.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/FreeTimeScene.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
-            </state>
-          </provider>
+      <file leaf-file-name="AddTimeTableScene.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableScene.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file leaf-file-name="FreeTimeSceneController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/FreeTimeSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="408">
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
+      <file leaf-file-name="AddTimeTableSceneController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="71" column="64" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="64" />
+            <state relative-caret-position="450">
+              <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+              <folding>
+                <element signature="method#next#0;class#AddTimeTableSceneController#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/input.xml" />
         <option value="$PROJECT_DIR$/src/PeriodObject.java" />
         <option value="$PROJECT_DIR$/src/ONode.java" />
         <option value="$PROJECT_DIR$/src/DayObject.java" />
@@ -157,7 +103,6 @@
         <option value="$PROJECT_DIR$/src/Calculators/LearningCalculator.java" />
         <option value="$PROJECT_DIR$/src/ReturnValues/PermAppointments.java" />
         <option value="$PROJECT_DIR$/src/XML/Reader.java" />
-        <option value="$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java" />
         <option value="$PROJECT_DIR$/src/GUI/DeleteAppointmentScene.fxml" />
         <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
         <option value="$PROJECT_DIR$/src/GUI/DeleteAppointmentScene.java" />
@@ -180,6 +125,8 @@
         <option value="$PROJECT_DIR$/src/GUI/SwitchUserSceneController.java" />
         <option value="$PROJECT_DIR$/src/GUI/FreeTimeScene.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/FreeTimeSceneController.java" />
+        <option value="$PROJECT_DIR$/src/GUI/AddTimeTableScene.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java" />
       </list>
     </option>
   </component>
@@ -233,9 +180,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,7 +348,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39979014" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.399754" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -419,6 +366,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/GUI/FreeTimeSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
@@ -596,19 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="74" column="59" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
-          <folding>
-            <element signature="method#getDayInformation#0;class#Reader#0" />
-            <element signature="method#getPemAppointments#0;class#Reader#0" />
-            <element signature="method#getPeriodInformation#0;class#Reader#0" />
-            <element signature="method#getAppiontmentInformation#0;class#Reader#0" />
-            <element signature="method#getNextFreeDay#0;class#Reader#0" />
-            <element signature="method#getNextFreePeriod#0;class#Reader#0" />
-            <element signature="method#getCurrentUser#0;class#Reader#0" />
-            <element signature="method#getUserList#0;class#Reader#0" />
-            <element signature="method#isRegistered#0;class#Reader#0" />
-            <element signature="method#FormToString#0;class#Reader#0" />
-            <element signature="method#InTime#0;class#Reader#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,17 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="141" column="62" selection-start-line="141" selection-start-column="62" selection-end-line="141" selection-end-column="62" />
-          <folding>
-            <element signature="method#initialize#0;class#AddTimeTableSceneController#0" />
-            <element signature="method#next#0;class#AddTimeTableSceneController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddPermanentAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -672,30 +602,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/SwitchUserScene.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/XML/Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="61" column="140" selection-start-line="61" selection-start-column="140" selection-end-line="61" selection-end-column="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/SwitchUserSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
           <folding>
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="method#AddUser#0;class#Writer#0" />
-            <element signature="method#AddPeriod#0;class#Writer#0" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="71" column="64" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/FreeTimeSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="35" column="64" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
+        <state relative-caret-position="113">
           <caret line="406" column="49" selection-start-line="406" selection-start-column="49" selection-end-line="406" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -711,8 +658,6 @@
             <element signature="method#addFreeTime#0;class#Logic#0" />
             <element signature="method#getNextFreeDay#0;class#Logic#0" />
             <element signature="method#AddUser#0;class#Logic#0" />
-            <element signature="e#19688#19689#0" expanded="true" />
-            <element signature="e#19734#19735#0" expanded="true" />
             <element signature="method#handleDate#0;class#Logic#0" />
             <element signature="method#DaysInOrder#0;class#Logic#0" />
             <element signature="method#TransformToString#0;class#Logic#0" />
@@ -723,26 +668,16 @@
             <element signature="method#getDate#0;class#Logic#0" />
             <element signature="method#checkDay#0;class#Logic#0" />
             <element signature="method#setup#0;class#Logic#0" />
-            <element signature="e#26638#26639#0" expanded="true" />
             <element signature="e#26669#26670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/SwitchUserSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#26700#26701#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="61" column="48" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="48" />
+        <state relative-caret-position="507">
+          <caret line="60" column="53" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#back#0;class#AddAppointmentSceneController#0" />
@@ -750,32 +685,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="35" column="64" lean-forward="true" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="71" column="64" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/FreeTimeScene.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableScene.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/FreeTimeSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="408">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+          <folding>
+            <element signature="method#next#0;class#AddTimeTableSceneController#0" />
+          </folding>
         </state>
       </provider>
     </entry>
