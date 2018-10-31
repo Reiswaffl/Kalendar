@@ -20,26 +20,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddTimeTableScene.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableScene.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+      <file leaf-file-name="DeleteAppointmentSceneContoller.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/DeleteAppointmentSceneContoller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+            <state relative-caret-position="510">
+              <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddTimeTableSceneController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
+      <file leaf-file-name="AddAppointmentSceneController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+            <state relative-caret-position="507">
+              <caret line="60" column="53" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="53" />
               <folding>
-                <element signature="method#next#0;class#AddTimeTableSceneController#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#back#0;class#AddAppointmentSceneController#0" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteAppointmentScene.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/DeleteAppointmentScene.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -76,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PeriodObject.java" />
         <option value="$PROJECT_DIR$/src/ONode.java" />
         <option value="$PROJECT_DIR$/src/DayObject.java" />
         <option value="$PROJECT_DIR$/src/Unmarshaller_Test.java" />
@@ -103,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/Calculators/LearningCalculator.java" />
         <option value="$PROJECT_DIR$/src/ReturnValues/PermAppointments.java" />
         <option value="$PROJECT_DIR$/src/XML/Reader.java" />
-        <option value="$PROJECT_DIR$/src/GUI/DeleteAppointmentScene.fxml" />
         <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
         <option value="$PROJECT_DIR$/src/GUI/DeleteAppointmentScene.java" />
         <option value="$PROJECT_DIR$/src/GUI/FreeTime.java" />
@@ -127,6 +135,8 @@
         <option value="$PROJECT_DIR$/src/GUI/FreeTimeSceneController.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddTimeTableScene.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java" />
+        <option value="$PROJECT_DIR$/src/GUI/DeleteAppointmentScene.fxml" />
+        <option value="$PROJECT_DIR$/src/GUI/DeleteAppointmentSceneContoller.java" />
       </list>
     </option>
   </component>
@@ -140,6 +150,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,9 +193,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -533,19 +543,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Calculators/LearningCalculator.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/StringBuffer.java" />
-    <entry file="file://$PROJECT_DIR$/src/GUI/DeleteAppointmentSceneContoller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="94" selection-start-line="94" selection-end-line="100" selection-end-column="13" />
-          <folding>
-            <element signature="imports" />
-            <element signature="method#handleDaily#0;class#DeleteAppointmentScene#0" />
-            <element signature="method#handleMonthly#0;class#DeleteAppointmentScene#0" />
-            <element signature="method#handleYearly#0;class#DeleteAppointmentScene#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/XML/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -674,6 +671,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <folding>
+            <element signature="method#next#0;class#AddTimeTableSceneController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DeleteAppointmentScene.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -685,21 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableScene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/DeleteAppointmentSceneContoller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
-          <folding>
-            <element signature="method#next#0;class#AddTimeTableSceneController#0" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
         </state>
       </provider>
     </entry>

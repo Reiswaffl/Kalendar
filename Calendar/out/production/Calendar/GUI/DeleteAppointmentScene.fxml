@@ -13,7 +13,7 @@
         <VBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
             <HBox alignment="CENTER" layoutX="94.0" layoutY="101.0" AnchorPane.bottomAnchor="850.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
                 <children>
-                    <Label fx:id="datetime" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Termin löschen">
+                    <Label fx:id="head" alignment="TOP_CENTER" layoutX="94.0" layoutY="101.0" prefHeight="70.0" prefWidth="563.0" text="Termin löschen">
                         <font>
                             <Font size="36.0" />
                         </font>
@@ -32,7 +32,7 @@
             </HBox>
             <HBox spacing="40.0" alignment="CENTER">
                 <children>
-                    <Label text="Datum:">
+                    <Label fx:id="dayinputhead" text="Datum:">
                         <font>
                             <Font size="18"/>
                         </font>
@@ -52,7 +52,7 @@
             </HBox>
             <HBox spacing="40.0" alignment="CENTER">
                 <children>
-                    <Label text="Start:">
+                    <Label fx:id="starthead" text="Start:">
                         <font>
                             <Font size="18"/>
                         </font>
@@ -72,17 +72,17 @@
             </HBox>
             <HBox alignment="TOP_CENTER" spacing="40.0">
                 <children>
-                     <Label text="Bezeichner:">
+                     <Label fx:id="inputhead" text="Bezeichner:">
                         <font>
                             <Font size="18"/>
                         </font>
                     </Label>
                     <TextField fx:id="input" promptText="Wochentag/Tag/Datum"/>
-                    <Label text="Wiederholung:" >
+                    <Label fx:id="repetitionhead" text="Wiederholung:" >
                     <font>
                         <Font size="18"/>
                     </font>
-                </Label>
+                    </Label>
                     <MenuButton fx:id="repetition" mnemonicParsing="false" text="Wiederholung">
                         <items>
                             <MenuItem id="weekly" fx:id="weekly" mnemonicParsing="false" onAction="#handleWeekly" text="wöchentlich" />
@@ -95,8 +95,8 @@
             </HBox>
             <HBox spacing="40.0" alignment="CENTER">
                 <children>
-                    <Button  mnemonicParsing="false" onAction="#back" text="Zurück" />
-                    <Button  mnemonicParsing="false" onAction="#confirm" text="Bestätigen" />
+                    <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="Zurück" />
+                    <Button fx:id="confirm" mnemonicParsing="false" onAction="#confirm" text="Bestätigen" />
                 </children>
             </HBox>
         </VBox>
