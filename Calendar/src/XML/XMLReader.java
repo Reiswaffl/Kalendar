@@ -16,6 +16,7 @@ public class XMLReader {
     Document doc;
 
     public XMLReader() {
+
         //reads in file
         try {
             File inputFile = new File("calendar.xml");
@@ -26,9 +27,8 @@ public class XMLReader {
             //Console delete later and replace with GUI
             users = doc.getElementsByTagName("user");
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+            System.out.println(e);
+            e.printStackTrace();}
 
     }
     //Update-method to update the File (after changes were made)

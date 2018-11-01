@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE calendar SYSTEM "CalML.dtd">
+
 <calendar>
     <users>
         <User id="Eric"/>
@@ -6,8 +8,7 @@
 </users>
     <currentUser id="Tom"/>
 
-    <permAppointments>
-        <User id="Eric">
+    <permAppointments><User id="Eric">
             
         </User>
     <User id="Tom">
@@ -39,8 +40,8 @@
 </user>
     <user id="Tom">
 <years id="18">
-<month id="02" maxdays="28">
-<day blocked="false" date="180201" name="--">
+<month id="02" >
+<day  date="180201" >
 <period end="14:40" isfamEvent="false" start="13:30">Meine Werbung</period>
 </day>
 </month>
