@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE calendar[
+    <!ELEMENT calendar (users*,permAppointments*,user*, currentUser*)>
+        <!ELEMENT currentUser (#PCDATA)>
+        <!ATTLIST currentUser
+                id CDATA #REQUIRED>
+        <!ELEMENT users (User*)>
+            <!ELEMENT User (#PCDATA)>
+            <!ATTLIST User
+                    id CDATA #REQUIRED>
+        <!ELEMENT permAppointments (permAppointment*)>
+            <!ELEMENT permAppointment (#PCDATA)>
+            <!ATTLIST permAppointment
+                    start CDATA #REQUIRED,
+                    end CDATA #REQUIRED,
+                    repetition CDATA #REQUIRED,
+                    weekday CDATA #REQUIRED>
+        <!ELEMENT user (year*)>
+        <!ATTLIST user
+                id CDATA #REQUIRED>
+            <!ELEMENT year (month*)>
+            <!ATTLIST year
+                    id CDATA #REQUIRED>
+                <!ELEMENT month (day*)>
+                <!ATTLIST month
+                        id CDATA #REQUIRED>
+                    <!ELEMENT day (period*)>
+                    <!ATTLIST day
+                            date CDATA #REQUIRED,
+                            blocked CDATA #REQUIRED>
+                        <!ELEMENT period (#PCDATA)>
+                        <!ATTLIST period
+                                start CDATA #REQUIRED,
+                                end CDATA #REQUIRED,
+                                isfamEvent CDATA #REQUIRED>
+
+     ]>

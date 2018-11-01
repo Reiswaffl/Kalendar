@@ -165,16 +165,16 @@ public class AddTimeTableSceneController implements Initializable {
         else if(weekday.getText().equals("FREITAG")){
             input = "FRIDAY";
         }
-        Logic.deletePermanentAppointment("08:00",input,"WEEKLY");
-        Logic.deletePermanentAppointment("08:45",input,"WEEKLY");
-        Logic.deletePermanentAppointment("09:45",input,"WEEKLY");
-        Logic.deletePermanentAppointment("10:30",input,"WEEKLY");
-        Logic.deletePermanentAppointment("11:35",input,"WEEKLY");
-        Logic.deletePermanentAppointment("12:20",input,"WEEKLY");
-        Logic.deletePermanentAppointment("13:05",input,"WEEKLY");
-        Logic.deletePermanentAppointment("14:00",input,"WEEKLY");
-        Logic.deletePermanentAppointment("14:45",input,"WEEKLY");
-        Logic.deletePermanentAppointment("15:30",input,"WEEKLY");
-        Logic.deletePermanentAppointment("16:15",input,"WEEKLY");
+        Logic.deletePermanentAppointment("08:00",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("08:45",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("09:45",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("10:30",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("11:35",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("12:20",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("13:05",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("14:00",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("14:45",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("15:30",input,"WEEKLY",true);
+        Logic.deletePermanentAppointment("16:15",input,"WEEKLY",true);
     }
 }

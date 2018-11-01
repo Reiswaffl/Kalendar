@@ -158,8 +158,16 @@ public final class Logic {
         }
         return null;
     }
-    public static String deletePermanentAppointment(String start, String weekday,String repetition){
-        writer.removePermAppointment(reader.getCurrentUser(),start,weekday, repetition);
+    public static String deletePermanentAppointment(String start, String weekday,String repetition, boolean learning){
+        if(learning){
+            PermAppointments perm = reader.getPemAppointments(reader.getCurrentUser());
+            ArrayList<String> apps = perm.getContent();
+            for(int i = 0; i < apps.size(); i++){
+                if(apps.get(i).contains("Schule:")) writer.removePermAppointment(reader.getCurrentUser(),start,weekday, repetition);
+            }
+        }else {
+            writer.removePermAppointment(reader.getCurrentUser(), start, weekday, repetition);
+        }
         return null;
     }
     public static String deleteNode(String start,String date){
@@ -372,7 +380,7 @@ public final class Logic {
             return deleteNode(date,start);
 
         }else if (input != null){
-            return deletePermanentAppointment(start, weekday,repetition);
+            return deletePermanentAppointment(start, weekday,repetition,false);
         }
         return "Nicht vollständige Eingabe";
     }

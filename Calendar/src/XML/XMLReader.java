@@ -4,9 +4,7 @@ import java.io.File;
 import javax.swing.text.AbstractDocument;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
@@ -27,11 +25,11 @@ public class XMLReader {
             doc.getDocumentElement().normalize();
             //Console delete later and replace with GUI
             users = doc.getElementsByTagName("user");
-            dbFactory = null;
-            dBuilder = null;
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
     //Update-method to update the File (after changes were made)
     public void Update(){

@@ -30,7 +30,6 @@ public class GUI extends Application {
             Scene scene = new Scene(pane);
             primaryStage.setScene(scene);
             primaryStage.show();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
