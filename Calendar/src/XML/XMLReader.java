@@ -19,7 +19,7 @@ public class XMLReader {
 
         //reads in file
         try {
-            File inputFile = new File("calendar.xml");
+            File inputFile = new File("resources/calendar.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             doc = dBuilder.parse(inputFile);
@@ -38,7 +38,7 @@ public class XMLReader {
             doc = null;
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            File inputFile = new File("calendar.xml");
+            File inputFile = new File("resources/calendar.xml");
             doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
             //Console delete later and replace with GUI
@@ -231,7 +231,7 @@ public class XMLReader {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("calendar.xml"));
+            StreamResult result = new StreamResult(new File("resources/calendar.xml"));
             transformer.transform(source, result);
         }catch (Exception e){}
 
@@ -246,7 +246,7 @@ public class XMLReader {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("calendar.xml"));
+        StreamResult result = new StreamResult(new File("resources/calendar.xml"));
         transformer.transform(source, result);
     }catch (Exception e){}
     return year;
@@ -255,13 +255,12 @@ public class XMLReader {
         Element month = doc.createElement("month");
         if(id.length() == 1){id = "0"+id;}
         month.setAttribute("id", id);
-        month.setAttribute("maxdays",maxdays);
         parent.appendChild(month);
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("calendar.xml"));
+            StreamResult result = new StreamResult(new File("resources/calendar.xml"));
             transformer.transform(source, result);
         } catch (Exception e) {
         }
@@ -270,14 +269,13 @@ public class XMLReader {
     public Element CreateDay(Node parent, String date, String name,String blocked){
         Element day = doc.createElement("day");
         day.setAttribute("date", date);
-        day.setAttribute("name",name);
         day.setAttribute("blocked", blocked);
         parent.appendChild(day);
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("calendar.xml"));
+            StreamResult result = new StreamResult(new File("resources/calendar.xml"));
             transformer.transform(source, result);
         } catch (Exception e) {}
         return day;
@@ -293,7 +291,7 @@ public class XMLReader {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("calendar.xml"));
+            StreamResult result = new StreamResult(new File("resources/calendar.xml"));
             transformer.transform(source, result);
         } catch (Exception e) {}
         return period;
@@ -310,7 +308,7 @@ public class XMLReader {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("calendar.xml"));
+            StreamResult result = new StreamResult(new File("resources/calendar.xml"));
             transformer.transform(source, result);
         } catch (Exception e) {}
         return null;
@@ -323,7 +321,7 @@ public class XMLReader {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("calendar.xml"));
+            StreamResult result = new StreamResult(new File("resources/calendar.xml"));
             transformer.transform(source, result);
         }catch (Exception e){}
     }
@@ -337,7 +335,7 @@ public class XMLReader {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("calendar.xml"));
+            StreamResult result = new StreamResult(new File("resources/calendar.xml"));
             transformer.transform(source, result);
         } catch (Exception e) {}
     }

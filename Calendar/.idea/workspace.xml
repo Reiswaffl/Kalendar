@@ -68,17 +68,35 @@
       <file leaf-file-name="XMLReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+            <state relative-caret-position="351">
+              <caret line="233" column="71" selection-start-line="233" selection-start-column="71" selection-end-line="233" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalML.dtd" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CalML.dtd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CalML.dtd">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+            <state relative-caret-position="-77">
+              <caret line="1" column="53" lean-forward="true" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/calendar.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalML.dtd" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/CalML.dtd">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -86,8 +104,8 @@
       <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calendar.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="4" selection-end-line="8" />
+            <state relative-caret-position="-312">
+              <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -104,7 +122,7 @@
       <file leaf-file-name="GUIController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2465">
+            <state relative-caret-position="42">
               <caret line="160" column="44" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
             </state>
           </provider>
@@ -144,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ReturnValues/DayObject.java" />
-        <option value="$PROJECT_DIR$/src/GUI/AddAppiontmentScene.java" />
         <option value="$PROJECT_DIR$/src/GUI/SwitchUserScene.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddAppiontmentScene.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/AppiontmentRequest.fxml" />
@@ -189,12 +205,14 @@
         <option value="$PROJECT_DIR$/src/GUI/DayReviewSceneControlle.java" />
         <option value="$PROJECT_DIR$/src/GUI/DayReviewScene.fxml" />
         <option value="$PROJECT_DIR$/src/GUI/DayReviewSceneController.java" />
-        <option value="$PROJECT_DIR$/src/GUI/GUI.java" />
         <option value="$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java" />
         <option value="$PROJECT_DIR$/src/Logic/Logic.java" />
         <option value="$PROJECT_DIR$/calendar.xml" />
-        <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
         <option value="$PROJECT_DIR$/CalML.dtd" />
+        <option value="$PROJECT_DIR$/src/GUI/GUI.java" />
+        <option value="$PROJECT_DIR$/resources/CalML.dtd" />
+        <option value="$PROJECT_DIR$/resources/calendar.xml" />
+        <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
       </list>
     </option>
   </component>
@@ -208,6 +226,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -219,7 +238,50 @@
             <path>
               <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
               <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Calendar_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
@@ -232,11 +294,10 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Calendar_jar/Calendar.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/META-INF" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -245,11 +306,13 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="GUI" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\GitHub\Kalender\Calendar\src" />
+      <recent name="C:\Users\admin\Documents\GitHub\Kalender\Calendar\resources" />
+      <recent name="C:\Users\admin\Documents\GitHub\Kalendar\Calendar\Images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\GitHub\Kalender\Calendar\out\artifacts\Calendar_jar" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\GitHub\Kalendar\Calendar\Images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -324,6 +387,11 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="Calendar" type="JarApplication" factoryName="JAR Application">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Calendar_jar/Calendar.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\admin\Documents\GitHub\Kalender\Calendar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
     <configuration name="Calendar.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Calendar_jar/Calendar.jar" />
       <option name="WORKING_DIRECTORY" value="C:\Users\admin\Documents\GitHub\Kalender\Calendar" />
@@ -363,6 +431,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.GUI" />
+      <item itemvalue="JAR Application.Calendar" />
       <item itemvalue="Application.TextClass (1)" />
       <item itemvalue="Application.TextClass" />
       <item itemvalue="Application.Unmarshaller_Test" />
@@ -430,14 +499,14 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2201722" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980666" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2201722" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -464,49 +533,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6392">
-          <caret line="376" column="47" lean-forward="true" selection-start-line="376" selection-start-column="47" selection-end-line="376" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getDateTime#0;class#Logic#0" />
-            <element signature="method#AddAppiontment#0;class#Logic#0" />
-            <element signature="method#AddPermanentAppointment#0;class#Logic#0" />
-            <element signature="method#deleteNode#0;class#Logic#0" />
-            <element signature="method#getDayInfo#0;class#Logic#0" />
-            <element signature="method#getDayTimes#0;class#Logic#0" />
-            <element signature="method#addLearningTime#0;class#Logic#0" />
-            <element signature="method#addFreeTime#0;class#Logic#0" />
-            <element signature="method#AddUser#0;class#Logic#0" />
-            <element signature="method#handleDate#0;class#Logic#0" />
-            <element signature="method#DaysInOrder#0;class#Logic#0" />
-            <element signature="method#TransformToString#0;class#Logic#0" />
-            <element signature="method#DayMonth#0;class#Logic#0" />
-            <element signature="method#DayMonth#1;class#Logic#0" />
-            <element signature="method#getID#0;class#Logic#0" />
-            <element signature="method#getDayName#0;class#Logic#0" />
-            <element signature="method#getDate#0;class#Logic#0" />
-            <element signature="method#checkDay#0;class#Logic#0" />
-            <element signature="method#setup#0;class#Logic#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calendar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -715,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
-          <caret line="160" column="44" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AddTimeTableSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2567">
@@ -765,6 +784,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sfjaslödfj.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="160" column="44" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -772,24 +801,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
+    <entry file="file://$PROJECT_DIR$/resources/CalML.dtd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state relative-caret-position="527">
+          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calendar.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="4" selection-end-line="8" />
+        <state relative-caret-position="-312">
+          <caret column="54" lean-forward="true" selection-start-column="54" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CalML.dtd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        <state relative-caret-position="-77">
+          <caret line="1" column="53" lean-forward="true" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="233" column="71" selection-start-line="233" selection-start-column="71" selection-end-line="233" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/calendar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
         </state>
       </provider>
     </entry>
@@ -798,7 +841,12 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
           <last-edited>Calendar:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">

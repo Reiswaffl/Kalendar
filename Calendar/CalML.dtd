@@ -4,7 +4,7 @@
         <!ATTLIST currentUser
                 id CDATA #REQUIRED>
         <!ELEMENT users (User*)>
-            <!ELEMENT User (#PCDATA*, permAppointment*)>
+            <!ELEMENT User (permAppointment*)>
             <!ATTLIST User
                     id CDATA #REQUIRED>
         <!ELEMENT permAppointments (User*)>
@@ -25,7 +25,7 @@
                         id CDATA #REQUIRED>
                     <!ELEMENT day (period*)>
                     <!ATTLIST day
-                            date CDATA #REQUIRED,
+                            date CDATA #REQUIRED
                             blocked CDATA #REQUIRED>
                         <!ELEMENT period (#PCDATA)>
                         <!ATTLIST period

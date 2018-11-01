@@ -42,6 +42,6 @@
                     <period end="14:40" isfamEvent="false" start="13:30">Meine Werbung</period>
                 </day>
             </month>
-        <month id="11"><day blocked="false" date="181112"><period end="13:30" isfamEvent="false" start="12:30">FreuEN</period></day></month></years>
+        <month id="11"><day blocked="false" date="181112"><period end="13:30" isfamEvent="false" start="12:30">Freuen</period></day></month></years>
     </user>
 </calendar>

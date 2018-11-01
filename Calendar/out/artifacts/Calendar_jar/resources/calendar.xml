@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><calendar>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE calendar SYSTEM "CalML.dtd">
+
+<calendar>
     <users>
         <User id="Eric"/>
         <User id="Tom"/>
@@ -37,11 +40,11 @@
     </user>
     <user id="Tom">
         <years id="18">
-            <month id="02">
-                <day blocked="false" date="180201">
+            <month id="02" >
+                <day  date="180201"  blocked="false">
                     <period end="14:40" isfamEvent="false" start="13:30">Meine Werbung</period>
                 </day>
             </month>
-        <month id="11"><day blocked="false" date="181112"><period end="13:30" isfamEvent="false" start="12:30">FreuEN</period></day></month></years>
+        </years>
     </user>
 </calendar>
