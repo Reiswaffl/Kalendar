@@ -339,4 +339,8 @@ public class XMLReader {
             transformer.transform(source, result);
         } catch (Exception e) {}
     }
+    public Node getUnlocked(){
+        return doc.getElementsByTagName("unlocked").item(0);
+    }
+
 }

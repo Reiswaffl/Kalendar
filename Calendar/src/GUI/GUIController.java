@@ -67,7 +67,7 @@ public class GUIController{
         this.gui = gui;
     }
     @FXML
-    public void initialize(){
+    public void initialize() {
         //Coloursetup
         addAppointment.setStyle("-fx-background-color: #0066C8;");
         addPermanentAppointment.setStyle("-fx-background-color: #0066C8;");
@@ -117,6 +117,7 @@ public class GUIController{
         day6.setText(daynames[6]);
         currentUser.setText(Logic.getCurrentUser());
         Logic.setup();
+
     }
 
     @FXML

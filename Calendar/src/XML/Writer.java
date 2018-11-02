@@ -180,5 +180,9 @@ public class Writer {
         }
 
     }
+    public void setUnlocked(){
+        Node unlocked = xmlReader.getUnlocked();
+        xmlReader.setAttribute((Element)unlocked,"state","true");
+    }
 
 }

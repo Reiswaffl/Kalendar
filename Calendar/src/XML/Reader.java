@@ -88,55 +88,8 @@ public class Reader {
         }
         return null;
     }
-    public Periods getPeriodInformation(String user, int date, String start) {
-        xmlReader.Update();
-        int y = date/10000;
-        String idy = FormToString(y);
-        NodeList years = xmlReader.getUser(user).getChildNodes();
-        Node year = xmlReader.getYearById(idy, years);
 
-        int m = date%10000;
-        m /= 100;
-        String idm = FormToString(m);
-                Node month = null;
-        if(year != null) { month = xmlReader.getMonthById(idm, year.getChildNodes());}
-        else{return null;}
-        Node day = null;
-        if(month != null){ day = xmlReader.getDayById(Integer.toString(date), month.getChildNodes());}
-        else{return null;}
-        Periods p = null;
-        if(day != null){p = xmlReader.getPeriodByTime(start, day.getChildNodes());}
-        else {return null;}
-        if(p != null){
-            return p;
-        }
-        return null;
 
-    }
-    public String getAppiontmentInformation(String user, int date, String time){
-        xmlReader.Update();
-        int y = date/10000;
-        String idy = FormToString(y);
-        NodeList years = xmlReader.getUser(user).getChildNodes();
-        Node year = xmlReader.getYearById(idy, years);
-
-        int m = date%10000;
-        m /= 100;
-        String idm = FormToString(m);
-        Node month = null;
-        if(year != null) { month = xmlReader.getMonthById(idm, year.getChildNodes());}
-        else{return null;}
-        Node day = null;
-        if(month != null){ day = xmlReader.getDayById(Integer.toString(date), month.getChildNodes());}
-        else{return null;}
-        Node p = null;
-        if(day != null){p = xmlReader.getPeriodById(time, day.getChildNodes());}
-        else {return null;}
-        if(p != null){
-            return p.getTextContent();
-        }
-        return null;
-    }
     public String getNextFreeDay(String usr,int month, int day ){
         xmlReader.Update();
         Node user = xmlReader.getUser(usr);
@@ -265,5 +218,7 @@ public class Reader {
         }
         return true;
     }
-
+     public boolean getUnlocked(){
+        return xmlReader.getUnlocked().equals("true");
+     }
 }

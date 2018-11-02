@@ -31,6 +31,7 @@ public final class Logic {
 
     public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean learningTime, boolean famEvent) throws TransformerException {
         if(date == null) return "Eingabe nicht komplett";
+        if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
         if(famEvent){
             //famEvent: highest priotrity
             ArrayList<String> users = reader.getUserList();
@@ -115,6 +116,7 @@ public final class Logic {
 
     }
     public static String AddPermanentAppointment(String start, String end, String content, String repetition, String input, String driver){
+        if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
         String s = start.substring(0,start.length()-3);
         String e = end.substring(0,end.length()-3);
@@ -159,6 +161,7 @@ public final class Logic {
         return null;
     }
     public static String deletePermanentAppointment(String start, String weekday,String repetition, boolean learning){
+        if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das löschen von Terminen möglich ist";
         if(learning){
             PermAppointments perm = reader.getPemAppointments(reader.getCurrentUser());
             ArrayList<String> apps = perm.getContent();
@@ -171,6 +174,7 @@ public final class Logic {
         return null;
     }
     public static String deleteNode(String start,String date){
+        if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das löschen von Terminen möglich ist";
         boolean done = writer.removeNode(reader.getCurrentUser(),date,start);
         if(done) return null;
         return "Leider ist ein Fehler beim Löschen aufgetreten. Der Termin is nicht vorhande";
@@ -300,6 +304,7 @@ public final class Logic {
         return ret;
     }
     public static String addLearningTime(String dateInput,String subject ) throws TransformerException {
+        if(!reader.getUnlocked()) return "Es muss erst ein Nuter erstellt werden, bevor das Ermitteln der Lernzeit möglich ist";
         //setup
         double hours = 0;
        PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
@@ -367,6 +372,7 @@ public final class Logic {
         return "Es wurden " + hours + " Stunden Lernzeit engetragen";
     }
     public static String removeAppointment(String date,String input , String start,String repetition, String weekday){
+        if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das löschen von Terminen möglich ist";
         if(date != null && input != null) return "Fehlerhafte Eingabe";
         if((date == null && input == null)|| start == null) return "Fehlerhaft Eingabe";
         if(date != null){
@@ -385,6 +391,7 @@ public final class Logic {
         return "Nicht vollständige Eingabe";
     }
     public static String addFreeTime(String date, String input, String start, String end, String repetition, String weekday) throws TransformerException {
+        if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das hinzufügen von Freizeit möglich ist";
         if(date != null && input != null) return "Es ist nicht möglich einen permanenten und normalen Termin gleichzeitig einzutragen";
         if(date == null && input == null) return "Fehlerhafte Eingabe";
         if(date != null){
@@ -399,22 +406,26 @@ public final class Logic {
         }
         return "Fehler bei der Eingabe";
     }
-    public static String getNextFreeDay(String usr){
-        Date date = new Date();
-        int month = Integer.parseInt(new SimpleDateFormat("MM").format(date));
-        int day = Integer.parseInt(new SimpleDateFormat("dd").format(date));
-        return reader.getNextFreeDay(usr,month,day);
-    }
+
     //Change user
     public static String SwitchUser(String user){
-        ArrayList<String> s  = reader.getUserList();
-        for(int i = 0; i < s.size(); i++){
-            if(user.equals(s.get(i))) {writer.SwitchUser(user);
-            return null;}
+        if(!reader.getUnlocked()){
+            return "Es muss zuerst ein Nutzer erzeugt werden";
+        }else {
+            ArrayList<String> s = reader.getUserList();
+            for (int i = 0; i < s.size(); i++) {
+                if (user.equals(s.get(i))) {
+                    writer.SwitchUser(user);
+                    return null;
+                }
+            }
         }
         return "Nutzername noch nicht eingetragen";
     }
     public static String  AddUser(String username) throws TransformerException {
+        if(!reader.getUnlocked()){
+            writer.setUnlocked();
+        }
         return writer.AddUser(username);
     }
     public static String getCurrentUser(){
@@ -434,7 +445,7 @@ public final class Logic {
 
         return null;
     }
-
+    public static boolean getUnlocked(){return reader.getUnlocked();}
     public static String[] DaysInOrder(){
         String[] daynames = new String[7];
         Date date = new Date();
