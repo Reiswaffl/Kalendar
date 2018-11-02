@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><calendar>
     <unlocked state="true"/>
-    <users><User id="Ich"/></users>
+    <users><User id="Ich"/><User id="Eric"/><User id="Kevin"/></users>
 
 
     <permAppointments>
 
-    <User id="Ich"/></permAppointments>
+    <User id="Ich"/><User id="Eric"/><User id="Kevin"/></permAppointments>
     <user id=""/>
-    <currentUser id="Ich"/>
-<user id="Ich"/></calendar>
+    <currentUser id="Kevin"/>
+<user id="Ich"/><user id="Eric"/><user id="Kevin"><years id="18"><month id="11"><day blocked="false" date="181102"><period end="13:30" isfamEvent="false" start="12:30">Nein</period></day></month></years></user></calendar>

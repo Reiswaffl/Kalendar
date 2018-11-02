@@ -1,23 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE calendar SYSTEM "CalML.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><calendar>
+    <unlocked state="true"/>
+    <users><User id="Ich"/><User id="Eric"/><User id="Kevin"/></users>
 
-<calendar>
-    <users>
-        <User id="Eric"/>
-        <User id="Tom"/>
-    </users>
-    <currentUser id="Tom"/>
 
-    <permAppointments><User id="Eric">
-	
-    </User>
-        <User id="Tom">
+    <permAppointments>
 
-        </User>
-    </permAppointments>
-    <user id="Eric">
-    </user>
-    <user id="Tom">
-        
-    </user>
-</calendar>
+    <User id="Ich"/><User id="Eric"/><User id="Kevin"/></permAppointments>
+    <user id=""/>
+    <currentUser id="Kevin"/>
+<user id="Ich"/><user id="Eric"/><user id="Kevin"/></calendar>

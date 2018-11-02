@@ -219,6 +219,11 @@ public class Reader {
         return true;
     }
      public boolean getUnlocked(){
-        return xmlReader.getUnlocked().equals("true");
+        Node unlocked = xmlReader.getUnlocked();
+        if(unlocked.getNodeType() == Node.ELEMENT_NODE){
+            Element eunlocked = (Element) unlocked;
+            return eunlocked.getAttribute("state").equals("true");
+        }
+        return false;
      }
 }

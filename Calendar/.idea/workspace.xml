@@ -28,8 +28,8 @@
       <file leaf-file-name="Writer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XML/Writer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="183" column="48" lean-forward="true" selection-start-line="183" selection-start-column="48" selection-end-line="183" selection-end-column="48" />
+            <state relative-caret-position="691">
+              <caret line="183" column="48" selection-start-line="183" selection-start-column="48" selection-end-line="183" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -37,34 +37,71 @@
       <file leaf-file-name="XMLReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="402">
+              <caret line="342" column="17" lean-forward="true" selection-start-line="342" selection-start-column="17" selection-end-line="342" selection-end-column="17" />
               <folding>
-                <element signature="e#13622#13623#0" expanded="true" />
-                <element signature="e#13689#13690#0" expanded="true" />
+                <element signature="e#13632#13633#0" expanded="true" />
+                <element signature="e#13699#13700#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reader.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calendar.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="54" selection-start-column="54" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/XML/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="221" column="54" selection-start-line="221" selection-start-column="54" selection-end-line="221" selection-end-column="54" />
-              <folding>
-                <element signature="e#8323#8324#0" expanded="true" />
-                <element signature="e#8378#8379#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="504">
+              <caret line="226" column="21" selection-start-line="226" selection-start-column="21" selection-end-line="226" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calendar.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/calendar.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="17">
+              <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1778">
+              <caret line="426" column="33" selection-start-line="426" selection-start-column="33" selection-end-line="426" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getDateTime#0;class#Logic#0" />
+                <element signature="method#AddPermanentAppointment#0;class#Logic#0" />
+                <element signature="method#deletePermanentAppointment#0;class#Logic#0" />
+                <element signature="method#deleteNode#0;class#Logic#0" />
+                <element signature="method#getDayInfo#0;class#Logic#0" />
+                <element signature="method#getDayTimes#0;class#Logic#0" />
+                <element signature="method#addLearningTime#0;class#Logic#0" />
+                <element signature="method#removeAppointment#0;class#Logic#0" />
+                <element signature="method#addFreeTime#0;class#Logic#0" />
+                <element signature="method#SwitchUser#0;class#Logic#0" />
+                <element signature="method#handleDate#0;class#Logic#0" />
+                <element signature="method#DaysInOrder#0;class#Logic#0" />
+                <element signature="method#TransformToString#0;class#Logic#0" />
+                <element signature="method#DayMonth#0;class#Logic#0" />
+                <element signature="method#DayMonth#1;class#Logic#0" />
+                <element signature="method#getID#0;class#Logic#0" />
+                <element signature="method#getDayName#0;class#Logic#0" />
+                <element signature="method#getDate#0;class#Logic#0" />
+                <element signature="method#checkDay#0;class#Logic#0" />
+                <element signature="method#setup#0;class#Logic#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,13 +202,13 @@
         <option value="$PROJECT_DIR$/calendar.xml" />
         <option value="$PROJECT_DIR$/CalML.dtd" />
         <option value="$PROJECT_DIR$/src/GUI/GUI.java" />
-        <option value="$PROJECT_DIR$/src/XML/Reader.java" />
-        <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
         <option value="$PROJECT_DIR$/src/XML/Writer.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUIController.java" />
         <option value="$PROJECT_DIR$/src/Logic/Logic.java" />
-        <option value="$PROJECT_DIR$/resources/calendar.xml" />
         <option value="$PROJECT_DIR$/resources/CalML.dtd" />
+        <option value="$PROJECT_DIR$/src/XML/XMLReader.java" />
+        <option value="$PROJECT_DIR$/resources/calendar.xml" />
+        <option value="$PROJECT_DIR$/src/XML/Reader.java" />
       </list>
     </option>
   </component>
@@ -185,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,19 +238,6 @@
               <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
               <item name="Calendar" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="Calendar_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
               <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -223,12 +246,6 @@
               <item name="out" type="462c0819:PsiDirectoryNode" />
               <item name="production" type="462c0819:PsiDirectoryNode" />
               <item name="Calendar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Calendar" type="b2602c69:ProjectViewProjectNode" />
@@ -268,6 +285,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -442,6 +460,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1307" height="925" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -452,11 +471,11 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2201722" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2201722" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3296433" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980666" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980666" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -476,7 +495,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="183" />
+      <option name="time" value="186" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -524,13 +543,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PeriodObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java" />
     <entry file="file://$PROJECT_DIR$/src/PeriodObject.java" />
     <entry file="file://$PROJECT_DIR$/calendar.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -546,13 +559,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java" />
     <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -560,13 +567,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java" />
     <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -625,13 +626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/TextClass.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/AddPermanentAppointmentSceneController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -695,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calendar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="54" selection-start-column="54" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CalML.dtd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -709,74 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#13622#13623#0" expanded="true" />
-            <element signature="e#13689#13690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUIController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-638">
           <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="426" column="33" selection-start-line="426" selection-start-column="33" selection-end-line="426" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getDateTime#0;class#Logic#0" />
-            <element signature="method#AddAppiontment#0;class#Logic#0" />
-            <element signature="method#AddPermanentAppointment#0;class#Logic#0" />
-            <element signature="method#deletePermanentAppointment#0;class#Logic#0" />
-            <element signature="method#deleteNode#0;class#Logic#0" />
-            <element signature="method#getDayInfo#0;class#Logic#0" />
-            <element signature="method#getDayTimes#0;class#Logic#0" />
-            <element signature="method#addLearningTime#0;class#Logic#0" />
-            <element signature="method#removeAppointment#0;class#Logic#0" />
-            <element signature="method#addFreeTime#0;class#Logic#0" />
-            <element signature="method#SwitchUser#0;class#Logic#0" />
-            <element signature="e#19977#19978#0" expanded="true" />
-            <element signature="e#20023#20024#0" expanded="true" />
-            <element signature="method#handleDate#0;class#Logic#0" />
-            <element signature="method#DaysInOrder#0;class#Logic#0" />
-            <element signature="method#TransformToString#0;class#Logic#0" />
-            <element signature="method#DayMonth#0;class#Logic#0" />
-            <element signature="method#DayMonth#1;class#Logic#0" />
-            <element signature="method#getID#0;class#Logic#0" />
-            <element signature="method#getDayName#0;class#Logic#0" />
-            <element signature="method#getDate#0;class#Logic#0" />
-            <element signature="method#checkDay#0;class#Logic#0" />
-            <element signature="method#setup#0;class#Logic#0" />
-            <element signature="e#26927#26928#0" expanded="true" />
-            <element signature="e#26958#26959#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="183" column="48" lean-forward="true" selection-start-line="183" selection-start-column="48" selection-end-line="183" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/XML/Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="221" column="54" selection-start-line="221" selection-start-column="54" selection-end-line="221" selection-end-column="54" />
-          <folding>
-            <element signature="e#8323#8324#0" expanded="true" />
-            <element signature="e#8378#8379#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,10 +718,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/calendar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="54" selection-start-column="54" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logic/Logic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1778">
+          <caret line="426" column="33" selection-start-line="426" selection-start-column="33" selection-end-line="426" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getDateTime#0;class#Logic#0" />
+            <element signature="method#AddPermanentAppointment#0;class#Logic#0" />
+            <element signature="method#deletePermanentAppointment#0;class#Logic#0" />
+            <element signature="method#deleteNode#0;class#Logic#0" />
+            <element signature="method#getDayInfo#0;class#Logic#0" />
+            <element signature="method#getDayTimes#0;class#Logic#0" />
+            <element signature="method#addLearningTime#0;class#Logic#0" />
+            <element signature="method#removeAppointment#0;class#Logic#0" />
+            <element signature="method#addFreeTime#0;class#Logic#0" />
+            <element signature="method#SwitchUser#0;class#Logic#0" />
+            <element signature="method#handleDate#0;class#Logic#0" />
+            <element signature="method#DaysInOrder#0;class#Logic#0" />
+            <element signature="method#TransformToString#0;class#Logic#0" />
+            <element signature="method#DayMonth#0;class#Logic#0" />
+            <element signature="method#DayMonth#1;class#Logic#0" />
+            <element signature="method#getID#0;class#Logic#0" />
+            <element signature="method#getDayName#0;class#Logic#0" />
+            <element signature="method#getDate#0;class#Logic#0" />
+            <element signature="method#checkDay#0;class#Logic#0" />
+            <element signature="method#setup#0;class#Logic#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/calendar.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="17">
+          <caret line="1" column="22" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XML/XMLReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="342" column="17" lean-forward="true" selection-start-line="342" selection-start-column="17" selection-end-line="342" selection-end-column="17" />
+          <folding>
+            <element signature="e#13632#13633#0" expanded="true" />
+            <element signature="e#13699#13700#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XML/Writer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="183" column="48" selection-start-line="183" selection-start-column="48" selection-end-line="183" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/XML/Reader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="226" column="21" selection-start-line="226" selection-start-column="21" selection-end-line="226" selection-end-column="21" />
         </state>
       </provider>
     </entry>

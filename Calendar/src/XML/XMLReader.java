@@ -58,7 +58,7 @@ public class XMLReader {
                 TransformerFactory transformerFactory = TransformerFactory.newInstance();
                 Transformer transformer = transformerFactory.newTransformer();
                 DOMSource source = new DOMSource(doc);
-                StreamResult result = new StreamResult(new File("calendar.xml"));
+                StreamResult result = new StreamResult(new File("resources/calendar.xml"));
                 transformer.transform(source, result);
             }catch (Exception e){}
     }
