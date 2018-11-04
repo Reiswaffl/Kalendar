@@ -17,18 +17,38 @@ import java.util.*;
 
 import static java.lang.String.*;
 
+/**
+ * @brief This class represents the Logic of the program. All proofs, that need to be made, are done here. This class delivers an interface between XML an GUI
+ */
 public final class Logic {
     public static Writer writer;
     public static Reader reader;
     public static int[] daysInMonth = new int[12];
 
     //getter to get information for the LogicWindow
+
+    /**
+     * @brief returns current date
+     * @return String: date
+     */
     public static String getDateTime() {
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy"); //HH:mm:ss
         Date date = new Date();
         return dateFormat.format(date);
     }
 
+    /**
+     * @brief checks, if an Appointment is possible, or if there is already on. If its possible it adds this one. If not it returns an Errormessage
+     * @param date date of the appointment
+     * @param start start of the appointment
+     * @param end end of the appointment
+     * @param content content of the appointment
+     * @param driver possible driver (person that has that event aswell)
+     * @param learningTime if the program should calculate learning-time or not
+     * @param famEvent if the program is for the whole family or not
+     * @return String: possible Errormessage
+     * @throws TransformerException
+     */
     public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean learningTime, boolean famEvent) throws TransformerException {
         if(date == null) return "Eingabe nicht komplett";
         if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
@@ -115,6 +135,17 @@ public final class Logic {
         return null;
 
     }
+
+    /**
+     * @brief checks, if an permanent Appointment is possible, or if there is already on. If its possible it adds this one. If not it returns an Errormessage
+     * @param start start of the appointment
+     * @param end end of the appointment
+     * @param content content of the appointment
+     * @param repetition repetition of the appointment (DAILY, WEEKLY, MONTHLY or YEARLY)
+     * @param input fixed point where the appointment is supposed to repeat. e.g MONDAY (at WEEKLY) or 03 (at MONTHLY)
+     * @param driver possiblle driver (person that has that event aswell
+     * @return
+     */
     public static String AddPermanentAppointment(String start, String end, String content, String repetition, String input, String driver){
         if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
@@ -160,6 +191,15 @@ public final class Logic {
         }
         return null;
     }
+
+    /**
+     * @brief deletes an permanent Appointment, that already exist. If it is School (learning) it has to be proven, that it is an school-appointment to delete if (see AddTimeTableScene)
+     * @param start start of the appointment
+     * @param weekday fixed point, where the Appointment repeats (see AppPermAppointment).
+     * @param repetition repetition of the Appointment
+     * @param learning if it is school or not
+     * @return String: possible to return Errormessage
+     */
     public static String deletePermanentAppointment(String start, String weekday,String repetition, boolean learning){
         if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das löschen von Terminen möglich ist";
         if(learning){
@@ -173,12 +213,28 @@ public final class Logic {
         }
         return null;
     }
+
+    /**
+     * @brief deletes an Appointment, that already exists
+     * @param start start of the Appointment
+     * @param date date of the Appointment
+     * @return String: possible Errormessage
+     */
     public static String deleteNode(String start,String date){
         if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das löschen von Terminen möglich ist";
         boolean done = writer.removeNode(reader.getCurrentUser(),date,start);
         if(done) return null;
         return "Leider ist ein Fehler beim Löschen aufgetreten. Der Termin is nicht vorhande";
     }
+
+    /**
+     * @brief There a two ways to get the information of a day: by direct dayinput, or by saying how much das the day is away from today. The program will search for information depending on the input.
+     * @param add How much days the searched day is away from now
+     * @param dateInput date to search for
+     * @param isDate search direct date or not
+     * @return String: possible Errormessage
+     * @throws ParseException
+     */
     public static String getDayInfo(int add, String dateInput, boolean isDate) throws ParseException {
         System.out.println("Date:" + dateInput);
         String date;
@@ -243,6 +299,15 @@ public final class Logic {
         }
         return ret;
     }
+
+    /**
+     * @brief same as getDayInfo, just with the start and end, not with the content of the Appointments
+     * @param add --
+     * @param dateInput --
+     * @param isDate --
+     * @return String: possible Errormessage
+     * @throws ParseException
+     */
     public static String getDayTimes(int add,String dateInput,boolean isDate) throws ParseException {
         String date;
         ReturnValue returnValue = null;
@@ -303,6 +368,14 @@ public final class Logic {
         }
         return ret;
     }
+
+    /**
+     * @brief calculares the learning-times
+     * @param dateInput date of the test or whatever you want to learn for
+     * @param subject Name of the subject the test is written in
+     * @return String: possible Errormessage
+     * @throws TransformerException
+     */
     public static String addLearningTime(String dateInput,String subject ) throws TransformerException {
         if(!reader.getUnlocked()) return "Es muss erst ein Nuter erstellt werden, bevor das Ermitteln der Lernzeit möglich ist";
         //setup
@@ -371,6 +444,16 @@ public final class Logic {
         }
         return "Es wurden " + hours + " Stunden Lernzeit engetragen";
     }
+
+    /**
+     * @brief decies id a normal or a permanent Appointment is supposed to be deleted
+     * @param date date of Appointment (only for normal Appointments)
+     * @param input
+     * @param start start of the Appointment (required)
+     * @param repetition repetition of the Appointment (only for permanent Appointments)
+     * @param weekday  fixed point, where the Appointment repeats (see AppPermAppointment).(only for permanent Appointments)
+     * @return
+     */
     public static String removeAppointment(String date,String input , String start,String repetition, String weekday){
         if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das löschen von Terminen möglich ist";
         if(date != null && input != null) return "Fehlerhafte Eingabe";
@@ -390,6 +473,18 @@ public final class Logic {
         }
         return "Nicht vollständige Eingabe";
     }
+
+    /**
+     * @brief Adds Appointment with special writer "Freizeit"
+     * @param date date of Appointment (only for normal Appointments
+     * @param input
+     * @param start start of the Appointment (required)
+     * @param end end of the Appointment (required)
+     * @param repetition repetition of the Appointment (only for permanent Appointments)
+     * @param weekday fixed point, where the Appointment repeats (see AppPermAppointment).(only for permanent Appointments)
+     * @return
+     * @throws TransformerException
+     */
     public static String addFreeTime(String date, String input, String start, String end, String repetition, String weekday) throws TransformerException {
         if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das hinzufügen von Freizeit möglich ist";
         if(date != null && input != null) return "Es ist nicht möglich einen permanenten und normalen Termin gleichzeitig einzutragen";
@@ -408,6 +503,12 @@ public final class Logic {
     }
 
     //Change user
+
+    /**
+     * @brief checks the possibility to switch the user
+     * @param user user, that the program is supposed to switch to
+     * @return String: poss ible Errormessage
+     */
     public static String SwitchUser(String user){
         if(!reader.getUnlocked()){
             return "Es muss zuerst ein Nutzer erzeugt werden";
@@ -422,15 +523,33 @@ public final class Logic {
         }
         return "Nutzername noch nicht eingetragen";
     }
+
+    /**
+     * @brief Adds a user
+     * @param username name of the new user
+     * @return String: possible Errormessage
+     * @throws TransformerException
+     */
     public static String  AddUser(String username) throws TransformerException {
         if(!reader.getUnlocked()){
             writer.setUnlocked();
         }
         return writer.AddUser(username);
     }
+
+    /**
+     * @brief forwards writer
+     * @return String: current User
+     */
     public static String getCurrentUser(){
         return writer.getCurrentUser();
     }
+
+    /**
+     * @brief filters dateinput
+     * @param date dateinput
+     * @return date or null, if no filtering is possible
+     */
     public static String handleDate(String date){
         if(date.length() > 10) return null;
 
@@ -446,6 +565,11 @@ public final class Logic {
         return null;
     }
     public static boolean getUnlocked(){return reader.getUnlocked();}
+
+    /**
+     * @brief sorts day beginning withe current day. e.g. "Samstag" - "Sonntag" - "Montag" and so on (only for Mainwindow)
+     * @return String[] days in the rigth order
+     */
     public static String[] DaysInOrder(){
         String[] daynames = new String[7];
         Date date = new Date();
@@ -465,6 +589,11 @@ public final class Logic {
 
         return daynames;
     }
+
+    /**
+     * @brief transforms the date in a String, the program can work with
+     * @return String: date
+     */
     private static String TransformToString(){
         Date date = new Date();
 
@@ -486,6 +615,12 @@ public final class Logic {
         String totaldate = year + month + day;
         return totaldate;
     }
+
+    /**
+     * @brief if there is an add with would run out of the month. e.g day: 30.10.yyyy add = 5. it will cast into the next month --> 05.11.yyy
+     * @param add days away from current day
+     * @return String: new date
+     */
     private static String DayMonth(int add) {
         String date = TransformToString();
         int totaldate = Integer.parseInt(date);
@@ -500,7 +635,7 @@ public final class Logic {
             day -= daysInMonth[month - 1];
             day += 1;
         } else if (day + add < 1){
-            // day os in lst month
+            // day ss in last month
             month -= 1;
             day = daysInMonth[month-1] + (day - add);
         }else{
@@ -520,6 +655,13 @@ public final class Logic {
         date = syear + smonth + sday;
         return date;
     }
+
+    /**
+     * @brief same as upper, but with dateinput to start from
+     * @param add --
+     * @param date --
+     * @return
+     */
     private static String DayMonth(int add,String date) {
         int totaldate = Integer.parseInt(date);
         int month = totaldate % 10000;
@@ -553,6 +695,12 @@ public final class Logic {
         date = syear + smonth + sday;
         return date;
     }
+
+    /**
+     * @brief for mainwindow
+     * @param dayname
+     * @return
+     */
     private static int getID(String dayname){
         switch (dayname){
             case "Montag":
@@ -573,6 +721,12 @@ public final class Logic {
                 return 10;
         }
     }
+
+    /**
+     * @brief for mainwindow
+     * @param id
+     * @return
+     */
     private static String getDayName(int id){
         switch (id){
             case 0:
@@ -593,6 +747,11 @@ public final class Logic {
                 return null;
         }
     }
+
+    /**
+     * @brief returns date, but with "." only to show in GUI
+     * @return date
+     */
     private static String getDate(){
         Date date = new Date();
         DateFormat dayFormat = new SimpleDateFormat("dd");
@@ -605,6 +764,14 @@ public final class Logic {
         String year = yearFormat.format(date);
         return day +"." + month + "." + year;
     }
+
+    /**
+     * @brief check if the permanent Appoints need to be shown
+     * @param compare comparevalue (only for WEEKLY)
+     * @param input point of the repetition. e.g. MONDAY or "03"
+     * @param repetition repetition of permanent Appointment
+     * @return boolean: true, when Appointment need to be shown. false when not
+     */
     private static boolean checkDay(String compare,String input,String repetition){
         if(repetition.equals("DAILY"))return true;
         if(repetition.equals("WEEKLY")) {
@@ -626,6 +793,9 @@ public final class Logic {
         return false;
     }
 
+    /**
+     * @brief searches current month and year to make it possible to delete the last month (see XMLReader)
+     */
     public static void setup(){
         Date date = new Date();
         DateFormat monthFormat = new SimpleDateFormat("MM");
@@ -640,6 +810,10 @@ public final class Logic {
         }
         writer.setup(year,month);
     }
+
+    /**
+     * @brief forwards writer
+     */
     public static void Update(){
         writer.Update();
     }

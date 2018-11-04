@@ -106,7 +106,7 @@ public class DeleteAppointmentSceneContoller implements Initializable{
 
 
         }
-        if(week().equals("Fehler, Tag nicht Vorhanden")){
+        if(week().equals("Fehler, Tag nicht Vorhanden") && sinput != null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fehler beim Eintragen");
 

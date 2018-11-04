@@ -8,4 +8,4 @@
     <User id="Ich"/><User id="Eric"/><User id="Kevin"/></permAppointments>
     <user id=""/>
     <currentUser id="Kevin"/>
-<user id="Ich"/><user id="Eric"/><user id="Kevin"><years id="18"><month id="11"><day blocked="false" date="181102"><period end="13:30" isfamEvent="false" start="12:30">Nein</period></day></month></years></user></calendar>
+<user id="Ich"/><user id="Eric"/><user id="Kevin"><years id="18"><month id="11"><day blocked="false" date="181102"><period end="13:30" isfamEvent="false" start="12:30">Nein</period></day><day blocked="false" date="181103"/></month></years></user></calendar>

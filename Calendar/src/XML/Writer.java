@@ -6,12 +6,20 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import javax.xml.transform.TransformerException;
 
+/**
+ * @brief This class is used to cast String-information into Node-information. It gets Strings from the Logic class,
+ * casts them and gives them to the XMLReader
+ */
 
 
 public class Writer {
     XMLReader xmlReader;
     int[] daysInMonth;
     //setup
+
+    /**
+     * @brief setup
+     */
     public Writer(){
         xmlReader = new XMLReader();
         daysInMonth = new int[12];
@@ -29,13 +37,29 @@ public class Writer {
         daysInMonth[11] = 31;
     }
 
+    /**
+     * @brief forward to xmlReader
+     * @param user user that is supposed to be the new currentUser
+     */
     //Change Users
     public void SwitchUser(String user){
         xmlReader.SwitchUser(user);
     }
+
+    /**
+     * forward to xmlReader
+     * @return String, currentUser
+     */
     public String getCurrentUser(){
         return xmlReader.getCurrentUser();
     }
+
+    /**
+     * @brief checks, if user already exist, before forewarding to the xmlReader
+     * @param name id, the new User-Element is supposed to have
+     * @return can return Errormassage
+     * @throws TransformerException
+     */
     public String AddUser(String name) throws TransformerException {
         NodeList userList = xmlReader.getUsers();
         if (userList == null){
@@ -55,10 +79,24 @@ public class Writer {
         return "--";
     }
 
+    /**
+     * @brief need of this method descried in XMLReader
+     */
     public void Update(){
         xmlReader.Update();
     }
 
+    /**
+     * @brief To make an efficient program data-structure is important, therefore the AddPeriod-method checks,
+     * if the ParentNodes for the year-/month-/day- and period-Elements already exists. If so, the program won't create a new one, otherwise it will.
+     * @param user user, the appointment is from
+     * @param date date, the appointment is supposed to have
+     * @param start start, the appointment is supposed to have
+     * @param end end, the appointment is supposed to have
+     * @param content content, the appointment is supposed to have
+     * @param isfamEvent says, if the appointment is a family Event
+     * @throws TransformerException
+     */
     public void AddPeriod(String user, String date, String start,String end, String content, String isfamEvent) throws TransformerException {
         Node usr = xmlReader.getUser(user);
         NodeList years = null;
@@ -125,10 +163,28 @@ public class Writer {
         }
         xmlReader.Update();
     }
+
+    /**
+     * @brief forwards to XMLReader
+     * @param user --
+     * @param start --
+     * @param end --
+     * @param repetition --
+     * @param weekday --
+     * @param content --
+     */
     public void AddPermAppointment(String user,String start, String end, String repetition,String weekday,String content){
         xmlReader.CreatePermanentAppointment(xmlReader.getPermUser(user),start, end,content,repetition,weekday);
 
     }
+
+    /**
+     * @brief prepares to delete a Node, by searching and deleting it
+     * @param user user, the appointment is from
+     * @param start start of the appointment
+     * @param date date of the appointment
+     * @return
+     */
     public boolean removeNode(String user,String start,String date){
         System.out.println(date +"+"+start);
         Node nuser = xmlReader.getUser(user);
@@ -147,6 +203,14 @@ public class Writer {
 
         return false;
     }
+
+    /**
+     * @brief prepares to delete a permanent Appointment- Node, by searching and deleting it
+     * @param user user, the appointment is from
+     * @param start start of the appointment
+     * @param weekday weekday, or day (when repetition is monthly) of the appointment. e.g. MONDAY, of 26
+     * @param repetition repetition of the appointment (DAILY, WEEKLY, MONTHLY or YEARLY)
+     */
     public void removePermAppointment(String user, String start, String weekday, String repetition){
        NodeList permAppointments = xmlReader.getPermAppointments(user);
         Node parent = xmlReader.getPermUser(user);
@@ -163,7 +227,11 @@ public class Writer {
     public void SetDayBusy(String user, String date, String content){}
     public void SetDayBusy(String user, String date){}
 
-
+    /**
+     * @brief removes all Nodes from the last month to hold the size of the XML-File small
+     * @param year current year
+     * @param month cureent month
+     */
     public void setup(String year, String month){
         System.out.println(year + "----" + month);
         NodeList users = xmlReader.getUsers(12);
@@ -180,6 +248,10 @@ public class Writer {
         }
 
     }
+
+    /**
+     * @brief sets the current state to unlocked
+     */
     public void setUnlocked(){
         Node unlocked = xmlReader.getUnlocked();
         xmlReader.setAttribute((Element)unlocked,"state","true");
