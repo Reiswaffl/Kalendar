@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><calendar>
     <unlocked state="true"/>
-    <users><User id="Ich"/><User id="Eric"/><User id="Kevin"/></users>
+    <users><User id="User"/><User id="User1"/><User id="User2"/><User id="User3"/><User id="User4"/><User id="User5"/><User id="User6"/><User id="User7"/></users>
 
 
     <permAppointments>
 
-    <User id="Ich"/><User id="Eric"/><User id="Kevin"/></permAppointments>
-    <user id=""/>
-    <currentUser id="Kevin"/>
-<user id="Ich"/><user id="Eric"/><user id="Kevin"><years id="18"><month id="11"><day blocked="false" date="181102"><period end="13:30" isfamEvent="false" start="12:30">Nein</period></day><day blocked="false" date="181103"/></month></years></user></calendar>
+        <User id="User"><permAppointment end="14:40" repetition="WEEKLY" start="12:30" weekday="MONDAY">Tut er</permAppointment><permAppointment end="16:30" repetition="WEEKLY" start="14:40" weekday="MONDAY">Tut er auch</permAppointment><permAppointment end="16:30" repetition="WEEKLY" start="14:40" weekday="MONDAY">Tut er auch</permAppointment></User><User id="User1"/><User id="User2"/><User id="User3"/><User id="User4"/><User id="User5"/><User id="User6"/><User id="User7"/></permAppointments>
+    <currentUser id="User"/>
+    <user id="User"><years id="18"><month id="11"><day blocked="false" date="181118"/><day blocked="false" date="181120"><period end="14:30" isfamEvent="false" start="13:31">Test2</period><period end="15:30" isfamEvent="false" start="14:32">Test3</period><period end="16:30" isfamEvent="false" start="15:33">Test4</period><period end="17:30" isfamEvent="false" start="16:34">Test5</period><period end="18:30" isfamEvent="false" start="17:35">Test6</period><period end="19:30" isfamEvent="false" start="18:36">Test7</period></day></month></years></user><user id="User1"/><user id="User2"/><user id="User3"/><user id="User4"/><user id="User5"/><user id="User6"/><user id="User7"/></calendar>

@@ -76,7 +76,7 @@ public class Writer {
             }
         }
         xmlReader.CreateUser(name);
-        return "--";
+        return null;
     }
 
     /**
@@ -185,12 +185,12 @@ public class Writer {
      * @param date date of the appointment
      * @return
      */
-    public boolean removeNode(String user,String start,String date){
+    public boolean removeNode(String user,String date,String start){
         System.out.println(date +"+"+start);
         Node nuser = xmlReader.getUser(user);
         String year = date.substring(0,2);
         String month = date.substring(2, 4);
-        String day = date.substring(4, 6);
+        System.out.println(year +month);
         Node nyear = null;
         if(nuser != null) nyear = xmlReader.getYearById(year,nuser.getChildNodes());
         Node nmonth = null;

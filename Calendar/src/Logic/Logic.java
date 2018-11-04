@@ -5,6 +5,7 @@ import ReturnValues.PermAppointments;
 import ReturnValues.ReturnValue;
 import XML.Reader;
 import XML.Writer;
+import javafx.fxml.Initializable;
 
 
 import javax.xml.transform.Source;
@@ -50,78 +51,101 @@ public final class Logic {
      * @throws TransformerException
      */
     public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean learningTime, boolean famEvent) throws TransformerException {
-        if(date == null) return "Eingabe nicht komplett";
-        if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
-        if(famEvent){
+        if (date == null) return "Eingabe nicht komplett";
+        if (!reader.getUnlocked())
+            return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
+        if (famEvent) {
             //famEvent: highest priotrity
             ArrayList<String> users = reader.getUserList();
-            int sthour = Integer.parseInt(start.substring(0,2));
-            int stminutes = Integer.parseInt(start.substring(3,5));
-            int enhour = Integer.parseInt(end.substring(0,2));
-            int enminutes = Integer.parseInt(end.substring(3,5));
-            for(int i = 0; i < users.size();i++){
-                ArrayList<String> s = reader.getDayInformation(users.get(i),Integer.parseInt(date)).getStart();
-                ArrayList<String> e = reader.getDayInformation(users.get(i),Integer.parseInt(date)).getEnd();
-                for(int c = 0; c < s.size();c++){
+            int sthour = Integer.parseInt(start.substring(0, 2));
+            int stminutes = Integer.parseInt(start.substring(3, 5));
+            int enhour = Integer.parseInt(end.substring(0, 2));
+            int enminutes = Integer.parseInt(end.substring(3, 5));
+            for (int i = 0; i < users.size(); i++) {
+                ArrayList<String> s = reader.getDayInformation(users.get(i), Integer.parseInt(date)).getStart();
+                ArrayList<String> e = reader.getDayInformation(users.get(i), Integer.parseInt(date)).getEnd();
+                for (int c = 0; c < s.size(); c++) {
                     int starthour = Integer.parseInt(s.get(c).substring(0, 2));
                     int startminutes = Integer.parseInt(s.get(c).substring(3, 5));
                     int endhour = Integer.parseInt(e.get(c).substring(0, 2));
                     int endminutes = Integer.parseInt(e.get(c).substring(3, 5));
 
-                    if((sthour < starthour && enhour < starthour)||(sthour > endhour && enhour > endhour)) {
-                    }else if(starthour == sthour){
-                        if((stminutes < startminutes && enhour < startminutes)||(sthour > endminutes && enhour > endminutes)){
+                    if ((sthour < starthour && enhour < starthour) || (sthour > endhour && enhour > endhour)) {
+                    } else if (starthour == sthour) {
+                        if ((stminutes < startminutes && enhour < startminutes) || (sthour > endminutes && enhour > endminutes)) {
 
-                        }else{
+                        } else {
                             // Appointment in the time
 
                         }
-                    }else{
+                    } else {
                         // Appointment in the time
                     }
                 }
-                writer.AddPeriod(users.get(i),date,start,end,content,"true");
+                writer.AddPeriod(users.get(i), date, start, end, content, "true");
                 return null;
             }
         }
-        if(driver != null && reader.isRegistered(driver) == false)
-        {
+        if (driver != null && reader.isRegistered(driver) == false) {
             System.out.println("Begleitperson");
             return "Die Begleitperson exestiert leider noch nicht. ";
         }
         String s = null;
         String e = null;
-        try{
-        s = start.substring(0,start.length()-3);
-        e = end.substring(0,end.length()-3);
-        if(Integer.parseInt(s) > Integer.parseInt(e)){
-            return "Ende liegt vor Start";
+        String sm = null;
+        String em = null;
+        try {
+            s = start.substring(0, start.length() - 3);
+            e = end.substring(0, end.length() - 3);
+            sm = start.substring(start.length()-2,start.length());
+            em = end.substring(end.length()-2,end.length());
+            System.out.println(sm + "       " + em);
+            if (Integer.parseInt(s) > Integer.parseInt(e) || (Integer.parseInt(s) == Integer.parseInt(e)&& Integer.parseInt(em ) < Integer.parseInt(sm))) {
+                return "Ende liegt vor Start";
+            }
+        } catch (NumberFormatException r) {
+            return "Fehlerhafte Eingabe";
         }
-        }catch (NumberFormatException r){return "Fehlerhafte Eingabe";}
-        ReturnValue periods = reader.getDayInformation(reader.getCurrentUser(),Integer.parseInt(date));
+        ReturnValue periods = reader.getDayInformation(reader.getCurrentUser(), Integer.parseInt(date));
         ArrayList<String> sp = periods.getStart();
         ArrayList<String> ep = periods.getEnd();
 
-        for(int i = 0; i < sp.size(); i++){
-            String ps = sp.get(i).substring(0,sp.get(i).length()-3);
-            String pe = ep.get(i).substring(0,ep.get(i).length()-3);
-            if(Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe))
-            {
+        for (int i = 0; i < sp.size(); i++) {
+            String ps = sp.get(i).substring(0, sp.get(i).length() - 3);
+            String pe = ep.get(i).substring(0, ep.get(i).length() - 3);
+            String psm = sp.get(i).substring(start.length()-2,start.length());
+            String pem = ep.get(i).substring(start.length()-2,start.length());
+            System.out.println(sm + "       " + psm);
+            System.out.println(sp.get(i));
+            if(Integer.parseInt(e) < Integer.parseInt(ps)){continue;}
+            else if(Integer.parseInt(s) > Integer.parseInt(pe)){continue;}
+            else if(Integer.parseInt(e) == Integer.parseInt(ps) && Integer.parseInt(em) <= Integer.parseInt(psm)){continue;}
+            else if(Integer.parseInt(s) == Integer.parseInt(pe) && Integer.parseInt(sm) >= Integer.parseInt(pem) ){continue;}
+            else{
                 return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
             }
+
         }
-        ReturnValue driverperiods = reader.getDayInformation(driver,Integer.parseInt(date));
+        if (driver != null){
+            ReturnValue driverperiods = reader.getDayInformation(driver, Integer.parseInt(date));
         ArrayList<String> spd = driverperiods.getStart();
         ArrayList<String> epd = driverperiods.getEnd();
 
-        for(int i = 0; i < sp.size(); i++){
-            String ps = spd.get(i).substring(0,spd.get(i).length()-3);
-            String pe = epd.get(i).substring(0,epd.get(i).length()-3);
-            if(Integer.parseInt(s) >= Integer.parseInt(ps) && Integer.parseInt(s) <= Integer.parseInt(pe)){
-                return "Der Zeitraum ist leider schon belegt \n" + spd.get(i) + " -" + epd.get(i);
+        for (int i = 0; i < sp.size(); i++) {
+            String ps = spd.get(i).substring(0, spd.get(i).length() - 3);
+            String pe = epd.get(i).substring(0, epd.get(i).length() - 3);
+            String psm = spd.get(i).substring(start.length()-2,start.length());
+            String pem = epd.get(i).substring(start.length()-2,start.length());
+            if(Integer.parseInt(e) < Integer.parseInt(ps)){continue;}
+            else if(Integer.parseInt(s) > Integer.parseInt(pe)){continue;}
+            else if(Integer.parseInt(e) == Integer.parseInt(ps) && Integer.parseInt(em) <= Integer.parseInt(psm)){continue;}
+            else if(Integer.parseInt(s) == Integer.parseInt(pe) && Integer.parseInt(sm) >= Integer.parseInt(pem) ){continue;}
+            else{
+                return "Der Zeitraum ist leider schon belegt \n" + spd.get(i) + " - " + epd.get(i);
             }
-        }
 
+        }
+        }
         writer.AddPeriod(reader.getCurrentUser(), date, start,end,content,"false");
         if(driver != null) {
             writer.AddPeriod(driver, date, start, end, content, "false");
@@ -151,6 +175,8 @@ public final class Logic {
         PermAppointments permAppointments = reader.getPemAppointments(reader.getCurrentUser());
         String s = start.substring(0,start.length()-3);
         String e = end.substring(0,end.length()-3);
+        String sm = start.substring(start.length()-2,start.length());
+        String em = end.substring(end.length()-2,end.length());
         try{
         if(Integer.parseInt(s) > Integer.parseInt(e)){
             return "Ende liegt vor Start";
@@ -165,12 +191,34 @@ public final class Logic {
             for (int i = 0; i < sp.size(); i++) {
                 String ps = sp.get(i).substring(0, sp.get(i).length() - 3);
                 String pe = ep.get(i).substring(0, ep.get(i).length() - 3);
-                if (Integer.parseInt(s) > Integer.parseInt(ps) && Integer.parseInt(s) < Integer.parseInt(pe) && input.equals(wd.get(i))) {
+                String psm = sp.get(i).substring(start.length()-2,start.length());
+                String pem = ep.get(i).substring(start.length()-2,start.length());
+                if(Integer.parseInt(e) < Integer.parseInt(ps)&&wd.equals(input)){continue;}
+                else if(Integer.parseInt(s) > Integer.parseInt(pe)&&wd.equals(input)){continue;}
+                else if(Integer.parseInt(e) == Integer.parseInt(ps) && Integer.parseInt(em) <= Integer.parseInt(psm) ){continue;}
+                else if(Integer.parseInt(s) == Integer.parseInt(pe) && Integer.parseInt(sm) >= Integer.parseInt(pem) ){continue;}
+                else if(!wd.equals(input)){continue;}
+                else{
                     return "Der Zeitraum ist leider schon belegt \n" + sp.get(i) + " - " + ep.get(i);
                 }
+
             }
         }
+        String sh = null;
+        String eh = null;
 
+        try {
+            sh = start.substring(0, start.length() - 3);
+            eh = end.substring(0, end.length() - 3);
+            sm = start.substring(start.length()-2,start.length());
+            em = end.substring(end.length()-2,end.length());
+            System.out.println(sm + "       " + em);
+            if (Integer.parseInt(sh) > Integer.parseInt(eh) || (Integer.parseInt(sh) == Integer.parseInt(eh)&& Integer.parseInt(em ) < Integer.parseInt(sm))) {
+                return "Ende liegt vor Start";
+            }
+        } catch (NumberFormatException r) {
+            return "Fehlerhafte Eingabe";
+        }
         PermAppointments permAppointmentsDriver = reader.getPemAppointments(driver);
         if(permAppointmentsDriver != null) {
             ArrayList<String> spd = permAppointmentsDriver.getStart();
@@ -180,8 +228,16 @@ public final class Logic {
             for (int i = 0; i < spd.size(); i++) {
                 String ps = spd.get(i).substring(0, spd.get(i).length() - 3);
                 String pe = epd.get(i).substring(0, epd.get(i).length() - 3);
-                if (Integer.parseInt(s) > Integer.parseInt(ps) && Integer.parseInt(s) < Integer.parseInt(pe) && input.equals(wdd.get(i))) {
-                    return "Der Zeitraum ist leider schon belegt (bei Beleitperson) \n" + spd.get(i) + " -" + epd.get(i);
+                String psm = spd.get(i).substring(start.length()-2,start.length());
+                String pem = epd.get(i).substring(start.length()-2,start.length());
+                System.out.println(spd.get(i));
+                if(Integer.parseInt(e) < Integer.parseInt(ps)&&wdd.equals(input)){continue;}
+                else if(Integer.parseInt(s) > Integer.parseInt(pe)&&wdd.equals(input)){continue;}
+                else if(Integer.parseInt(e) == Integer.parseInt(ps) && Integer.parseInt(em) <= Integer.parseInt(psm)){continue;}
+                else if(Integer.parseInt(s) == Integer.parseInt(pe) && Integer.parseInt(sm) >= Integer.parseInt(pem)){continue;}
+                else if(!wdd.equals(input)) continue;
+                else{
+                    return "Der Zeitraum ist leider schon belegt \n" + spd.get(i) + " - " + epd.get(i);
                 }
             }
         }
@@ -224,7 +280,7 @@ public final class Logic {
         if(!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor das löschen von Terminen möglich ist";
         boolean done = writer.removeNode(reader.getCurrentUser(),date,start);
         if(done) return null;
-        return "Leider ist ein Fehler beim Löschen aufgetreten. Der Termin is nicht vorhande";
+        return "Leider ist ein Fehler beim Löschen aufgetreten. Der Termin ist nicht vorhanden";
     }
 
     /**
@@ -476,7 +532,7 @@ public final class Logic {
 
     /**
      * @brief Adds Appointment with special writer "Freizeit"
-     * @param date date of Appointment (only for normal Appointments
+     * @param date date of Appointment (only for normal Appointments)
      * @param input
      * @param start start of the Appointment (required)
      * @param end end of the Appointment (required)
