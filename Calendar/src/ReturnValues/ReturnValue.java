@@ -21,7 +21,6 @@ public class ReturnValue {
         this.start.add(start);
         this.end.add(end);
     }
-
     //returns
     public ArrayList<String> getContent() {
         return content;
@@ -30,3 +29,6 @@ public class ReturnValue {
     public ArrayList<String> getEnd(){return end;}
 
 }
+
+
+

@@ -35,7 +35,6 @@ public class XMLReader {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             doc = dBuilder.parse(inputFile);
             doc.getDocumentElement().normalize();
-            //Console delete later and replace with GUI
             users = doc.getElementsByTagName("user");
         } catch (Exception e) {
             System.out.println(e);
@@ -458,7 +457,6 @@ public class XMLReader {
      */
     //Remove Nodes
     public void remove(Node parent, Node child){
-        System.out.println(parent +"-------" + child);
         parent.removeChild(child);
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
