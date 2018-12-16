@@ -51,14 +51,18 @@ public final class Logic {
      * @throws TransformerException
      */
     public static String AddAppiontment(String date,String start,String end, String content, String driver, boolean learningTime, boolean famEvent) throws TransformerException {
+        if (!reader.getUnlocked()) return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
         int shour = Integer.parseInt(start.substring(0, 2));
         int sminutes = Integer.parseInt(start.substring(3, 5));
         int ehour = Integer.parseInt(end.substring(0, 2));
         int eminutes = Integer.parseInt(end.substring(3, 5));
         if(shour > 23 || ehour > 23 || sminutes > 59 || eminutes > 59) return "Leider ist eine der Zeiten nicht gültig";
         if (date == null) return "Eingabe nicht komplett";
-        if (!reader.getUnlocked())
-            return "Es muss erst ein Nutzer erstellt werden, bevor es möglich ist Termine einzutragen";
+        int m = Integer.parseInt(date.substring(2,4));
+        int d = Integer.parseInt(date.substring(4,6));
+        System.out.println("M: " + m +", D:" + d);
+        if(d > daysInMonth[m-1]) return "Der gewählte Monat hat nicht so viele Tage";
+        if(date.length() > 6) return "Der gewählte Monat hat nicht so viele Tage";
         if (famEvent) {
             //famEvent: highest priotrity
             ArrayList<String> users = reader.getUserList();
@@ -181,6 +185,11 @@ public final class Logic {
         String e = end.substring(0,end.length()-3);
         String sm = start.substring(start.length()-2,start.length());
         String em = end.substring(end.length()-2,end.length());
+        int shour = Integer.parseInt(start.substring(0, 2));
+        int sminutes = Integer.parseInt(start.substring(3, 5));
+        int ehour = Integer.parseInt(end.substring(0, 2));
+        int eminutes = Integer.parseInt(end.substring(3, 5));
+        if(shour > 23 || ehour > 23 || sminutes > 59 || eminutes > 59) return "Leider ist eine der Zeiten nicht gültig";
         try{
         if(Integer.parseInt(s) > Integer.parseInt(e)){
             return "Ende liegt vor Start";
